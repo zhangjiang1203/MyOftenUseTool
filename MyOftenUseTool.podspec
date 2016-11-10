@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MyOftenUseTool'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = '自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法'
 
 # This description is used to generate tags and improve search results.
@@ -58,7 +58,7 @@ DESC
 
   s.subspec 'UIKit' do |ss|
     ss.ios.deployment_target = '8.0'
-    ss.public_header_files = 'UIKit+UIKit+Category/UI_Categories.h'
+    ss.public_header_files = 'UIKit+Category/UI_Categories.h'
     ss.source_files = 'UIKit+Category'
   end
 

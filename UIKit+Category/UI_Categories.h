@@ -6,9 +6,7 @@
 //  Copyright © 2015年 YYQ. All rights reserved.
 //
 
-#ifndef UI_Categories_h
-#define UI_Categories_h
-
+#ifdef __OBJC__
 #import "UITextField+Blocks.h"
 #import "UITextView+PlaceHolder.h"
 #import "UIView+BlockGesture.h"
