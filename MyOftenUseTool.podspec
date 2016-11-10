@@ -32,7 +32,7 @@ DESC
   s.ios.deployment_target = '8.0'
 
 
-  s.source_files  = "MyOftenUseTool", "**/*.{h,m}"
+  s.source_files  = "MyOftenUseTool", "MyOftenUseTool/**/*.{h,m}"
   s.exclude_files = "MyOftenUseTool/Exclude"
 
   # s.resource_bundles = {

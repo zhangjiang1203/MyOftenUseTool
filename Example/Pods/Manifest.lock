@@ -1,5 +1,23 @@
 PODS:
-  - MyOftenUseTool (0.1.0)
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - MyOftenUseTool (0.0.1):
+    - AFNetworking (~> 3.1.0)
+    - pop
+  - pop (1.0.9)
 
 DEPENDENCIES:
   - MyOftenUseTool (from `../`)
@@ -9,7 +27,9 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  MyOftenUseTool: 3cbb85660165356adbe81970e3d2343e1ff99346
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  MyOftenUseTool: 414c33582547e1f5254738549cc68160a50a0142
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
 PODFILE CHECKSUM: 29cf27f18207caf3277924b498f5aad7a36dd75d
 
