@@ -39,7 +39,7 @@ DESC
   #   'MyOftenUseTool' => ['MyOftenUseTool/Assets/*.png']
   # }
 
-  #s.public_header_files = 'MyOftenUseTool/ZJMethodHeader.h'
+  #s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
   s.frameworks = 'UIKit', 'MapKit','QuartzCore','Foundation'
   s.dependency 'AFNetworking', '~> 3.1.0'
   s.dependency 'pop'
