@@ -14,19 +14,20 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - MyOftenUseTool (0.1.6):
+  - MyOftenUseTool (0.1.7):
     - AFNetworking (~> 3.1.0)
-    - MyOftenUseTool/AFNRequest (= 0.1.6)
-    - MyOftenUseTool/HUDMethod (= 0.1.6)
-    - MyOftenUseTool/UIKit (= 0.1.6)
+    - MyOftenUseTool/AFNRequest (= 0.1.7)
+    - MyOftenUseTool/HUDMethod (= 0.1.7)
+    - MyOftenUseTool/UIKit (= 0.1.7)
+    - MyOftenUseTool/UIKit (= 0.1.7)
     - pop
-  - MyOftenUseTool/AFNRequest (0.1.6):
-    - AFNetworking (~> 3.1.0)
-    - pop
-  - MyOftenUseTool/HUDMethod (0.1.6):
+  - MyOftenUseTool/AFNRequest (0.1.7):
     - AFNetworking (~> 3.1.0)
     - pop
-  - MyOftenUseTool/UIKit (0.1.6):
+  - MyOftenUseTool/HUDMethod (0.1.7):
+    - AFNetworking (~> 3.1.0)
+    - pop
+  - MyOftenUseTool/UIKit (0.1.7):
     - AFNetworking (~> 3.1.0)
     - pop
   - pop (1.0.9)
@@ -40,7 +41,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  MyOftenUseTool: efc98aa8dcd1b2c28b63b7486b92ebf959b92c17
+  MyOftenUseTool: 309323aeb10c4c77e6f5dbddb170a340f6896187
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
 PODFILE CHECKSUM: 29cf27f18207caf3277924b498f5aad7a36dd75d

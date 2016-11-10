@@ -8,27 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		00C05031BBA5BA48A00FE41348F41BDA /* UIRefreshControl+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 31C3BED466C59882F79E6AF3292A6558 /* UIRefreshControl+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0644A3D4FB6EB2A048AC696145E7B9C7 /* UITextView+PlaceHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 93BACFB984650DC62BFABE77142BA7C5 /* UITextView+PlaceHolder.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		03F1B71DC72DD91267719E52FEB44FE0 /* UIView+Toast.h in Headers */ = {isa = PBXBuildFile; fileRef = A74C868EBFF0866F68CA4A9B80B5DECD /* UIView+Toast.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		065C6B04F9FF4BEFC0F54E2FEE5F13DC /* POPMath.h in Headers */ = {isa = PBXBuildFile; fileRef = 5ED71A83ECE650E1B04A2C15946F1A42 /* POPMath.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		09A3F11E9CA4496AFD258A4F24219AAD /* UIImage+Capture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3A6AAAD9B14950233AA6890F4C6529 /* UIImage+Capture.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0A3529929F376BE8F6FFD7C6366582B7 /* POPDecayAnimationInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 0598B34341D45BAE5FB10275839959E8 /* POPDecayAnimationInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0A627903D954012CB3C4D0D88AB9D672 /* POPAnimator.mm in Sources */ = {isa = PBXBuildFile; fileRef = D7D566F05869B8F61A56B352630BC1C7 /* POPAnimator.mm */; };
 		0AA74AE0731FB5AD8DD19499BD47D014 /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C65DD06C5AC15F4884C206BF3BFCA7 /* UIButton+CountDown.m */; };
-		0BC1E5AE3AC09DBF2A284AD851289833 /* UIView+Nib.h in Headers */ = {isa = PBXBuildFile; fileRef = 6643BD8218C1D10050A946CEA89B6303 /* UIView+Nib.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0D04C4D89B970EFE8820C82D36F12D3E /* UITextField+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FF1ACABA707CF40A092AC407DF7423 /* UITextField+Blocks.m */; };
 		0D1FFD30267C0776FD3E88EFF51E312F /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 52B247FA0109A9BF746BCDE6C6F72DCD /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0DC9A208826F47A012935844BAE20D79 /* UIButton+CountDown.h in Headers */ = {isa = PBXBuildFile; fileRef = 417E47677DA73778DB22F0A2FD919DAC /* UIButton+CountDown.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0D8E3DB88C1004B6E0B2F8566A8A21C2 /* ZJAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D621DA85BC5994D6C2F2B0129A656F9D /* ZJAlertViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		102218DE93A112D96EBFE3052E227953 /* Pods-MyOftenUseTool_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 619033A0BB4CE297D51E14E43C377126 /* Pods-MyOftenUseTool_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10DE0DE2757F0ABEA3ED9648D37CCE10 /* UIButton+Indicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1127FF5A9F3297627357FCB575DAFE41 /* UIButton+Indicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11B769645C529EC2C1BB1935910B6E45 /* CustomLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FBE42AE78AE429FE9D094EBADCA9C34 /* CustomLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		140F458AB7312414FC423FEED70A3733 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = DA14AAA181031099FA5B9B36EF2CEC85 /* UIActivityIndicatorView+AFNetworking.m */; };
 		14653010DF1CB184D05D4498B79A1CE7 /* POPAnimationEvent.mm in Sources */ = {isa = PBXBuildFile; fileRef = ED1EFFEE954D156A3076730AD9A65AB9 /* POPAnimationEvent.mm */; };
 		1478BA88D9D3AC90CE2CDA33D9D5C76F /* UIView+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 464841B5B6711617CB0BE6ACEFBCB7D3 /* UIView+Nib.m */; };
 		151E848911102220BBE8255D54484FFE /* POPLayerExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 4361912E4C1A3D898B071F890D7752EC /* POPLayerExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		157C6F002A92476AB2A934C43C3C018E /* UIView+Frame.h in Headers */ = {isa = PBXBuildFile; fileRef = A859F141143E612951B41C5346D287E5 /* UIView+Frame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1663ECD24F16D3C52AA0CFF47808441B /* UIImage+RoundedCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D8D2B874BFC7D683CADD73CA1E960C /* UIImage+RoundedCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		172F9BB2D3861BC65861DB4648C13E00 /* POPGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = B68BF89972D3C63E02408F6DE35128D4 /* POPGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18FBF64167A598EE1A5AA8912C6B0720 /* POPPropertyAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 26B0BA1E4D02F21FBD04D4720F1FF9D1 /* POPPropertyAnimation.mm */; };
 		1A456F7F616A68DB5261D0BBD85C4EF9 /* UnitBezier.h in Headers */ = {isa = PBXBuildFile; fileRef = F1F75D863E6DE41D89C887C79A518654 /* UnitBezier.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1E2A6D057E20BE8F5ED3E594F7B8C286 /* AFNetworking-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 737319DBE5644EFC5638FA0EF568665C /* AFNetworking-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1F13313EB7921C795662A05DF476F744 /* UIImage+Merge.h in Headers */ = {isa = PBXBuildFile; fileRef = B95194103FBD721EF2F660F6C92ED179 /* UIImage+Merge.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2044B6EFACC1FAF95E5700F1B253B408 /* CustomImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71E052EA9E51E062559291F2E58B1957 /* CustomImageView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		234A3C8B4E257BB93BA05E6DAEA40FC7 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D41C239E3B2C00C192093787134790 /* UIView+Frame.m */; };
 		237C633F7D3955C5BEACC981435F9418 /* POPAnimationPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F7DDE1FF4DD564B5861EDED43D7A45A /* POPAnimationPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		23EFB184AD12FB1014FFC765CE0D710A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2DF5CDAEBBB905BF784E14A6929B01F /* Security.framework */; };
@@ -36,95 +36,97 @@
 		286A884241773BC358C1507FFB7B60C6 /* POPPropertyAnimationInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = B9BECCBC73086A049F0211ED772DACE2 /* POPPropertyAnimationInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		29476636EA86BEFC4CB833D3BB7A52D7 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = F9312C4BCC72F59F60F961C2CE21632D /* AFURLRequestSerialization.m */; };
 		2B0705CC26A4CBEE32A5A60284AED35B /* UIButton+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 67C5B947ACDB7C02E9C3EBBB0DB45667 /* UIButton+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C6DE495716847DAA490A6CC0E46D018 /* UIViewController+TopBarMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = DB2A8ABB861FC514C66BD752499AA5C6 /* UIViewController+TopBarMessage.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2F4527CE2B1DF88BD6CD14E0D4315D10 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F16A72BAF698C4718CF926B0DF10F57 /* UIImage+animatedGIF.m */; };
 		2FC323AFDDFEFFCB49807540B94D7ED3 /* POPAnimationTracer.mm in Sources */ = {isa = PBXBuildFile; fileRef = D0F14F7DEEBFA2B81F53B5DAEF95C474 /* POPAnimationTracer.mm */; };
 		32076D3DD644045CF79DFFEBB6BFF3F2 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCBCCF27F8D7DCC36A0400FD3B300A7 /* UIButton+AFNetworking.m */; };
 		325689B63A031346E1D4D8CB9466528E /* TransformationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1996ECB5E73011A9F146424EB214BEF5 /* TransformationMatrix.cpp */; };
 		3320441D9B050AB9B32EA295A09C7512 /* CustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F2C71BDD403CBA447580DF67C03B3AB9 /* CustomTextField.m */; };
-		33457D49D897248949CA0C52A916D27F /* UIImage+FX.h in Headers */ = {isa = PBXBuildFile; fileRef = E653FA45DB853E361F55104EE7394D14 /* UIImage+FX.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		335406BB586635196F9F55C5F347929C /* UIView+Frame.h in Headers */ = {isa = PBXBuildFile; fileRef = A859F141143E612951B41C5346D287E5 /* UIView+Frame.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		33E172E4AC6675F341883116BE6D5661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F550D40141BDE75BD2A3909E2069D911 /* UIKit.framework */; };
 		34C88657FE7ABE9F833623F94952D253 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 8540D33E39662E387F5786E7CF9BF364 /* UIProgressView+AFNetworking.m */; };
 		34FE52064AD9707FC63EF60320804490 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 8753B84CDAA3AC08D492FC5B561DD70F /* UIImage+Color.m */; };
 		359CAA77B686E838CECBD2444DE45852 /* POPSpringSolver.h in Headers */ = {isa = PBXBuildFile; fileRef = F302BFD295741135B76191AED2975E15 /* POPSpringSolver.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		35CBB7B255FD8D412AFCECBC4311A847 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 7146A8C5D99058A3E37CCBB67A7ECD39 /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36B9AD34B50BDF9BE927659B2D2F326C /* UIViewController+MJPopupViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EFF90BD8B3578FD436271FEEDA600A41 /* UIViewController+MJPopupViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3811B8F44E28DDA0188E3087FAC6F41B /* UIView+Nib.h in Headers */ = {isa = PBXBuildFile; fileRef = 6643BD8218C1D10050A946CEA89B6303 /* UIView+Nib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C2D30BF3D025FB682BCCEAA5143B42A /* UIImage+FX.m in Sources */ = {isa = PBXBuildFile; fileRef = 795FD8788B587D7F5AA746DFC5D506CB /* UIImage+FX.m */; };
 		3D8524F203D43AD357103B9CCADAFD96 /* pop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D62E5AA40A7D5F89B02BE07B912DA4D /* pop-dummy.m */; };
 		3DDFB2F6C3148BFAFD46BD801D4135E2 /* POPAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 139BAF83631C7EE7DB4643FCE3CBA46A /* POPAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F3FB65C32B62CA37B2DE25E0FAAD487 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC0DEA9260972887E31D217C1586EF4 /* CustomButton.m */; };
+		4093EACDD57B2411FC26705461D1FFF1 /* UIButton+CountDown.h in Headers */ = {isa = PBXBuildFile; fileRef = 417E47677DA73778DB22F0A2FD919DAC /* UIButton+CountDown.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41B405A847DCCDB10AFB4933BC009975 /* MyOftenUseTool-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 94A4A5489A00E1E9C4BC2C8EB63E5C1B /* MyOftenUseTool-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41D36717D3A39D54CF9ABCE8482C96D0 /* CustomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7EF43612AE9FD708DD33CDBF227E49B /* CustomTextView.m */; };
 		442AE444980752E46AC7DA88BE478CB9 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1C67131C49F5E52E5A33A1C5ED8744 /* UIImage+RoundedCorner.m */; };
 		4442D8453D210EFC13CFE2CAF862ED1D /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 553E88E05297CDAF77A1FEFDB224EA1A /* AFHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		456175C0372AC316B90700F5F3CB4DAB /* Pods-MyOftenUseTool_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CDDB56B327F08EC4083EA14FF6F67E /* Pods-MyOftenUseTool_Tests-dummy.m */; };
-		4575812C0E5E07FF90F93C79A65B47F3 /* UIImage+Alpha.h in Headers */ = {isa = PBXBuildFile; fileRef = BCF78678B6A476F7E0DEE567388483D1 /* UIImage+Alpha.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		45F802D04B3BE0CAEC586C2F3016027B /* UIActivityIndicatorView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 36FE54C4522E3C7BAD8E4DF9963BA758 /* UIActivityIndicatorView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		465BB257ED83A690AE5C679A7E46CA54 /* POPCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D194EC339722DD55DE3B5852B93AC4AD /* POPCGUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		46C3DECB598152FA4E6E31C77764AC1B /* CustomImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 71E052EA9E51E062559291F2E58B1957 /* CustomImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		47F04CBDF6C54B220F6AEECEF15264D5 /* AFAutoPurgingImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 948C28F382A6C865B0A854302B5F6100 /* AFAutoPurgingImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4887334966B1615A3DE115B110ED22BB /* POPAnimationInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FC020D81515CCE4D22A4000FFA8A76C /* POPAnimationInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		488A3E972C517FEC2A110A546828A65E /* UIImage+animatedGIF.h in Headers */ = {isa = PBXBuildFile; fileRef = 78805B45AEA0CD35ABFCDB290F78217B /* UIImage+animatedGIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		490113D1CCB5CB38CEB6E110C6DFF857 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF03D96FC905F3A33C47142DA13EE26A /* QuartzCore.framework */; };
 		4AB33C1BE9BD518367D61CF502472A4E /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF31F33CCB4687CBCB44896476B0B4 /* pop.framework */; };
-		4C46C9ACDC82890373210ACD8668AC3B /* UIButton+BackgroundColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B66206FBE30EEE4410EB8A787747822F /* UIButton+BackgroundColor.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4F016EAE284D6BB227912DB2AE0982EA /* POPAnimationExtras.mm in Sources */ = {isa = PBXBuildFile; fileRef = F081B7994D0101A6ED37D014CEF6A9A8 /* POPAnimationExtras.mm */; };
-		4F106863F87AEFB28CEE14A15F334C53 /* CustomTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = A8F59835542B6E7058213C0E8671870D /* CustomTextField.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		505B638B994DA6A2CBF37C3F6685D4AA /* UIButton+Block.h in Headers */ = {isa = PBXBuildFile; fileRef = FD975F82764A0A572D2CDFCE1DB28BD6 /* UIButton+Block.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51047C1945103943F70BEADE83725630 /* UIWebView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 26ECDEB58C5291630F510F9BF67186B7 /* UIWebView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5129C6528AED6A6A22F95129CD5D91F0 /* UIButton+Indicator.h in Headers */ = {isa = PBXBuildFile; fileRef = 1127FF5A9F3297627357FCB575DAFE41 /* UIButton+Indicator.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		53DED5DE0A6DE4712DE63DB8106D0A3A /* UIButton+Submitting.h in Headers */ = {isa = PBXBuildFile; fileRef = 967FFBEB6D02A6DD194814496FE1D6EC /* UIButton+Submitting.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5487702D3C9FB1FC75ACDB845E4CEC27 /* POPAnimatableProperty.mm in Sources */ = {isa = PBXBuildFile; fileRef = 153FD7839F40BEAE56E23DD9683219FF /* POPAnimatableProperty.mm */; };
 		553A1D7DF7ACC10CFE17E210A3130E58 /* UIView+MBIBnspectable.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2E1270A690DD10722021D481D8F623 /* UIView+MBIBnspectable.m */; };
 		56C5E7A145444FB3638DA21F5A254298 /* UITextView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 855A84B5F2127ABAF0E07DFDC3C60638 /* UITextView+PlaceHolder.m */; };
-		57CF4755923B92345396CDE5AEF68F37 /* UIView+BlockGesture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4592963566E505086B0C2559D41B80 /* UIView+BlockGesture.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5894DB4B15DCE6CD2C1215C3FBF9335D /* POPCustomAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = ED84A414E27D6B5855BA080F13436106 /* POPCustomAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5A1D34D104D42B1EE399E23BCD7935A0 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = CC462D01DC853001854FD990B3415AEC /* AFURLResponseSerialization.m */; };
 		5B260ADE4AAACF1187274C96F5E1692D /* MyOftenUseTool-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F2035DA5056FA2CD903B11058AB60728 /* MyOftenUseTool-dummy.m */; };
 		5F5A7C8C6D44F80E849756C9220FD75B /* UIButton+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = CEBE3F23319630C84E1A8E4CC1E5621A /* UIButton+Block.m */; };
+		60A3B42E20B4983A10B4D0D8B33FB4BF /* UITextView+PlaceHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 93BACFB984650DC62BFABE77142BA7C5 /* UITextView+PlaceHolder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61F332A281189280CD826C346E81148B /* UIView+Constraints.h in Headers */ = {isa = PBXBuildFile; fileRef = 863F789BF12055AA2E0C4B264DB76409 /* UIView+Constraints.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		621DE5FA1FD22617702FF4D3DB43DD3C /* UIImage+RemoteSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 6476D1FDB0FAB8D54BF66618E80AC4D0 /* UIImage+RemoteSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64123D4763F78566299A51EFF21DD091 /* UIImage+Color.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C75252FFAB140FAAC1A32CED6446D49 /* UIImage+Color.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		649E78B5EA450FABDF5201E31F265FAB /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF351748067DA5A6F91D8C53BB90A55F /* AFNetworkActivityIndicatorManager.m */; };
 		6573AF9ABA59AC8D1F52B07088197F71 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = F7FCA7AB9AB91BAFDBDD8860A020AE77 /* AFSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65F9D740BBC755E1820EF00EC3AF3018 /* UIDevice+Hardware.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AF21AD0EF9EC17E4132368DB5BF0A /* UIDevice+Hardware.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		669AE6DF09C1CD0BA3ED98C1FFF2148E /* UIImage+Capture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3A6AAAD9B14950233AA6890F4C6529 /* UIImage+Capture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		672AFB6AE7082E5622D2778157111385 /* UIView+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EA4CD389F9B55396F8A3A57BE38644 /* UIView+Screenshot.m */; };
 		6800B1945C1E44FA039639D72C6F395E /* UIViewController+TopBarMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = F020A86915B65732C6DD5E6E1A360B14 /* UIViewController+TopBarMessage.m */; };
+		6B110449E63F9AD8070D4D019045C018 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = ABCBC4C68411245A26B50463E125B6FA /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6B5AA364809E7A7223A6F696AC9C90FD /* POPVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4453CC518EC285C36058FC59AD945A13 /* POPVector.mm */; };
 		6C87133C6108CA00AF6FA38D152612B1 /* POPBasicAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AE40533AD2DF628090CF381748C1963 /* POPBasicAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DA7481790122B4869BFA3C3DC4FE249 /* UIImage+Capture.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CC91E59A7722E0DD9E7CEFA762F1DD /* UIImage+Capture.m */; };
 		71CD0E3085ADA9539B19D389D6639391 /* UIView+BlockGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF5852DE22F5E8189AACC8E5F2556C1 /* UIView+BlockGesture.m */; };
 		72BE65E696A388D4CC0D75BE461FEF1B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB666EAEAA983F5E6462EC1C522A704 /* MobileCoreServices.framework */; };
-		748A57C0FC37ADB49D003099D5421750 /* UIImage+RemoteSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 6476D1FDB0FAB8D54BF66618E80AC4D0 /* UIImage+RemoteSize.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		762B69FA5FC1A86F95FC568B6AC9EC7E /* UIView+Find.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F40E56D0436718F846F9599EE12508 /* UIView+Find.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A112C0F21A62CB6F1AA8D917A6EEA6C /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B6F46C6314FCF2196956B41B56DB77A /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A89C1DA23524EE03CB45C8E5008774D /* UI_Categories.h in Headers */ = {isa = PBXBuildFile; fileRef = 818CE5BDE7D899EC044F2264CA6CA6D5 /* UI_Categories.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7AD32C12A84B89766291CD44700DE6BA /* CustomTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = A32A9A430CF326CEE0D54F13A1935281 /* CustomTextView.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		7CE16B1BF75DF396768A0A3CFD968DB1 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3807183641F2E7686FF8ED6D9BC776 /* UIWebView+AFNetworking.m */; };
 		7D143FE3BA79986DDAF812C05926B911 /* POPSpringAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = F48ADA6078C3013148F8CC55A9D28CCB /* POPSpringAnimation.mm */; };
 		7FEB04A8DE5F67740FAA528BE883C1A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659B0CEDB799AF7892F60DF8405EB02E /* Foundation.framework */; };
+		8134CC8E011E8273E0584CCC82B7333C /* UIImage+FileName.h in Headers */ = {isa = PBXBuildFile; fileRef = 38B4F62217E1DD622BBCF8247F95638B /* UIImage+FileName.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		856D6A73F31A6E68B2B5BECD856DE641 /* POPCGUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7036055469FAFD598355FC795C9B48FA /* POPCGUtils.mm */; };
 		8680719E347D66EED749F0C4A9CF5B8F /* POPPropertyAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 499EB181249F9124466E49085CF0D1D1 /* POPPropertyAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		872617C45E0F43FD02B1FE7ACB10278A /* UIViewController+TopBarMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = DB2A8ABB861FC514C66BD752499AA5C6 /* UIViewController+TopBarMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8877F95388796AD1D092CF249442ED90 /* UIImage+RemoteSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D251BE1E5616F4506289CA3B9273F79 /* UIImage+RemoteSize.m */; };
-		8AAF28327AF5B69211E6F2830A9B62BC /* UIViewController+MJPopupViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = EFF90BD8B3578FD436271FEEDA600A41 /* UIViewController+MJPopupViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8C0A2CC1A4F6D1C2F0A21807201C32FB /* CustomButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AFFAFD3D4031268E793F1260EA279EB1 /* CustomButton.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		88D8DE3F98684EA8087C0BF046FF7457 /* CustomTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = A8F59835542B6E7058213C0E8671870D /* CustomTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8EDC393C9838F360712E7CBD93BF538E /* UIImage+FileName.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FD4676D57D63AD0580C2F89B5E968B /* UIImage+FileName.m */; };
 		9112BD3DE111F7469427F1175F176DE7 /* POPAnimator.h in Headers */ = {isa = PBXBuildFile; fileRef = 41B3C56975A972D329405AA2E5D38315 /* POPAnimator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		913CE98222CD30A9915DAAADC58695A7 /* UIButton+Submitting.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D0AA423627D221FA26DD7E82DAA0FB6 /* UIButton+Submitting.m */; };
-		92467B14DF915968A61900768E44A3BE /* UIView+MBIBnspectable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C1655A7D17BA9162BF64725148FDCF4 /* UIView+MBIBnspectable.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9264BD69AFA8EE74F0D7F0EBD74F762F /* UIImage+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 95336FD7ED1844687D72E1314313D7E0 /* UIImage+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		93DFC0CC12E763AE770017349EE009D1 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BEF61723EEAD126557532A75294C124 /* AFNetworkReachabilityManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		948458DC0A9308A2D8C018C37FB7BBDD /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 4584C30A2124CF308A1DA286A1D3C88C /* AFURLResponseSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9491BF51ECF8786873C3EB860697C1C5 /* UIButton+Block.h in Headers */ = {isa = PBXBuildFile; fileRef = FD975F82764A0A572D2CDFCE1DB28BD6 /* UIButton+Block.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		97965DE8F61A769CB9E8120A7ACEE8CD /* UIButton+Submitting.h in Headers */ = {isa = PBXBuildFile; fileRef = 967FFBEB6D02A6DD194814496FE1D6EC /* UIButton+Submitting.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		98167680F4D8346C18A388F6281CF40E /* Pods-MyOftenUseTool_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C471576A94D792D509744990A882513 /* Pods-MyOftenUseTool_Example-dummy.m */; };
+		9DC985C3981F1BC4820A710547235702 /* UIView+MBIBnspectable.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C1655A7D17BA9162BF64725148FDCF4 /* UIView+MBIBnspectable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9E262ECD5BC31B68643335560C3EA690 /* CustomLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5F37685FC8B0557FEAE1FD7C70A1C3 /* CustomLabel.m */; };
 		9E2F57CAC63FA9645134F9EDC9829499 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA7848CFC99E1A5E8304CC7981DFAAA /* MapKit.framework */; };
+		9EC326B411AB43405726329190F4C923 /* CustomButton.h in Headers */ = {isa = PBXBuildFile; fileRef = AFFAFD3D4031268E793F1260EA279EB1 /* CustomButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A3591DEDA776B48C026E7F9144981E58 /* AFAutoPurgingImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A7E9C21509B10FD57F3E7E22F862FB5 /* AFAutoPurgingImageCache.m */; };
 		A398D63C8DED664D99A864D79881A13C /* AFImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B109DF36A818ECF2DAF5DCF3A37B38 /* AFImageDownloader.m */; };
 		A7AB1F1027A02FAF6097274C39E826BF /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 618FBFD8BA8163094B61B9B950DF083C /* AFNetworking.framework */; };
-		A8FEA491782E8F9B791B630D9F6420A0 /* UITextField+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = AAE69E2CE81A72F168C4B7BCA92752AC /* UITextField+Blocks.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A981A60223447CF8AACE9F98EB3A649D /* POPAnimationRuntime.mm in Sources */ = {isa = PBXBuildFile; fileRef = B0A6FBC76FC95B3DCEE85B01F57A5DE6 /* POPAnimationRuntime.mm */; };
 		AB9A90EFDFF65B29E14A444A6D0F045D /* ZJAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D54243E166E26AC576DD62B86043F90 /* ZJAlertViewController.m */; };
 		ABC1CFFAC5A8E75F52FA662DD8957244 /* UIButton+Indicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9994825B49EFDEE48C832A874D90958E /* UIButton+Indicator.m */; };
-		ADEDCB466DB31925CAE2D62547D1EF44 /* UIImage+Color.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C75252FFAB140FAAC1A32CED6446D49 /* UIImage+Color.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		AE976B0E8E3DD81E4F49DBEF19D3C0AD /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = DBD396F49B151897D04C21CDE9046E48 /* AFURLSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B16A078FC7FBC172A266A336AEF7F673 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = CF45666E111D2199FD2203B752390A53 /* UIRefreshControl+AFNetworking.m */; };
 		B2AAC5FB575150FDB0ABAE685CCBE5D3 /* POP.h in Headers */ = {isa = PBXBuildFile; fileRef = 373F44AF60E26873B2C346B630F0A691 /* POP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B36AC412D2527D0C2947A52AF2E2D4F4 /* POPGeometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = CE70A2E3B115121C46E6DDB5F9E6A5CF /* POPGeometry.mm */; };
 		B4DCC7DB297B201A5C1A14A8D1FC42C7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659B0CEDB799AF7892F60DF8405EB02E /* Foundation.framework */; };
-		B6A4001BD362B0A72418A591801300F5 /* UIView+Screenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF31395DDDC05287CD53C5482D7309F /* UIView+Screenshot.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B7917E103DFD9B3E6ECCCBAB2BE0E383 /* POPAnimationTracer.h in Headers */ = {isa = PBXBuildFile; fileRef = 12725BBAEC11D3D0643193CD804B887E /* POPAnimationTracer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B896BAA80DD73432425AACBD419728A3 /* ZJAFNRequestTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E324880DE68F04C698775ECD60ECA /* ZJAFNRequestTool.m */; };
 		B96BD33D026AA972FFF12986304DAC49 /* POPLayerExtras.mm in Sources */ = {isa = PBXBuildFile; fileRef = 042741B32F5FC3C5895879D31F2F25D8 /* POPLayerExtras.mm */; };
@@ -140,39 +142,37 @@
 		C9FF11775D272A1AEF48F3B9D786C7F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659B0CEDB799AF7892F60DF8405EB02E /* Foundation.framework */; };
 		CB32C5F39812F994FA737A3FBAC1696F /* CustomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6CA8E3C120260ED917ACAC1B5E31D66 /* CustomImageView.m */; };
 		CB5894FA401DC48CAF2AE30D8CD56BDA /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EB0353D845D5CC25D6CC5A4EA6A26EB /* UIImage+Alpha.m */; };
-		CC05C84489D5B5FE22DB445BA841D1EE /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = ABCBC4C68411245A26B50463E125B6FA /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CCBC4DE5170275E8C30F896931EDDD07 /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C362C30FA5BCFEE55BDE13D2C04ED7A5 /* UIViewController+MJPopupViewController.m */; };
 		CD37ABA4CC083E3748BB5BCACFDA2347 /* POPAnimatableProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = C04B1604B53317A663371F865685503C /* POPAnimatableProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD8C5FD8467CE28B2C7A7C9A0CF56483 /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4590FE719D202D5972BF6D16AE865C /* HUDHelper.m */; };
 		CDACE9AF7A6AE4724F8851B4AF20C2EE /* Pods-MyOftenUseTool_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 09EC6E7A0C32B267A2EB23E05FE373BB /* Pods-MyOftenUseTool_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE2EB8CE3176F8A1FAA78CC8786292CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99984BB845AD6F696F9791DF0A3FA279 /* SystemConfiguration.framework */; };
 		CEB2F0E229EF841D92C780C3FFDF1BEA /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2944AED68C0686A888C32C6AD3360EA3 /* AFSecurityPolicy.m */; };
+		CEFBC4ABEB43C9B71A62C61248714A1B /* UIView+Screenshot.h in Headers */ = {isa = PBXBuildFile; fileRef = BDF31395DDDC05287CD53C5482D7309F /* UIView+Screenshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CF287829627F26B2EB4382B897D06A0E /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D93160F19B706DE44698FC1D880FED6 /* AFNetworking-dummy.m */; };
 		D0402AE8628E53BF3B767A32AE317FF1 /* POPBasicAnimationInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 5771CBCE9FDB8D8ECFF3742AFD090B4E /* POPBasicAnimationInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D1702F09378506F3C9FF800CEF2167A2 /* UIView+Toast.h in Headers */ = {isa = PBXBuildFile; fileRef = A74C868EBFF0866F68CA4A9B80B5DECD /* UIView+Toast.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D3FBD9049A16FBC541E69E1F0F6CFD9A /* POPDecayAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33A4F749FF245D808029807BE1FED940 /* POPDecayAnimation.mm */; };
 		D48BEF1D78F6D74F3F275D407C4FAA39 /* POPAction.h in Headers */ = {isa = PBXBuildFile; fileRef = 281F7AA34123D62EEE301E401423AEB1 /* POPAction.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D4E80BD7EAAB83200183110578A80591 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5362CECF4BE6694134C71E99A46FEF /* AFURLSessionManager.m */; };
 		D4FAAF195C9A33A211CABC97B1EF2345 /* UIButton+BackgroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = BF407327ADD0B26FA100616034D0DA2D /* UIButton+BackgroundColor.m */; };
-		D5FCFE82828B56152FD4122DE4CD7105 /* UIImage+RoundedCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D8D2B874BFC7D683CADD73CA1E960C /* UIImage+RoundedCorner.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D7307BEDA402C1D868A09D21E506BC2E /* POPMath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6D5E3508CADECDEDF7331D520BF23233 /* POPMath.mm */; };
+		DAF94C747CD76679FECCBDD501F2B25E /* UIImage+FX.h in Headers */ = {isa = PBXBuildFile; fileRef = E653FA45DB853E361F55104EE7394D14 /* UIImage+FX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC3CDEA32E9B015C6221EC5A9C312368 /* POPDecayAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 48D0DE0222E61288A18A5C53A659BE43 /* POPDecayAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DC5E29090273B750172DB1DCC00B05B4 /* UIView+BlockGesture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4592963566E505086B0C2559D41B80 /* UIView+BlockGesture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD465B9F2447D1F45BD31066944516ED /* UIView+Find.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C1BA6DB6356C16EA83A2A0433464F22 /* UIView+Find.m */; };
 		DD887A93A200A87A51B3D00BD1B80D20 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B3560B768E2DC14529BA1AED515912 /* AFNetworkReachabilityManager.m */; };
+		DF27B8DD26474C5A64D4D880D129B744 /* UITextField+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = AAE69E2CE81A72F168C4B7BCA92752AC /* UITextField+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E0B7C9404BFA9F8F860B250EC2BBA860 /* FloatConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AEF682CE09E2C74CFCD8E7BC97E1FE8 /* FloatConversion.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E0ED6AFA2BAE9BB61D3ECA03B352B4A8 /* UIView+Constraints.h in Headers */ = {isa = PBXBuildFile; fileRef = 863F789BF12055AA2E0C4B264DB76409 /* UIView+Constraints.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E1C853533B55D697B653D608358BEF1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 659B0CEDB799AF7892F60DF8405EB02E /* Foundation.framework */; };
 		E23B9A6F533461CB33C0FA6FB59E3AB2 /* UIKit+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 52970CF4E01132BF61D8D77337136E0D /* UIKit+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E33878003E535A4E35FF85D5F7284176 /* POPAnimationEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = B3CE0E72C61A3BDA6E8EC074477F9180 /* POPAnimationEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E409D31918762B9B25E4BCB9F3D2B0BB /* POPVector.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A752833FCA6CAEB07BA29881D93AEB1 /* POPVector.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E55048530DF07CECBD31121C609C0576 /* UIImage+animatedGIF.h in Headers */ = {isa = PBXBuildFile; fileRef = 78805B45AEA0CD35ABFCDB290F78217B /* UIImage+animatedGIF.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E59B3EF24AA8259615C07E5EC78FCF5B /* POPSpringAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 91314910A4F0229553AADC7AD2BE3CFD /* POPSpringAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E71771F68832986FDC36BE0E578EB242 /* UIImage+Merge.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9D5D8B60224C01BA6AFFEA41A9DCB7 /* UIImage+Merge.m */; };
-		E7DC305852BB6D0047D54156173777EB /* CustomLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FBE42AE78AE429FE9D094EBADCA9C34 /* CustomLabel.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		E7A72F9DBEBB960E9C44C2AA3C8D5210 /* CustomTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = A32A9A430CF326CEE0D54F13A1935281 /* CustomTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8F07C58867AA00D4DBD2A0F1084FC54 /* POPSpringAnimationInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 556E59436D98F19653BFA7146045BF38 /* POPSpringAnimationInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E92B621C726D82305767BB7991BEE74D /* UIView+Constraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 73ECDB0F3F058C2FE012E87AB5FEDBD9 /* UIView+Constraints.m */; };
 		EAF16633DB3C992CF975BE4A2932D41C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 692E19A07A8360605D116918319565FB /* AFHTTPSessionManager.m */; };
-		EB45C125BC2B7953487FC6BC967E3EBB /* ZJAlertViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = D621DA85BC5994D6C2F2B0129A656F9D /* ZJAlertViewController.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		EE3F849D0B4C52A9CF0A8A2C194AA696 /* POPAnimatorPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 780F8D701FCE70A090BFCE73D6B5DFEB /* POPAnimatorPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F1CAA2EBDDFF558DEF98684F2479A7AF /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 30DFA18DDA881E776C873251355BD5E7 /* AFURLRequestSerialization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F1F1232D1F43C108CCA7DD490E7DC22C /* TransformationMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F691D85FC096BC511D4CA2B16CF5895 /* TransformationMatrix.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -180,14 +180,14 @@
 		F28C8D390FFEE5194DFA1C631345F8BD /* ZJMethodHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B5F08F7A32A1C996534095DC8D4F32C /* ZJMethodHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2D899C7AA0D7FC20160091BB9D31CF3 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EB721BD730C2D0A0E34E270FE48CD3 /* UIImageView+AFNetworking.m */; };
 		F33757352FE7E69414D5EBEF767EF97B /* pop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F9C0B0994E96EF988FDFA02E5BAFD2B /* pop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F47301FEBB7402A1F3F1ED636D4FB091 /* UIButton+BackgroundColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B66206FBE30EEE4410EB8A787747822F /* UIButton+BackgroundColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F5C497605D3E7744BAF376F3CAF33965 /* UIImage+Merge.h in Headers */ = {isa = PBXBuildFile; fileRef = B95194103FBD721EF2F660F6C92ED179 /* UIImage+Merge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7113D408AFBFFB6054448CADEE515B8 /* UIImage+Alpha.h in Headers */ = {isa = PBXBuildFile; fileRef = BCF78678B6A476F7E0DEE567388483D1 /* UIImage+Alpha.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F84DD74BB7F612DE372F8C051420DF72 /* UIProgressView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 87AFDB618975404253A24FEF0BCA0E62 /* UIProgressView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F9FA0057083757B9DF2FCB5AF4970B36 /* UIView+Find.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F40E56D0436718F846F9599EE12508 /* UIView+Find.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FB8B48BBC21363B7471D5A6EBCBE2697 /* POPAnimationRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 781A4E5052AEDD9E89D9EB0952C7590D /* POPAnimationRuntime.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FBBD119C9044AF9D71D9473601EF9A68 /* POPAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 916650CE8C345F73BB85EC897AA5FD8A /* POPAnimation.mm */; };
 		FC7FDBEC930E160E1613C2DC39C864C2 /* POPAnimationEventInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = AE036CCF795210BCCB81D32CBF97D840 /* POPAnimationEventInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FE0C3CDD0661C9F5665621BF27D3EA49 /* HUDHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C0F05025661B054895766F7D49FEAD6 /* HUDHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE1619A11DF34234C65CE9A17DDD57DA /* UIImage+FileName.h in Headers */ = {isa = PBXBuildFile; fileRef = 38B4F62217E1DD622BBCF8247F95638B /* UIImage+FileName.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FEC5A8B0D166FBD4AF8C757D2BD7FA31 /* UIDevice+Hardware.h in Headers */ = {isa = PBXBuildFile; fileRef = C84AF21AD0EF9EC17E4132368DB5BF0A /* UIDevice+Hardware.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FEF6EACE962EAE70E2EAC5F3C83EF7C8 /* AFImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = AC86EAED0E32A3F13FB4C187EB1A5F43 /* AFImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -978,44 +978,44 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C0A2CC1A4F6D1C2F0A21807201C32FB /* CustomButton.h in Headers */,
-				2044B6EFACC1FAF95E5700F1B253B408 /* CustomImageView.h in Headers */,
-				E7DC305852BB6D0047D54156173777EB /* CustomLabel.h in Headers */,
-				4F106863F87AEFB28CEE14A15F334C53 /* CustomTextField.h in Headers */,
-				7AD32C12A84B89766291CD44700DE6BA /* CustomTextView.h in Headers */,
+				9EC326B411AB43405726329190F4C923 /* CustomButton.h in Headers */,
+				46C3DECB598152FA4E6E31C77764AC1B /* CustomImageView.h in Headers */,
+				11B769645C529EC2C1BB1935910B6E45 /* CustomLabel.h in Headers */,
+				88D8DE3F98684EA8087C0BF046FF7457 /* CustomTextField.h in Headers */,
+				E7A72F9DBEBB960E9C44C2AA3C8D5210 /* CustomTextView.h in Headers */,
 				FE0C3CDD0661C9F5665621BF27D3EA49 /* HUDHelper.h in Headers */,
 				41B405A847DCCDB10AFB4933BC009975 /* MyOftenUseTool-umbrella.h in Headers */,
 				7A89C1DA23524EE03CB45C8E5008774D /* UI_Categories.h in Headers */,
-				4C46C9ACDC82890373210ACD8668AC3B /* UIButton+BackgroundColor.h in Headers */,
-				9491BF51ECF8786873C3EB860697C1C5 /* UIButton+Block.h in Headers */,
-				0DC9A208826F47A012935844BAE20D79 /* UIButton+CountDown.h in Headers */,
-				5129C6528AED6A6A22F95129CD5D91F0 /* UIButton+Indicator.h in Headers */,
-				97965DE8F61A769CB9E8120A7ACEE8CD /* UIButton+Submitting.h in Headers */,
-				FEC5A8B0D166FBD4AF8C757D2BD7FA31 /* UIDevice+Hardware.h in Headers */,
-				4575812C0E5E07FF90F93C79A65B47F3 /* UIImage+Alpha.h in Headers */,
-				E55048530DF07CECBD31121C609C0576 /* UIImage+animatedGIF.h in Headers */,
-				09A3F11E9CA4496AFD258A4F24219AAD /* UIImage+Capture.h in Headers */,
-				ADEDCB466DB31925CAE2D62547D1EF44 /* UIImage+Color.h in Headers */,
-				FE1619A11DF34234C65CE9A17DDD57DA /* UIImage+FileName.h in Headers */,
-				33457D49D897248949CA0C52A916D27F /* UIImage+FX.h in Headers */,
-				CC05C84489D5B5FE22DB445BA841D1EE /* UIImage+GIF.h in Headers */,
-				1F13313EB7921C795662A05DF476F744 /* UIImage+Merge.h in Headers */,
-				748A57C0FC37ADB49D003099D5421750 /* UIImage+RemoteSize.h in Headers */,
-				D5FCFE82828B56152FD4122DE4CD7105 /* UIImage+RoundedCorner.h in Headers */,
-				A8FEA491782E8F9B791B630D9F6420A0 /* UITextField+Blocks.h in Headers */,
-				0644A3D4FB6EB2A048AC696145E7B9C7 /* UITextView+PlaceHolder.h in Headers */,
-				57CF4755923B92345396CDE5AEF68F37 /* UIView+BlockGesture.h in Headers */,
-				E0ED6AFA2BAE9BB61D3ECA03B352B4A8 /* UIView+Constraints.h in Headers */,
-				F9FA0057083757B9DF2FCB5AF4970B36 /* UIView+Find.h in Headers */,
-				335406BB586635196F9F55C5F347929C /* UIView+Frame.h in Headers */,
-				92467B14DF915968A61900768E44A3BE /* UIView+MBIBnspectable.h in Headers */,
-				0BC1E5AE3AC09DBF2A284AD851289833 /* UIView+Nib.h in Headers */,
-				B6A4001BD362B0A72418A591801300F5 /* UIView+Screenshot.h in Headers */,
-				D1702F09378506F3C9FF800CEF2167A2 /* UIView+Toast.h in Headers */,
-				8AAF28327AF5B69211E6F2830A9B62BC /* UIViewController+MJPopupViewController.h in Headers */,
-				2C6DE495716847DAA490A6CC0E46D018 /* UIViewController+TopBarMessage.h in Headers */,
+				F47301FEBB7402A1F3F1ED636D4FB091 /* UIButton+BackgroundColor.h in Headers */,
+				505B638B994DA6A2CBF37C3F6685D4AA /* UIButton+Block.h in Headers */,
+				4093EACDD57B2411FC26705461D1FFF1 /* UIButton+CountDown.h in Headers */,
+				10DE0DE2757F0ABEA3ED9648D37CCE10 /* UIButton+Indicator.h in Headers */,
+				53DED5DE0A6DE4712DE63DB8106D0A3A /* UIButton+Submitting.h in Headers */,
+				65F9D740BBC755E1820EF00EC3AF3018 /* UIDevice+Hardware.h in Headers */,
+				F7113D408AFBFFB6054448CADEE515B8 /* UIImage+Alpha.h in Headers */,
+				488A3E972C517FEC2A110A546828A65E /* UIImage+animatedGIF.h in Headers */,
+				669AE6DF09C1CD0BA3ED98C1FFF2148E /* UIImage+Capture.h in Headers */,
+				64123D4763F78566299A51EFF21DD091 /* UIImage+Color.h in Headers */,
+				8134CC8E011E8273E0584CCC82B7333C /* UIImage+FileName.h in Headers */,
+				DAF94C747CD76679FECCBDD501F2B25E /* UIImage+FX.h in Headers */,
+				6B110449E63F9AD8070D4D019045C018 /* UIImage+GIF.h in Headers */,
+				F5C497605D3E7744BAF376F3CAF33965 /* UIImage+Merge.h in Headers */,
+				621DE5FA1FD22617702FF4D3DB43DD3C /* UIImage+RemoteSize.h in Headers */,
+				1663ECD24F16D3C52AA0CFF47808441B /* UIImage+RoundedCorner.h in Headers */,
+				DF27B8DD26474C5A64D4D880D129B744 /* UITextField+Blocks.h in Headers */,
+				60A3B42E20B4983A10B4D0D8B33FB4BF /* UITextView+PlaceHolder.h in Headers */,
+				DC5E29090273B750172DB1DCC00B05B4 /* UIView+BlockGesture.h in Headers */,
+				61F332A281189280CD826C346E81148B /* UIView+Constraints.h in Headers */,
+				762B69FA5FC1A86F95FC568B6AC9EC7E /* UIView+Find.h in Headers */,
+				157C6F002A92476AB2A934C43C3C018E /* UIView+Frame.h in Headers */,
+				9DC985C3981F1BC4820A710547235702 /* UIView+MBIBnspectable.h in Headers */,
+				3811B8F44E28DDA0188E3087FAC6F41B /* UIView+Nib.h in Headers */,
+				CEFBC4ABEB43C9B71A62C61248714A1B /* UIView+Screenshot.h in Headers */,
+				03F1B71DC72DD91267719E52FEB44FE0 /* UIView+Toast.h in Headers */,
+				36B9AD34B50BDF9BE927659B2D2F326C /* UIViewController+MJPopupViewController.h in Headers */,
+				872617C45E0F43FD02B1FE7ACB10278A /* UIViewController+TopBarMessage.h in Headers */,
 				BEFCB8B14CECE7C4A94AD0775B5BC1BC /* ZJAFNRequestTool.h in Headers */,
-				EB45C125BC2B7953487FC6BC967E3EBB /* ZJAlertViewController.h in Headers */,
+				0D8E3DB88C1004B6E0B2F8566A8A21C2 /* ZJAlertViewController.h in Headers */,
 				F28C8D390FFEE5194DFA1C631345F8BD /* ZJMethodHeader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
