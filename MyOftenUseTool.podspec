@@ -31,7 +31,7 @@ DESC
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files  = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
+  s.source_files  = 'MyOftenUseTool/Classes/**'
   s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
   #s.exclude_files = "MyOftenUseTool/Exclude"
 
@@ -56,11 +56,11 @@ DESC
 
   end
 
-  s.subspec 'UIKit' do |ss|
-    ss.ios.deployment_target = '8.0'
-    ss.source_files = 'MyOftenUseTool/UIKit+Category/*.{h,m}'
-    ss.public_header_files = 'MyOftenUseTool/UIKit+Category/UI_Categories.h'
+ # s.subspec 'UIKit' do |ss|
+ #   ss.ios.deployment_target = '8.0'
+ #   ss.source_files = 'MyOftenUseTool/UIKit+Category/*.{h,m}'
+ #   ss.public_header_files = 'MyOftenUseTool/UIKit+Category/UI_Categories.h'
     
-  end
+ # end
 
 end

@@ -18,7 +18,7 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "MyOftenUseTool/Classes/ZJMethodHeader.h",
+  "source_files": "MyOftenUseTool/Classes/**",
   "public_header_files": "MyOftenUseTool/Classes/ZJMethodHeader.h",
   "frameworks": [
     "UIKit",
@@ -45,14 +45,6 @@
       "name": "AFNRequest",
       "source_files": "MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}",
       "public_header_files": "MyOftenUseTool/Classes/ZJAFNRequestTool.h"
-    },
-    {
-      "name": "UIKit",
-      "platforms": {
-        "ios": "8.0"
-      },
-      "public_header_files": "UIKit+Category/UI_Categories.h",
-      "source_files": "UIKit+Category"
     }
   ]
 }
