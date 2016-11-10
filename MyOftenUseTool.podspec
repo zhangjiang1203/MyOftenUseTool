@@ -56,4 +56,10 @@ DESC
 
   end
 
+  s.subspec 'UIKit' do |ss|
+    ss.ios.deployment_target = '8.0'
+    ss.public_header_files = 'UIKit+UIKit+Category/UI_Categories.h'
+    ss.source_files = 'UIKit+Category'
+  end
+
 end

@@ -1,0 +1,6 @@
+framework module MyOftenUseTool {
+  umbrella header "MyOftenUseTool-umbrella.h"
+
+  export *
+  module * { export * }
+}
