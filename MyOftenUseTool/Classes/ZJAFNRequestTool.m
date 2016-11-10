@@ -7,7 +7,7 @@
 //
 
 #import "ZJAFNRequestTool.h"
-
+#import "AFNetworking.h"
 @interface ZJAFNRequestTool ()
 {
     AFHTTPSessionManager *_manager;

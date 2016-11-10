@@ -9,9 +9,9 @@
 #import "HUDHelper.h"
 #include <arpa/inet.h>
 #include <ifaddrs.h>
-#import "AppDelegate.h"
 #import <AVFoundation/AVFoundation.h>/*相机*/
 #import <objc/runtime.h>
+#import "pop.h"
 #define _IPHONE70_ 70000
 #define IOS9  [[[UIDevice currentDevice] systemVersion] floatValue]>=9.0f
 static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
@@ -26,6 +26,12 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
 }
 @end
 
+@interface HUDHelper ()<POPAnimationDelegate>
+
+@end
+
+
+
 @implementation HUDHelper
 + (HUDHelper *) getInstance
 {
@@ -38,9 +44,6 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
     return instance;
 }
 
-- (AppDelegate *)appDelegate {
-    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
-}
 
 
 ////  当前的网络类型

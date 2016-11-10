@@ -40,7 +40,7 @@ typedef enum {
 }NETWORK_TYPE;
 
 
-@interface HUDHelper : NSObject<POPAnimationDelegate>
+@interface HUDHelper : NSObject
 @property (nonatomic, strong) UIView *backView;
 
 /**
