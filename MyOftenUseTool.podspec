@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MyOftenUseTool'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = '自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法'
 
 # This description is used to generate tags and improve search results.
@@ -45,13 +45,13 @@ DESC
   s.dependency 'pop'
   s.requires_arc = true
 
-#创建个人目录
-#  s.subspec 'HUDMethod' do |hudMethod|
-#    hudMethod.source_files = 'MyOftenUseTool/Classes/HUDHelper.{h,m}'
-# end
+  #创建个人目录
+  s.subspec 'HUDMethod' do |hudMethod|
+    hudMethod.source_files = 'MyOftenUseTool/Classes/HUDHelper.{h,m}'
+  end
 
-#  s.subspec 'AFNRequest' do |afnRequest|
-#   afnRequest.source_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}'
-#  end
+  s.subspec 'AFNRequest' do |afnRequest|
+   afnRequest.source_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}'
+  end
 
 end
