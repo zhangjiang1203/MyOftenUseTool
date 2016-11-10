@@ -31,15 +31,14 @@ DESC
 
   s.ios.deployment_target = '8.0'
 
-
-  s.source_files  = "MyOftenUseTool", "MyOftenUseTool/**/*.{h,m}"
-  s.exclude_files = "MyOftenUseTool/Exclude"
+  s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
+  s.source_files  = 'MyOftenUseTool/ZJMethodHeader.h'
+  #s.exclude_files = "MyOftenUseTool/Exclude"
 
   # s.resource_bundles = {
   #   'MyOftenUseTool' => ['MyOftenUseTool/Assets/*.png']
   # }
 
-  #s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
   s.frameworks = 'UIKit', 'MapKit','QuartzCore','Foundation'
   s.dependency 'AFNetworking', '~> 3.1.0'
   s.dependency 'pop'
@@ -48,10 +47,13 @@ DESC
   #创建个人目录
   s.subspec 'HUDMethod' do |hudMethod|
     hudMethod.source_files = 'MyOftenUseTool/Classes/HUDHelper.{h,m}'
+    hudMethod.public_header_files = 'MyOftenUseTool/Classes/HUDHelper.h'
   end
 
   s.subspec 'AFNRequest' do |afnRequest|
    afnRequest.source_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}'
+   afnRequest.public_header_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.h'
+
   end
 
 end
