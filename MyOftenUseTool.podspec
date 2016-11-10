@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MyOftenUseTool'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = '自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ DESC
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files  = 'MyOftenUseTool/Classes/**'
+  s.source_files  = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
   s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
   #s.exclude_files = "MyOftenUseTool/Exclude"
 
@@ -56,11 +56,10 @@ DESC
 
   end
 
- # s.subspec 'UIKit' do |ss|
- #   ss.ios.deployment_target = '8.0'
- #   ss.source_files = 'MyOftenUseTool/UIKit+Category/*.{h,m}'
- #   ss.public_header_files = 'MyOftenUseTool/UIKit+Category/UI_Categories.h'
+  s.subspec 'UIKit' do |ss|
+    ss.source_files = 'MyOftenUseTool/Classes/*.{h,m}'
+    ss.public_header_files = 'MyOftenUseTool/Classes/UI_Categories.h'
     
- # end
+  end
 
 end
