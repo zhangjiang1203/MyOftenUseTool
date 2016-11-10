@@ -1,0 +1,16 @@
+PODS:
+  - MyOftenUseTool (0.1.0)
+
+DEPENDENCIES:
+  - MyOftenUseTool (from `../`)
+
+EXTERNAL SOURCES:
+  MyOftenUseTool:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MyOftenUseTool: 3cbb85660165356adbe81970e3d2343e1ff99346
+
+PODFILE CHECKSUM: 29cf27f18207caf3277924b498f5aad7a36dd75d
+
+COCOAPODS: 1.1.1

@@ -1,0 +1,22 @@
+{
+  "name": "MyOftenUseTool",
+  "version": "0.1.0",
+  "summary": "A short description of MyOftenUseTool.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/MyOftenUseTool",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "zhangjiang": "896884553@q.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/MyOftenUseTool.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "MyOftenUseTool/Classes/**/*"
+}
