@@ -63,7 +63,7 @@ DESC
   end
 
   s.subspec 'Foundation+Category' do |ss|
-    ss.source_files = 'MyOftenUseTool/Foundation/*.{h,m}'
+    ss.source_files = 'MyOftenUseTool/Foundation'
     ss.public_header_files = 'MyOftenUseTool/Foundation/*.h'
     
   end
