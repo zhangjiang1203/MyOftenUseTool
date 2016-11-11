@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MyOftenUseTool'
-  s.version          = '0.1.9'
+  s.version          = '0.2.1'
   s.summary          = '自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法'
 
 # This description is used to generate tags and improve search results.
@@ -31,8 +31,8 @@ DESC
 
   s.ios.deployment_target = '8.0'
 
- # s.source_files  = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
- # s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
+  #s.source_files  = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
+  #s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
 
   s.source_files  = 'MyOftenUseTool/**/*.{h,m}'
   s.public_header_files = 'MyOftenUseTool/**/*.h'
@@ -49,16 +49,16 @@ DESC
   s.requires_arc = true
 
   #创建个人目录
-  s.subspec 'HUDMethod' do |hudMethod|
-    hudMethod.source_files = 'MyOftenUseTool/Classes/HUDHelper.{h,m}'
-    hudMethod.public_header_files = 'MyOftenUseTool/Classes/HUDHelper.h'
-  end
+  #s.subspec 'HUDMethod' do |hudMethod|
+  #  hudMethod.source_files = 'MyOftenUseTool/Classes/HUDHelper.{h,m}'
+ #   hudMethod.public_header_files = 'MyOftenUseTool/Classes/HUDHelper.h'
+ # end
 
-  s.subspec 'AFNRequest' do |afnRequest|
-   afnRequest.source_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}'
-   afnRequest.public_header_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.h'
+  #s.subspec 'AFNRequest' do |afnRequest|
+  # afnRequest.source_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}'
+  # afnRequest.public_header_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.h'
 
-  end
+  #end
 
   s.subspec 'UIKit+Category' do |ss|
     ss.source_files = 'MyOftenUseTool/UIKit/*.{h,m}'
@@ -66,11 +66,11 @@ DESC
     
   end
 
-  s.subspec 'Foundation+Category' do |ss|
-    ss.source_files = 'MyOftenUseTool/Foundation/**'
-    ss.public_header_files = 'MyOftenUseTool/Foundation/*.h'
+  #s.subspec 'Foundation+Category' do |ss|
+   # ss.source_files = 'MyOftenUseTool/Foundation/**'
+    #ss.public_header_files = 'MyOftenUseTool/Foundation/*.h'
     
-  end
+  #end
   
 
 end
