@@ -18,8 +18,8 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "MyOftenUseTool/Classes/ZJMethodHeader.h",
-  "public_header_files": "MyOftenUseTool/Classes/ZJMethodHeader.h",
+  "source_files": "MyOftenUseTool/**/*.{h,m}",
+  "public_header_files": "MyOftenUseTool/**/*.h",
   "frameworks": [
     "UIKit",
     "MapKit",
@@ -53,7 +53,7 @@
     },
     {
       "name": "Foundation+Category",
-      "source_files": "MyOftenUseTool/Foundation",
+      "source_files": "MyOftenUseTool/Foundation/**",
       "public_header_files": "MyOftenUseTool/Foundation/*.h"
     }
   ]

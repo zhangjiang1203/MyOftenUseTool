@@ -31,8 +31,12 @@ DESC
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files  = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
-  s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
+ # s.source_files  = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
+ # s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
+
+  s.source_files  = 'MyOftenUseTool/**/*.{h,m}'
+  s.public_header_files = 'MyOftenUseTool/**/*.h'
+
   #s.exclude_files = "MyOftenUseTool/Exclude"
 
   # s.resource_bundles = {
@@ -63,7 +67,7 @@ DESC
   end
 
   s.subspec 'Foundation+Category' do |ss|
-    ss.source_files = 'MyOftenUseTool/Foundation'
+    ss.source_files = 'MyOftenUseTool/Foundation/**'
     ss.public_header_files = 'MyOftenUseTool/Foundation/*.h'
     
   end
