@@ -81,7 +81,7 @@
         return nil;
     }
     //拼接URL
-    NSString *requestURL = [NSString stringWithFormat:@"%@%@",KRESOURCEURL,sourceURL];
+    NSString *requestURL = [NSString stringWithFormat:@"%@%@",_resourceURL,sourceURL];
     switch (requestMethod) {
         case RequestMethod_Get:
         {

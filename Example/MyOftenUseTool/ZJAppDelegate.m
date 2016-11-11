@@ -7,11 +7,12 @@
 //
 
 #import "ZJAppDelegate.h"
-
+#import "ZJMethodHeader.h"
 @implementation ZJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [ZJAFNRequestTool shareRequestTool].resourceURL = @"";
     // Override point for customization after application launch.
     return YES;
 }

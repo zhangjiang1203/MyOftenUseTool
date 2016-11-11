@@ -8,19 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
-#pragma mark -设置请求的接口前缀
-#ifdef DEBUG
-
-#define KRESOURCEURL  @""
-
-#else
-
-#define KRESOURCEURL  @""
-
-#endif
-
-
 typedef void(^RequestSuccessBlock)(NSURLSessionDataTask  *task, id dataResource);
 typedef void(^RequestFailBlock)(NSString *errorStr);
 
@@ -31,6 +18,18 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
 };
 
 @interface ZJAFNRequestTool : NSObject
+
+
+/**
+ 设置网络请求的前缀,在delegate中设置一边就可以，也可以根据测试版和正式版分别设置
+ */
+@property (nonatomic,copy)NSString *resourceURL;
+
+/**
+ 设置网络分享的单例模式
+ */
++(instancetype)shareRequestTool;
+
 
 /*
  * 开启网络监测
