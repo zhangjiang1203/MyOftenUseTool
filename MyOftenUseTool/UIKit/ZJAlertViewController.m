@@ -70,6 +70,35 @@ static const char AlertBlockKey;
     }
 }
 
+
++ (void)alertShowWithMsg:(nullable NSString *)message
+           continueBlock:(nullable continueNoParamBlock)continueBlock
+             cancelBlock:(nullable continueNoParamBlock)cancelBlock{
+    
+    [self alertShowTitle:@"提示信息" message:message cancelButtonTitle:@"取消" otherButtonTitles:@"确定" block:^(NSInteger buttonIndex) {
+        if (buttonIndex == 0) {
+            if (cancelBlock) {
+                cancelBlock();
+            }
+        }else{
+            if (continueBlock) {
+                continueBlock();
+            }
+        }
+    }];
+}
++ (void)alertShowWithMsg:(nullable NSString *)message
+           continueBlock:(nullable continueNoParamBlock)continueBlock
+{
+    [self alertShowTitle:@"提示信息" message:message cancelButtonTitle:nil otherButtonTitles:@"确定" block:^(NSInteger buttonIndex) {
+        if (continueBlock) {
+            continueBlock();
+        }
+    }];
+}
+
+
+
 //alertView的代理方法
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     continueBlock alertBlock = (continueBlock)objc_getAssociatedObject(alertView, &AlertBlockKey);

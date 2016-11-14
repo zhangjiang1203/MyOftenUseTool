@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MyOftenUseTool'
-  s.version          = '0.2.3'
+  s.version          = '0.2.4'
   s.summary          = '自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法'
 
 # This description is used to generate tags and improve search results.

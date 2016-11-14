@@ -9,9 +9,6 @@
 #import "ZJAFNRequestTool.h"
 #import "AFNetworking.h"
 @interface ZJAFNRequestTool ()
-{
-    AFHTTPSessionManager *_manager;
-}
 
 @property (nonatomic,strong) NSURLSessionDataTask *httpDataTask;
 
@@ -21,24 +18,23 @@
 
 @implementation ZJAFNRequestTool
 
-+(void)startMonitoring{
+static AFHTTPSessionManager *_manager;
+
+
++(BOOL)startMonitoring{
     
+    __block BOOL isNet = NO;
     [[AFNetworkReachabilityManager sharedManager]startMonitoring];
     [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         [ZJAFNRequestTool shareRequestTool].workStatus = status;
         if (status == AFNetworkReachabilityStatusNotReachable) {
             //跳转到设置URL的地方
-//            NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-//            if ([[UIApplication sharedApplication] canOpenURL:url]) {
-//                [[UIApplication sharedApplication] openURL:url];
-//            }
-            NSLog(@"还没有连接网络");
+            isNet = NO;
         }else{
-            //提醒用户没有连接网络
-            NSLog(@"已经连接网络");
+            isNet = YES;
         }
-        
     }];
+    return NO;
 }
 
 +(void)stopMonitoring{
@@ -56,18 +52,25 @@
     return manager;
 }
 
+//initialize该初始化方法在当用到此类时候只调用一次
++(void)initialize{
+    _manager = [AFHTTPSessionManager manager];
+    //设置请求参数的类型:JSON (AFJSONRequestSerializer,AFHTTPRequestSerializer)
+    _manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    //设置请求的超时时间
+    _manager.requestSerializer.timeoutInterval = 30.f;
+    //设置服务器返回结果的类型:JSON (AFJSONResponseSerializer,AFHTTPResponseSerializer)
+    _manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/*", nil];
+}
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _manager = [AFHTTPSessionManager manager];
-//        _manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        _manager.responseSerializer = [AFJSONResponseSerializer serializer];
-//        _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
+        //加载错误信息提示
 
-//        [_manager.requestSerializer setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
-//        [_manager.requestSerializer setValue:@"en-us,en;q=0.5" forHTTPHeaderField:@"Accept-Language"];
-//        [_manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     }
     return self;
 }
@@ -135,6 +138,95 @@
         successBlock(task,dataResource);
     } fail:failBlock];
 }
+
+#pragma mark - 下载文件
++ (NSURLSessionTask *)downloadWithURL:(NSString *)URL
+                              fileDir:(NSString *)fileDir
+                             progress:(HttpProgress)progress
+                              success:(void(^)(NSString *))success
+                              failure:(RequestFailBlock)failure
+{
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:URL]];
+    NSURLSessionDownloadTask *downloadTask = [_manager downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+        
+        //下载进度
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            progress ? progress(downloadProgress) : nil;
+        });
+        NSLog(@"下载进度:%.2f%%",100.0*downloadProgress.completedUnitCount/downloadProgress.totalUnitCount);
+        
+    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+        
+        //拼接缓存目录
+        NSString *downloadDir = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:fileDir ? fileDir : @"Download"];
+        //打开文件管理器
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        
+        //创建Download目录
+        [fileManager createDirectoryAtPath:downloadDir withIntermediateDirectories:YES attributes:nil error:nil];
+        
+        //拼接文件路径
+        NSString *filePath = [downloadDir stringByAppendingPathComponent:response.suggestedFilename];
+        
+        NSLog(@"downloadDir = %@",downloadDir);
+        
+        //返回文件位置的URL路径
+        return [NSURL fileURLWithPath:filePath];
+        
+    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+        
+        if(failure && error) {failure(error.description) ; return ;};
+        success ? success(filePath.absoluteString /** NSURL->NSString*/) : nil;
+        
+    }];
+    
+    //开始下载
+    [downloadTask resume];
+    
+    return downloadTask;
+    
+}
+
+
+#pragma mark - 上传图片文件
+
++ (NSURLSessionTask *)uploadWithURL:(NSString *)URL
+                         parameters:(NSDictionary *)parameters
+                             images:(NSArray<UIImage *> *)images
+                               name:(NSString *)name
+                           progress:(HttpProgress)progress
+                            success:(UploadMyFileSuccess)success
+                            failure:(RequestFailBlock)failure
+{
+    
+    return [_manager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        //根据当前系统时间生成图片名称
+        NSDate *date = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"yyyy/MM/dd/hh/mm/ss"];
+        NSString *dateString = [formatter stringFromDate:date];
+        //压缩-添加-上传图片
+        [images enumerateObjectsUsingBlock:^(UIImage * _Nonnull image, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+            [formData appendPartWithFileData:imageData name:name fileName:[NSString stringWithFormat:@"%@-%zd",dateString,idx] mimeType:@"image/jpg/png/jpeg"];
+        }];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        //上传进度
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            progress ? progress(uploadProgress) : nil;
+        });
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        success ? success(responseObject) : nil;
+        NSLog(@"responseObject = %@",responseObject);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+        failure ? failure(error.description) : nil;
+        NSLog(@"error = %@",error);
+    }];
+}
+
+
 
 /**
  *  取消当前的请求

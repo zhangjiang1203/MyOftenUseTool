@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^continueNoParamBlock)();
 typedef void(^continueBlock )(NSInteger buttonIndex);
 
 
@@ -27,5 +28,25 @@ typedef void(^continueBlock )(NSInteger buttonIndex);
      cancelButtonTitle:(nullable NSString *)cancelButtonTitle
      otherButtonTitles:(nullable NSString *)otherButtonTitles
                  block:(nullable continueBlock)alertBlock;
+
+
+/**
+ *  提示信息 有取消和确定两个按钮
+ *
+ *  @param message       内容
+ *  @param continueBlock 确定按钮的点击事件
+ *  @param cancelBlock   返回按钮的点击事件
+ */
++(void)alertShowWithMsg:(nullable NSString *)message
+          continueBlock:(nullable continueNoParamBlock)continueBlock
+            cancelBlock:(nullable continueNoParamBlock)cancelBlock;
+/**
+ *  提示信息,只有确定按钮
+ *
+ *  @param message       内容
+ *  @param continueBlock 确定按钮的点击事件
+ */
++(void)alertShowWithMsg:(nullable NSString *)message
+          continueBlock:(nullable continueNoParamBlock)continueBlock;
 
 @end
