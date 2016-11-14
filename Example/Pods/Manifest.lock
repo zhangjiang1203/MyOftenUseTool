@@ -14,23 +14,23 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - MyOftenUseTool (0.2.3):
+  - MyOftenUseTool (0.2.5):
     - AFNetworking (~> 3.1.0)
-    - MyOftenUseTool/AFNRequest (= 0.2.3)
-    - MyOftenUseTool/Foundation+Category (= 0.2.3)
-    - MyOftenUseTool/HUDMethod (= 0.2.3)
-    - MyOftenUseTool/UIKit+Category (= 0.2.3)
+    - MyOftenUseTool/AFNRequest (= 0.2.5)
+    - MyOftenUseTool/Foundation+Category (= 0.2.5)
+    - MyOftenUseTool/HUDMethod (= 0.2.5)
+    - MyOftenUseTool/UIKit+Category (= 0.2.5)
     - pop
-  - MyOftenUseTool/AFNRequest (0.2.3):
-    - AFNetworking (~> 3.1.0)
-    - pop
-  - MyOftenUseTool/Foundation+Category (0.2.3):
+  - MyOftenUseTool/AFNRequest (0.2.5):
     - AFNetworking (~> 3.1.0)
     - pop
-  - MyOftenUseTool/HUDMethod (0.2.3):
+  - MyOftenUseTool/Foundation+Category (0.2.5):
     - AFNetworking (~> 3.1.0)
     - pop
-  - MyOftenUseTool/UIKit+Category (0.2.3):
+  - MyOftenUseTool/HUDMethod (0.2.5):
+    - AFNetworking (~> 3.1.0)
+    - pop
+  - MyOftenUseTool/UIKit+Category (0.2.5):
     - AFNetworking (~> 3.1.0)
     - pop
   - pop (1.0.9)
@@ -44,7 +44,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  MyOftenUseTool: 2edb0cc6119766c69ed1be0743688f244e25fe0f
+  MyOftenUseTool: 04e3fc80bb285cb2ccb50c65c181e9358c2eb6fc
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
 
 PODFILE CHECKSUM: 29cf27f18207caf3277924b498f5aad7a36dd75d
