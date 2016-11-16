@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MyOftenUseTool'
-  s.version          = '0.2.7'
+  s.version          = '0.2.8'
   s.summary          = '自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法,里面已经添加了最新的AFN,pop,SAMKeychain等依赖的框架'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-这是我自己根据项目中常用的方法和在网络上收集的一些比较好用的iOS原有的框架上添加的category，方便自己在开发中的使用
+这是我自己根据项目中常用的方法和在网络上收集的一些比较好用的iOS原有的框架上添加的category，方便自己在开发中的使用，里面已经添加了最新的AFN,pop,SAMKeychain等依赖的框架
 DESC
 
 
@@ -31,7 +31,7 @@ DESC
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files  = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
+  s.source_files  = 'MyOftenUseTool/**/*.{h,m}'
   s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
 
   #s.source_files  = 'MyOftenUseTool/**/*.{h,m}'
@@ -52,33 +52,33 @@ DESC
   s.requires_arc = true
 
   #创建个人目录
-  s.subspec 'HUDMethod' do |hudMethod|
-    hudMethod.source_files = 'MyOftenUseTool/Classes/HUDHelper.{h,m}'
-    hudMethod.public_header_files = 'MyOftenUseTool/Classes/HUDHelper.h'
-  end
+#  s.subspec 'HUDMethod' do |hudMethod|
+#    hudMethod.source_files = 'MyOftenUseTool/Classes/#HUDHelper.{h,m}'
+#   hudMethod.public_header_files = 'MyOftenUseTool/#Classes/HUDHelper.h'
+#  end
 
-  s.subspec 'SystemMethod' do |ss|
-    ss.source_files = 'MyOftenUseTool/Classes/ZJSystemUtils.{h,m}'
-    ss.public_header_files = 'MyOftenUseTool/Classes/ZJSystemUtils.h'
-  end
+# s.subspec 'SystemMethod' do |ss|
+#   ss.source_files = 'MyOftenUseTool/Classes/#ZJSystemUtils.{h,m}'
+#    ss.public_header_files = 'MyOftenUseTool/Classes/#ZJSystemUtils.h'
+#  end
 
-  s.subspec 'AFNRequest' do |afnRequest|
-   afnRequest.source_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}'
-   afnRequest.public_header_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.h'
+#  s.subspec 'AFNRequest' do |afnRequest|
+#   afnRequest.source_files = 'MyOftenUseTool/Classes/#ZJAFNRequestTool.{h,m}'
+#  afnRequest.public_header_files = 'MyOftenUseTool/#Classes/ZJAFNRequestTool.h'
 
-  end
+# end
 
-  s.subspec 'UIKit+Category' do |ss|
-    ss.source_files = 'MyOftenUseTool/UIKit/*.{h,m}'
-    ss.public_header_files = 'MyOftenUseTool/UIKit/*.h'
+# s.subspec 'UIKit+Category' do |ss|
+#   ss.source_files = 'MyOftenUseTool/UIKit/*.{h,m}'
+#   ss.public_header_files = 'MyOftenUseTool/UIKit/*.h'
     
-  end
+#  end
 
-  s.subspec 'Foundation+Category' do |ss|
-    ss.source_files = 'MyOftenUseTool/Foundation/**'
-    ss.public_header_files = 'MyOftenUseTool/Foundation/*.h'
+#  s.subspec 'Foundation+Category' do |ss|
+#    ss.source_files = 'MyOftenUseTool/Foundation/**'
+#    ss.public_header_files = 'MyOftenUseTool/Foundation/#*.h'
     
-  end
+#  end
   
 
 end
