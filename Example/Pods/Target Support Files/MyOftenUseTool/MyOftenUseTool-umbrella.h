@@ -35,6 +35,7 @@
 #import "NSTimer+Addition.h"
 #import "NSTimer+Blocks.h"
 #import "HUDHelper.h"
+#import "ZJSystemUtils.h"
 #import "CustomButton.h"
 #import "CustomImageView.h"
 #import "CustomLabel.h"

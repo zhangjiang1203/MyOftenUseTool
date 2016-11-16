@@ -86,10 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MyOftenUseTool/MyOftenUseTool.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SAMKeychain/SAMKeychain.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
   install_framework "$BUILT_PRODUCTS_DIR/MyOftenUseTool/MyOftenUseTool.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SAMKeychain/SAMKeychain.framework"
   install_framework "$BUILT_PRODUCTS_DIR/pop/pop.framework"
 fi

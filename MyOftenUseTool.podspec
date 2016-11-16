@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MyOftenUseTool'
-  s.version          = '0.2.6'
-  s.summary          = '自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法'
+  s.version          = '0.2.7'
+  s.summary          = '自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法,里面已经添加了最新的AFN,pop,SAMKeychain等依赖的框架'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -45,13 +45,21 @@ DESC
 
   s.frameworks = 'UIKit', 'MapKit','QuartzCore','Foundation'
   s.dependency 'AFNetworking', '~> 3.1.0'
+#动画引擎
   s.dependency 'pop'
+#密码保存
+  s.dependency 'SAMKeychain'
   s.requires_arc = true
 
   #创建个人目录
   s.subspec 'HUDMethod' do |hudMethod|
     hudMethod.source_files = 'MyOftenUseTool/Classes/HUDHelper.{h,m}'
     hudMethod.public_header_files = 'MyOftenUseTool/Classes/HUDHelper.h'
+  end
+
+  s.subspec 'SystemMethod' do |ss|
+    ss.source_files = 'MyOftenUseTool/Classes/ZJSystemUtils.{h,m}'
+    ss.public_header_files = 'MyOftenUseTool/Classes/ZJSystemUtils.h'
   end
 
   s.subspec 'AFNRequest' do |afnRequest|
