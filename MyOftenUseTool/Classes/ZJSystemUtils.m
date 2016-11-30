@@ -13,8 +13,6 @@
 #include <arpa/inet.h>               /*ip*/
 #import "SAMKeychain.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-//#import <mach/mach.h>
-//#import <sys/mount.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 
 static NSString *key = @"CFBundleShortVersionString";
