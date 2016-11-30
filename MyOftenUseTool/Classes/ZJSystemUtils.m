@@ -13,6 +13,8 @@
 #include <arpa/inet.h>               /*ip*/
 #import "SAMKeychain.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <mach/mach.h>
+#import <sys/mount.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 
 static NSString *key = @"CFBundleShortVersionString";
@@ -316,31 +318,22 @@ static NSString *key = @"CFBundleShortVersionString";
 }
 
 #pragma mark -获取当前连接的wifi名称
-+ (NSString *)getWifiName
-{
-        NSString *wifiName = nil;
-     
-        CFArrayRef wifiInterfaces = CNCopySupportedInterfaces();
-        if (!wifiInterfaces) {
-                return nil;
-            }
-     
-        NSArray *interfaces = (__bridge NSArray *)wifiInterfaces;
-     
-        for (NSString *interfaceName in interfaces) {
-                CFDictionaryRef dictRef = CNCopyCurrentNetworkInfo((__bridge CFStringRef)(interfaceName));
-         
-                if (dictRef) {
-                        NSDictionary *networkInfo = (__bridge NSDictionary *)dictRef;
-             
-                        wifiName = [networkInfo objectForKey:(__bridge NSString *)kCNNetworkInfoKeySSID];
-             
-                        CFRelease(dictRef);
-                    }
-            }
-     
-        CFRelease(wifiInterfaces);
-        return wifiName;
++(NSString*)getWifiName{
+    NSString *wifiName = nil;
+    CFArrayRef wifiInterfaces = CNCopySupportedInterfaces();
+    if (!wifiInterfaces) return nil;
+    
+    NSArray *interfaces = (__bridge NSArray *)wifiInterfaces;
+    for (NSString *interfaceName in interfaces) {
+        CFDictionaryRef dictRef = CNCopyCurrentNetworkInfo((__bridge CFStringRef)(interfaceName));
+        if(dictRef){
+            NSDictionary *networkInfo = (__bridge NSDictionary*)dictRef;
+            wifiName = [networkInfo objectForKey:((__bridge NSString *)kCNNetworkInfoKeySSID)];
+            CFRelease(dictRef);
+        }
+    }
+    CFRelease(wifiInterfaces);
+    return wifiName;
 }
 
 
@@ -363,19 +356,17 @@ static NSString *key = @"CFBundleShortVersionString";
     }
 }
 
-+(long long)getAvailableDiskSize
++(long long)getAvailableDiskSize
 {
-        struct statfs buf;
-        unsigned long long freeSpace = -1;
-        if (statfs("/var", &buf) >= 0)
-            {
-                    freeSpace = (unsigned long long)(buf.f_bsize * buf.f_bavail);
-                }
-        return freeSpace;
+    struct statfs buf;
+    unsigned long long freeSpace = -1;
+    if (statfs("/var", &buf) >= 0) {
+        freeSpace = (unsigned long long)(buf.f_bsize * buf.f_bavail);
+    }
+    return freeSpace;
 }
 
 
-//include <sys mount.h="">
 +(long long)getTotalDiskSize
 {
     struct statfs buf;
@@ -389,28 +380,24 @@ static NSString *key = @"CFBundleShortVersionString";
 
 +(double)getUsedMemory
 {
-      task_basic_info_data_t taskInfo;
-      mach_msg_type_number_t infoCount = TASK_BASIC_INFO_COUNT;
-      kern_return_t kernReturn = task_info(mach_task_self(),TASK_BASIC_INFO,(task_info_t)&taskInfo,&infoCount);
-     
-      if (kernReturn != KERN_SUCCESS
-                ) {
-            return NSNotFound;
-          }
-     
-      return taskInfo.resident_size;
+    task_basic_info_data_t taskInfo;
+    mach_msg_type_number_t infoCount = TASK_BASIC_INFO_COUNT;
+    kern_return_t kernReturn = task_info(mach_task_self(),TASK_BASIC_INFO,(task_info_t)&taskInfo,&infoCount);
+    if (kernReturn != KERN_SUCCESS) {
+        return NSNotFound;
+    }
+    return taskInfo.resident_size;
 }
 
-+(long long)getAvailableMemorySize
++(long long)getAvailableMemorySize
 {
-        vm_statistics_data_t vmStats;
-        mach_msg_type_number_t infoCount = HOST_VM_INFO_COUNT;
-        kern_return_t kernReturn = host_statistics(mach_host_self(), HOST_VM_INFO, (host_info_t)&vmStats, &infoCount);
-        if (kernReturn != KERN_SUCCESS)
-            {
-                    return NSNotFound;
-                }
-        return ((vm_page_size * vmStats.free_count + vm_page_size * vmStats.inactive_count));
+    vm_statistics_data_t vmStats;
+    mach_msg_type_number_t infoCount = HOST_VM_INFO_COUNT;
+    kern_return_t kernReturn = host_statistics(mach_host_self(),HOST_VM_INFO,(host_info_t)&vmStats,&infoCount);
+    if (kernReturn != KERN_SUCCESS) {
+        return NSNotFound;
+    }
+    return (vm_page_size*vmStats.free_count + vm_page_size*vmStats.inactive_count);
 }
 
 +(long long)getTotalMemorySize
@@ -425,7 +412,7 @@ static NSString *key = @"CFBundleShortVersionString";
 
 +(CGFloat)getBatteryQuantity
 {
-    return [[UIDevice currentDevice] batteryLevel];
+    return [[UIDevice currentDevice]batteryLevel];
 }
 
 @end
