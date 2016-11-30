@@ -15,11 +15,13 @@ static const void *UIButtonBlockKey = &UIButtonBlockKey;
     objc_setAssociatedObject(self, UIButtonBlockKey, touchHandler, OBJC_ASSOCIATION_COPY_NONATOMIC);
     [self addTarget:self action:@selector(actionTouched:) forControlEvents:UIControlEventTouchUpInside];
 }
+
 -(void)actionTouched:(UIButton *)btn{
     TouchedBlock block = objc_getAssociatedObject(self, UIButtonBlockKey);
     if (block) {
         block(btn.tag);
     }
 }
+
 @end
 
