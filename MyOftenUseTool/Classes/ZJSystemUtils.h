@@ -100,29 +100,6 @@
  @return 返回值
  */
 +(NSString *)fileSizeToString:(unsigned long long)fileSize;
-/**
- 获取可用磁盘总容量
- */
-+(long long)getAvailableDiskSize;
-/**
- 获取磁盘总容量
- */
-+(long long)getTotalDiskSize;
-
-/**
- 获取已使用的内存
- */
-+(double)getUsedMemory;
-
-/**
- 获取当前可用内存
- */
-+(long long)getAvailableMemorySize;
-
-/**
- 获取总内存大小
- */
-+(long long)getTotalMemorySize;
 
 /**
  获取电池的状态
@@ -133,4 +110,6 @@
  获取电池的电量，用百分比表示
  */
 +(CGFloat)getBatteryQuantity;
+
+
 @end
