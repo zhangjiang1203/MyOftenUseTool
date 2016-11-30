@@ -47,6 +47,7 @@ typedef void(^continueBlock )(NSInteger buttonIndex);
  *  @param continueBlock 确定按钮的点击事件
  */
 +(void)alertShowWithMsg:(nullable NSString *)message
+          continueTitle:(nullable NSString *)title
           continueBlock:(nullable continueNoParamBlock)continueBlock;
 
 @end
