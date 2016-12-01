@@ -38,12 +38,12 @@ pod 'MyOftenUseTool'
     [[AFNetworkReachabilityManager sharedManager]startMonitoring];
     [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
     [ZJAFNRequestTool shareRequestTool].workStatus = status;
-    if (status == AFNetworkReachabilityStatusNotReachable) {
-    //跳转到设置URL的地方
-    isNet = NO;
-    }else{
-    isNet = YES;
-    }
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+            //跳转到设置URL的地方
+            isNet = NO;
+        }else{
+            isNet = YES;
+        }
     }];
     return NO;
 }
@@ -199,11 +199,7 @@ AFN请求中的封装还有post和put以及文件的上传和下载操作
 *  @param otherButtonTitles 其他按钮,@"",没有确定按钮
 *  @param alertBlock        返回的block
 */
-+ (void)alertShowTitle:(nullable NSString *)title
-message:(nullable NSString *)message
-cancelButtonTitle:(nullable NSString *)cancelButtonTitle
-otherButtonTitles:(nullable NSString *)otherButtonTitles
-block:(nullable continueBlock)alertBlock;
++ (void)alertShowTitle:(nullable NSString *)title message:(nullable NSString*)message cancelButtonTitle:(nullable NSString *)cancelButtonTitle otherButtonTitles:(nullable NSString *)otherButtonTitles block:(nullable continueBlock)alertBlock;
 
 
 /**
@@ -213,9 +209,7 @@ block:(nullable continueBlock)alertBlock;
 *  @param continueBlock 确定按钮的点击事件
 *  @param cancelBlock   返回按钮的点击事件
 */
-+(void)alertShowWithMsg:(nullable NSString *)message
-continueBlock:(nullable continueNoParamBlock)continueBlock
-cancelBlock:(nullable continueNoParamBlock)cancelBlock;
++(void)alertShowWithMsg:(nullable NSString *)message continueBlock:(nullable continueNoParamBlock)continueBlock cancelBlock:(nullable continueNoParamBlock)cancelBlock;
 
 /**
 提示信息,只有确定按钮
@@ -224,12 +218,9 @@ cancelBlock:(nullable continueNoParamBlock)cancelBlock;
 @param title         确定按钮的title
 @param continueBlock 确定按钮的点击事件
 */
-+(void)alertShowWithMsg:(nullable NSString *)message
-continueTitle:(nullable NSString *)title
-continueBlock:(nullable continueNoParamBlock)continueBlock;
++(void)alertShowWithMsg:(nullable NSString *)message continueTitle:(nullable NSString *)title continueBlock:(nullable continueNoParamBlock)continueBlock;
 
 ```
-
 
 #Demo
 上面的文件都包含在一个[测试项目](https://github.com/zhangjiang1203/MyOftenUseTool)中，可以下载测试项目
