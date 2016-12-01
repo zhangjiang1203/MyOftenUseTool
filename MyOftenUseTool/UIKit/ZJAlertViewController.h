@@ -40,11 +40,13 @@ typedef void(^continueBlock )(NSInteger buttonIndex);
 +(void)alertShowWithMsg:(nullable NSString *)message
           continueBlock:(nullable continueNoParamBlock)continueBlock
             cancelBlock:(nullable continueNoParamBlock)cancelBlock;
+
 /**
- *  提示信息,只有确定按钮
- *
- *  @param message       内容
- *  @param continueBlock 确定按钮的点击事件
+ 提示信息,只有确定按钮
+
+ @param message       内容
+ @param title         确定按钮的title
+ @param continueBlock 确定按钮的点击事件
  */
 +(void)alertShowWithMsg:(nullable NSString *)message
           continueTitle:(nullable NSString *)title

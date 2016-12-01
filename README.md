@@ -1,5 +1,5 @@
 # MyOftenUseTool
-![Version](https://img.shields.io/badge/pod-0.3.0-yellow.svg)
+![Version](https://img.shields.io/badge/pod-0.3.2-yellow.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-iOS-orange.svg)
 ![Platform](https://img.shields.io/badge/Build-Passed-green.svg)
@@ -14,7 +14,7 @@ platform :ios, '8.0'
 pod 'MyOftenUseTool'
 ```
 
-#Usage
+#关于类库的一些使用说明
 ##AFNetworking的封装
 首先添加的就是关于网络状态的检测，
 
@@ -34,22 +34,22 @@ pod 'MyOftenUseTool'
 ```objective-c
 +(BOOL)startMonitoring{
 
-__block BOOL isNet = NO;
-[[AFNetworkReachabilityManager sharedManager]startMonitoring];
-[[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-[ZJAFNRequestTool shareRequestTool].workStatus = status;
-if (status == AFNetworkReachabilityStatusNotReachable) {
-//跳转到设置URL的地方
-isNet = NO;
-}else{
-isNet = YES;
-}
-}];
-return NO;
+    __block BOOL isNet = NO;
+    [[AFNetworkReachabilityManager sharedManager]startMonitoring];
+    [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+    [ZJAFNRequestTool shareRequestTool].workStatus = status;
+    if (status == AFNetworkReachabilityStatusNotReachable) {
+    //跳转到设置URL的地方
+    isNet = NO;
+    }else{
+    isNet = YES;
+    }
+    }];
+    return NO;
 }
 
 +(void)stopMonitoring{
-[[AFNetworkReachabilityManager sharedManager]stopMonitoring];
+    [[AFNetworkReachabilityManager sharedManager]stopMonitoring];
 }
 
 ```
@@ -76,3 +76,168 @@ AFN请求中的封装还有post和put以及文件的上传和下载操作
 
 ##关于HUDHelper类的说明
 这个类中涉及的方法使用比较杂，图像绘制，坐标转换，日期转换，判断空字符串和邮箱电话号码的正则表达式判断设置label的行间距，返回图文混排的文本，简单动画设定，计算文本的高度和数组字符串的一些处理方法等方法，具体的请看这个分类中的方法，都有注释的。
+
+##关于ZJSystemUtils类的说明
+此类中主要是获取一些系统的信息，存储用户登录的账号和密码
+```objective-c
+
+/**
+*  手机型号  “iPhone 5”,“iPhone 4S”,"iPhone 4"
+*/
++(NSString*)deviceString;
+/**
+*  获取ip地址
+*/
++(NSString *)getIPAddress;
+/**
+*  是否有摄像头使用权限
+*
+*  @param authorized 有权限回调
+*  @param restricted 无权限回调
+*/
++(void)videoAuthorizationStatusAuthorized:(void(^)(void))authorized restricted:(void(^)(void))restricted;
+/**
+*  获取当前的显示的ViewController
+*
+*  @return 当前的显示的ViewController
+*/
++ (UIViewController *)getCurrentViewController;
+
+/**
+*  获取当前版本号
+*/
++(NSString*)getCurrentVersion;
+
+/**
+*  获取历史存储的版本号
+*/
++(NSString*)getHistoryVersion;
+
+/**
+设置登录状态 0 退出登录  1 登录成功
+*/
++(void)setLoginState:(BOOL)state;
+
+/**
+获取登录状态 0 没有登录 1 登录
+*/
++(BOOL)getLoginState;
+
+
+/**
+*  判断是不是第一次登陆
+*/
++(BOOL)judgeIsFirstLogin;
+
+
+/**
+*  存储登录账号的用户名和密码
+*/
++(void)saveUserAccount:(NSString*)account password:(NSString*)password;
+
+/**
+*  获取用户密码
+*/
++(NSString*)getUserPassword;
+
+/**
+*  获取用户账号
+*/
++(NSString*)getUserAccount;
+
+/**
+*  获取设备标示
+*/
++(NSString *)getDiviceIdentifier;
+
+#pragma mark -应用程序需要事先申请音视频使用权限
++ (BOOL)requestMediaCapturerAccessWithCompletionHandler:(void (^)(BOOL value, NSError *error))handler;
+
+/**
+*  检查app是否有照片操作权限
+*/
++(void)getAssetsAuthorizationStatus:(void (^)(BOOL isAuthorize,NSString *errorStr))authorizeBlock;
+
+#pragma mark -获取当前连接的wifi名称
+
+/**
+获取当前连接的wifi名称
+*/
++(NSString *)getWifiName;
+
+/**
+容量转换
+@param fileSize 文件大小
+@return 返回值
+*/
++(NSString *)fileSizeToString:(unsigned long long)fileSize;
+
+/**
+获取电池的状态
+*/
++(UIDeviceBatteryState)getBatteryStauts;
+
+/**
+获取电池的电量，用百分比表示
+*/
++(CGFloat)getBatteryQuantity;
+
+```
+具体的实现请点击.m文件查看
+
+##UIKit和Foundation+Category类
+这两个类中是收集的一些kit和foundation框架中添加的一些拓展类的方法，ZJAlertViewController是我自己封装的一个alertView的一个简单使用
+
+```objective-c
+
+/**
+*  设置弹出的alertView，已经适配ios9
+*
+*  @param title             标题
+*  @param message           信息
+*  @param cancelButtonTitle 取消按钮,@"",没有取消按钮
+*  @param otherButtonTitles 其他按钮,@"",没有确定按钮
+*  @param alertBlock        返回的block
+*/
++ (void)alertShowTitle:(nullable NSString *)title
+message:(nullable NSString *)message
+cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+otherButtonTitles:(nullable NSString *)otherButtonTitles
+block:(nullable continueBlock)alertBlock;
+
+
+/**
+*  提示信息 有取消和确定两个按钮
+*
+*  @param message       内容
+*  @param continueBlock 确定按钮的点击事件
+*  @param cancelBlock   返回按钮的点击事件
+*/
++(void)alertShowWithMsg:(nullable NSString *)message
+continueBlock:(nullable continueNoParamBlock)continueBlock
+cancelBlock:(nullable continueNoParamBlock)cancelBlock;
+
+/**
+提示信息,只有确定按钮
+
+@param message       内容
+@param title         确定按钮的title
+@param continueBlock 确定按钮的点击事件
+*/
++(void)alertShowWithMsg:(nullable NSString *)message
+continueTitle:(nullable NSString *)title
+continueBlock:(nullable continueNoParamBlock)continueBlock;
+
+```
+
+
+#Demo
+上面的文件都包含在一个[测试项目](https://github.com/zhangjiang1203/MyOftenUseTool)中，可以下载测试项目
+
+#证书
+
+RealReachability is released under the MIT license. See LICENSE for details.
+
+#最后
+
+欢迎使用，如果在使用中有什么问题请联系我😁😁😁😁
