@@ -14,32 +14,32 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - MyOftenUseTool (0.2.7):
+  - MyOftenUseTool (0.3.2):
     - AFNetworking (~> 3.1.0)
-    - MyOftenUseTool/AFNRequest (= 0.2.7)
-    - MyOftenUseTool/Foundation+Category (= 0.2.7)
-    - MyOftenUseTool/HUDMethod (= 0.2.7)
-    - MyOftenUseTool/SystemMethod (= 0.2.7)
-    - MyOftenUseTool/UIKit+Category (= 0.2.7)
+    - MyOftenUseTool/AFNRequest (= 0.3.2)
+    - MyOftenUseTool/Foundation+Category (= 0.3.2)
+    - MyOftenUseTool/HUDMethod (= 0.3.2)
+    - MyOftenUseTool/SystemMethod (= 0.3.2)
+    - MyOftenUseTool/UIKit+Category (= 0.3.2)
     - pop
     - SAMKeychain
-  - MyOftenUseTool/AFNRequest (0.2.7):
-    - AFNetworking (~> 3.1.0)
-    - pop
-    - SAMKeychain
-  - MyOftenUseTool/Foundation+Category (0.2.7):
+  - MyOftenUseTool/AFNRequest (0.3.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
-  - MyOftenUseTool/HUDMethod (0.2.7):
+  - MyOftenUseTool/Foundation+Category (0.3.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
-  - MyOftenUseTool/SystemMethod (0.2.7):
+  - MyOftenUseTool/HUDMethod (0.3.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
-  - MyOftenUseTool/UIKit+Category (0.2.7):
+  - MyOftenUseTool/SystemMethod (0.3.2):
+    - AFNetworking (~> 3.1.0)
+    - pop
+    - SAMKeychain
+  - MyOftenUseTool/UIKit+Category (0.3.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
@@ -55,7 +55,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  MyOftenUseTool: 507f2d24fdfeb4a7cd8051bd046652bbdb482463
+  MyOftenUseTool: 90704e19d79974e41ddfc75eda7d5f1870ff9176
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
 

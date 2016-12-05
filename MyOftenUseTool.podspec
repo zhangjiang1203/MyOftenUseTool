@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MyOftenUseTool'
-  s.version          = '0.3.2'
+  s.version          = '0.3.3'
   s.summary          = '自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法,里面已经添加了最新的AFN,pop,SAMKeychain等依赖的框架'
 
   s.description      = <<-DESC
@@ -55,6 +55,15 @@ DESC
    ss.source_files = 'MyOftenUseTool/Classes/ZJSystemUtils.{h,m}'
     ss.public_header_files = 'MyOftenUseTool/Classes/ZJSystemUtils.h'
   end
+
+  s.subspec 'WaveAnimation' do |ss|
+    ss.source_files = 'MyOftenUseTool/Classes/WaveAnimation.{h,m}'
+    ss.public_header_files = 'MyOftenUseTool/Classes/WaveAnimation.h'
+    ss.resource_bundles = {
+      'MyOftenUseTool' => ['MyOftenUseTool/Classes/Resource.bundle']
+    }
+  end
+
 
   s.subspec 'AFNRequest' do |afnRequest|
    afnRequest.source_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}'
