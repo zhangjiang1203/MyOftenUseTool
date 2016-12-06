@@ -19,7 +19,7 @@ DESC
   s.homepage         = 'https://github.com/zhangjiang1203/MyOftenUseTool'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'zhangjiang' => '896884553@q.com' }
+  s.author           = { 'zhangjiang' => '896884553@qq.com' }
   s.source           = { :git => 'https://github.com/zhangjiang1203/MyOftenUseTool.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
