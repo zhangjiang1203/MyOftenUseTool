@@ -71,6 +71,7 @@
 #import "UIViewController+TopBarMessage.h"
 #import "UI_Categories.h"
 #import "ZJAlertViewController.h"
+#import "WaveAnimation.h"
 
 FOUNDATION_EXPORT double MyOftenUseToolVersionNumber;
 FOUNDATION_EXPORT const unsigned char MyOftenUseToolVersionString[];

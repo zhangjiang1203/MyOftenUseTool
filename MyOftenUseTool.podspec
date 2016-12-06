@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MyOftenUseTool'
-  s.version          = '0.3.3'
+  s.version          = '0.3.4'
   s.summary          = '自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法,里面已经添加了最新的AFN,pop,SAMKeychain等依赖的框架'
 
   s.description      = <<-DESC
@@ -28,8 +28,9 @@ DESC
   s.source_files  = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
   s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
 
-  #s.source_files  = 'MyOftenUseTool/**/*.{h,m}'
-  #s.public_header_files = 'MyOftenUseTool/**/*.h'
+#添加新的文件时，先更新一下这个本地的类库
+#  s.source_files  = 'MyOftenUseTool/**/*.{h,m}'
+#  s.public_header_files = 'MyOftenUseTool/**/*.h'
 
   #s.exclude_files = "MyOftenUseTool/Exclude"
 
@@ -64,15 +65,14 @@ DESC
     }
   end
 
-
   s.subspec 'AFNRequest' do |afnRequest|
-   afnRequest.source_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}'
-  afnRequest.public_header_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.h'
+    afnRequest.source_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}'
+    afnRequest.public_header_files = 'MyOftenUseTool/Classes/ZJAFNRequestTool.h'
   end
 
   s.subspec 'UIKit+Category' do |ss|
-   ss.source_files = 'MyOftenUseTool/UIKit/*.{h,m}'
-   ss.public_header_files = 'MyOftenUseTool/UIKit/*.h'
+    ss.source_files = 'MyOftenUseTool/UIKit/*.{h,m}'
+    ss.public_header_files = 'MyOftenUseTool/UIKit/*.h'
   end
 
   s.subspec 'Foundation+Category' do |ss|
