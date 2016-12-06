@@ -10,10 +10,15 @@
 
 @interface WaveAnimation : UIView
 
-#pragma mark -开始和暂停动画
+/**
+ 开始加载显示视图 nil为空的时候显示在rootView的window上
+ */
 +(void)startAnimationToView:(UIView*)view;
 
 
+/**
+ 停止显示视图
+ */
 +(void)stopAnimation;
 
 @end
