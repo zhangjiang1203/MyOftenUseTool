@@ -222,6 +222,11 @@ AFN请求中的封装还有post和put以及文件的上传和下载操作
 
 ```
 
+##WaveAnimation
+这是一个加载等待视图，在网络加载过程中显示，这是在网上看到的一个比较好的例子，自己修改和封装之后更方便使用，[原文地址](http://www.cocoachina.com/ios/20161202/18252.html),加载完成之后取消显示,效果如下
+
+![波浪显示](https://github.com/zhangjiang1203/AllMyTestDemoZJ/blob/master/Recourses/%E6%94%AF%E4%BB%98%E6%96%B9%E5%BC%8F.gif "波浪显示")
+
 #Demo
 上面的文件都包含在一个[测试项目](https://github.com/zhangjiang1203/MyOftenUseTool)中，可以下载测试项目
 

@@ -23,6 +23,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		7EABEA30B1BC5782ABF9F88D /* Pods_MyOftenUseTool_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E06E1735D1DFBA9BFB7A45 /* Pods_MyOftenUseTool_Tests.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		CF49B6F61DF6546500F5DE77 /* waveAnimation.gif in Resources */ = {isa = PBXBuildFile; fileRef = CF49B6F51DF6546500F5DE77 /* waveAnimation.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		99B16918552246B19ACA9B08 /* Pods-MyOftenUseTool_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyOftenUseTool_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyOftenUseTool_Example/Pods-MyOftenUseTool_Example.release.xcconfig"; sourceTree = "<group>"; };
 		99E06E1735D1DFBA9BFB7A45 /* Pods_MyOftenUseTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyOftenUseTool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C7F4B525D3E312FA5CEBCC /* Pods-MyOftenUseTool_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyOftenUseTool_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyOftenUseTool_Example/Pods-MyOftenUseTool_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CF49B6F51DF6546500F5DE77 /* waveAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = waveAnimation.gif; sourceTree = "<group>"; };
 		DB932289E105DA0F69E984F9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +188,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				CF49B6F51DF6546500F5DE77 /* waveAnimation.gif */,
 				28BD7FD1D35AAEDC40AB354F /* MyOftenUseTool.podspec */,
 				DB932289E105DA0F69E984F9 /* README.md */,
 				3DD178B117410125D143E1B8 /* LICENSE */,
@@ -279,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF49B6F61DF6546500F5DE77 /* waveAnimation.gif in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
