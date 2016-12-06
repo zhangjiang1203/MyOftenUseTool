@@ -11,6 +11,7 @@
 #import "UI_Categories.h"
 #import "HUDHelper.h"
 #import "ZJAFNRequestTool.h"
+#import "WaveAnimation.h"
 
 
 #endif

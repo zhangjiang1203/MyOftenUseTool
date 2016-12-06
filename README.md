@@ -1,5 +1,5 @@
 # MyOftenUseTool
-![Version](https://img.shields.io/badge/pod-0.3.2-yellow.svg)
+![Version](https://img.shields.io/badge/pod-0.3.5-yellow.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-iOS-orange.svg)
 ![Platform](https://img.shields.io/badge/Build-Passed-green.svg)
