@@ -14,37 +14,37 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - MyOftenUseTool (0.3.4):
+  - MyOftenUseTool (0.3.5):
     - AFNetworking (~> 3.1.0)
-    - MyOftenUseTool/AFNRequest (= 0.3.4)
-    - MyOftenUseTool/Foundation+Category (= 0.3.4)
-    - MyOftenUseTool/HUDMethod (= 0.3.4)
-    - MyOftenUseTool/SystemMethod (= 0.3.4)
-    - MyOftenUseTool/UIKit+Category (= 0.3.4)
-    - MyOftenUseTool/WaveAnimation (= 0.3.4)
+    - MyOftenUseTool/AFNRequest (= 0.3.5)
+    - MyOftenUseTool/Foundation+Category (= 0.3.5)
+    - MyOftenUseTool/HUDMethod (= 0.3.5)
+    - MyOftenUseTool/SystemMethod (= 0.3.5)
+    - MyOftenUseTool/UIKit+Category (= 0.3.5)
+    - MyOftenUseTool/WaveAnimation (= 0.3.5)
     - pop
     - SAMKeychain
-  - MyOftenUseTool/AFNRequest (0.3.4):
-    - AFNetworking (~> 3.1.0)
-    - pop
-    - SAMKeychain
-  - MyOftenUseTool/Foundation+Category (0.3.4):
+  - MyOftenUseTool/AFNRequest (0.3.5):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
-  - MyOftenUseTool/HUDMethod (0.3.4):
+  - MyOftenUseTool/Foundation+Category (0.3.5):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
-  - MyOftenUseTool/SystemMethod (0.3.4):
+  - MyOftenUseTool/HUDMethod (0.3.5):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
-  - MyOftenUseTool/UIKit+Category (0.3.4):
+  - MyOftenUseTool/SystemMethod (0.3.5):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
-  - MyOftenUseTool/WaveAnimation (0.3.4):
+  - MyOftenUseTool/UIKit+Category (0.3.5):
+    - AFNetworking (~> 3.1.0)
+    - pop
+    - SAMKeychain
+  - MyOftenUseTool/WaveAnimation (0.3.5):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
@@ -60,7 +60,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  MyOftenUseTool: 2b04ef6678e8c382cae77f36d476a7cb2190db66
+  MyOftenUseTool: 7d7b8ca3267421f39fac33bb39e5c2deff53a991
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
 
