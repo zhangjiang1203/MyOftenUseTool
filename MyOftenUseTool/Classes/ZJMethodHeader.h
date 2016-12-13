@@ -36,7 +36,6 @@
  */
 #define KAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
-
 /**
  生成颜色值
  */

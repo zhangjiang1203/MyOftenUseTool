@@ -8,6 +8,9 @@
 
 #import "ZJAFNRequestTool.h"
 #import "AFNetworking.h"
+
+#define KCertificates @""
+
 @interface ZJAFNRequestTool ()
 
 @property (nonatomic,strong) NSURLSessionDataTask *httpDataTask;
@@ -63,6 +66,16 @@ static AFHTTPSessionManager *_manager;
     _manager.responseSerializer = [AFJSONResponseSerializer serializer];
     
     _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/*", nil];
+    
+    // 2.设置证书模式
+    NSString * cerPath = [[NSBundle mainBundle] pathForResource:KCertificates ofType:@"cer"];
+    NSData * cerData = [NSData dataWithContentsOfFile:cerPath];
+    _manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate withPinnedCertificates:[[NSSet alloc] initWithObjects:cerData, nil]];
+    // 客户端是否信任非法证书
+    _manager.securityPolicy.allowInvalidCertificates = YES;
+    // 是否在证书域字段中验证域名
+    [_manager.securityPolicy setValidatesDomainName:NO];
+
 }
 
 - (instancetype)init

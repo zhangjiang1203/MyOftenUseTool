@@ -75,7 +75,7 @@ static WaveAnimation *animation = nil;
 -(void)setUpMyView{
     [_displayLink invalidate];//取消定时器
     
-    [[NSBundle mainBundle]pathForResource:@"Resource.bundle" ofType:nil];
+//    [[NSBundle mainBundle]pathForResource:@"Resource.bundle" ofType:nil];
     
     waveWidth = CGRectGetWidth(self.bounds);
     waveHeight = CGRectGetHeight(self.bounds)*0.5;
