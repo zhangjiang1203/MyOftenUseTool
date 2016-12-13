@@ -23,7 +23,6 @@
 
 static AFHTTPSessionManager *_manager;
 
-
 +(BOOL)startMonitoring{
     
     __block BOOL isNet = NO;
@@ -47,7 +46,6 @@ static AFHTTPSessionManager *_manager;
 #pragma mark -创建单例
 +(instancetype)shareRequestTool{
     static ZJAFNRequestTool *manager = nil;
-    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         manager = [[ZJAFNRequestTool alloc]init];
@@ -64,19 +62,28 @@ static AFHTTPSessionManager *_manager;
     _manager.requestSerializer.timeoutInterval = 30.f;
     //设置服务器返回结果的类型:JSON (AFJSONResponseSerializer,AFHTTPResponseSerializer)
     _manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    
     _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/*", nil];
-    
-    // 2.设置证书模式
-    NSString * cerPath = [[NSBundle mainBundle] pathForResource:KCertificates ofType:@"cer"];
-    NSData * cerData = [NSData dataWithContentsOfFile:cerPath];
-    _manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate withPinnedCertificates:[[NSSet alloc] initWithObjects:cerData, nil]];
-    // 客户端是否信任非法证书
-    _manager.securityPolicy.allowInvalidCertificates = YES;
-    // 是否在证书域字段中验证域名
-    [_manager.securityPolicy setValidatesDomainName:NO];
-
 }
+
+- (AFSecurityPolicy*)customSecurityPolicy
+{
+    // /先导入证书
+    NSString *cerPath = [[NSBundle mainBundle] pathForResource:_certificatesName ofType:@"cer"];//证书的路径
+    NSData *certData = [NSData dataWithContentsOfFile:cerPath];
+    // AFSSLPinningModeCertificate 使用证书验证模式
+    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    // allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO
+    // 如果是需要验证自建证书，需要设置为YES
+    securityPolicy.allowInvalidCertificates = YES;
+    //validatesDomainName 是否需要验证域名，默认为YES；
+    //假如证书的域名与你请求的域名不一致，需把该项设置为NO；如设成NO的话，即服务器使用其他可信任机构颁发的证书，也可以建立连接，这个非常危险，建议打开。
+    //置为NO，主要用于这种情况：客户端请求的是子域名，而证书上的是另外一个域名。因为SSL证书上的域名是独立的，假如证书上注册的域名是www.google.com，那么mail.google.com是无法验证通过的；当然，有钱可以注册通配符的域名*.google.com，但这个还是比较贵的。
+    //如置为NO，建议自己添加对应域名的校验逻辑。
+    securityPolicy.validatesDomainName = NO;
+    securityPolicy.pinnedCertificates = @[certData];
+    return securityPolicy;
+}
+
 
 - (instancetype)init
 {
@@ -95,6 +102,10 @@ static AFHTTPSessionManager *_manager;
         failBlock(@"您还没有联网,请检查网络");
         [ZJAFNRequestTool cancelRequest];
         return nil;
+    }
+    //https SSL验证
+    if (self.certificatesName) {
+        [_manager setSecurityPolicy:[self customSecurityPolicy]];
     }
     //拼接URL
     NSString *requestURL = [NSString stringWithFormat:@"%@%@",_resourceURL,sourceURL];
@@ -169,40 +180,28 @@ static AFHTTPSessionManager *_manager;
         NSLog(@"下载进度:%.2f%%",100.0*downloadProgress.completedUnitCount/downloadProgress.totalUnitCount);
         
     } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
-        
         //拼接缓存目录
         NSString *downloadDir = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:fileDir ? fileDir : @"Download"];
         //打开文件管理器
         NSFileManager *fileManager = [NSFileManager defaultManager];
-        
         //创建Download目录
         [fileManager createDirectoryAtPath:downloadDir withIntermediateDirectories:YES attributes:nil error:nil];
-        
         //拼接文件路径
         NSString *filePath = [downloadDir stringByAppendingPathComponent:response.suggestedFilename];
-        
         NSLog(@"downloadDir = %@",downloadDir);
-        
         //返回文件位置的URL路径
         return [NSURL fileURLWithPath:filePath];
-        
     } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
-        
         if(failure && error) {failure(error.description) ; return ;};
         success ? success(filePath.absoluteString /** NSURL->NSString*/) : nil;
-        
     }];
-    
     //开始下载
     [downloadTask resume];
-    
     return downloadTask;
-    
 }
 
 
 #pragma mark - 上传图片文件
-
 + (NSURLSessionTask *)uploadWithURL:(NSString *)URL
                          parameters:(NSDictionary *)parameters
                              images:(NSArray<UIImage *> *)images
@@ -229,7 +228,6 @@ static AFHTTPSessionManager *_manager;
             progress ? progress(uploadProgress) : nil;
         });
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
         success ? success(responseObject) : nil;
         NSLog(@"responseObject = %@",responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -238,8 +236,6 @@ static AFHTTPSessionManager *_manager;
         NSLog(@"error = %@",error);
     }];
 }
-
-
 
 /**
  *  取消当前的请求

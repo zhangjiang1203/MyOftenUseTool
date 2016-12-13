@@ -28,9 +28,14 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
 
 
 /**
- 设置网络请求的前缀,在delegate中设置一边就可以，也可以根据测试版和正式版分别设置
+ 设置网络请求的前缀,在delegate中设置一次就可以，也可以根据测试版和正式版分别设置
  */
 @property (nonatomic,copy)NSString *resourceURL;
+
+/**
+ 设置HTTPS请求时的SSL证书，设置一次就可以了
+ */
+@property (nonatomic,copy)NSString *certificatesName;
 
 /**
  设置网络分享的单例模式
