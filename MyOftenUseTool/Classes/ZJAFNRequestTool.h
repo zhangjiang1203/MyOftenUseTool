@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
 /*
  * 开启网络监测 YES 有网络  NO 没有联网
  */
-+ (BOOL)startMonitoring;
++ (BOOL)startMonitoring:(void(^)(BOOL isNet))netBlock;
 
 /*
  * 关闭网络监测
@@ -54,37 +54,38 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
 
 /**
  get请求
-
  @param urlStr       请求的URL
  @param params       请求参数
+ @param isShow       显示指示符
  @param successBlock 成功的回调
  @param failBlock    失败的回调
  @return 返回的任务队列
  */
-+(NSURLSessionTask*)getWithURL:(NSString*)urlStr param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock;
++(NSURLSessionTask*)getWithURL:(NSString*)urlStr param:(NSDictionary*)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock;
 
 
 /**
  post请求
- 
  @param urlStr       请求的URL
  @param params       请求参数
+ @param isShow       显示指示符
  @param successBlock 成功的回调
  @param failBlock    失败的回调
  @return 返回的任务队列
  */
-+(NSURLSessionTask*)postWithURL:(NSString*)urlStr param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock;
++(NSURLSessionTask*)postWithURL:(NSString*)urlStr param:(NSDictionary*)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock;
 
 
 /**
  put请求
  @param urlStr       请求的URL
  @param params       请求参数
+ @param isShow       显示指示符
  @param successBlock 成功的回调
  @param failBlock    失败的回调
  @return 返回的任务队列
  */
-+(NSURLSessionTask*)putWithURL:(NSString*)urlStr param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock;
++(NSURLSessionTask*)putWithURL:(NSString*)urlStr param:(NSDictionary*)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock;
 
 /**
  下载文件

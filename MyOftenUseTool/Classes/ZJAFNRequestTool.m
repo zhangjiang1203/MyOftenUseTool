@@ -8,8 +8,7 @@
 
 #import "ZJAFNRequestTool.h"
 #import "AFNetworking.h"
-
-#define KCertificates @""
+#import "SVProgressHUD.h"
 
 @interface ZJAFNRequestTool ()
 
@@ -23,20 +22,18 @@
 
 static AFHTTPSessionManager *_manager;
 
-+(BOOL)startMonitoring{
++ (void)startMonitoring:(void(^)(BOOL isNet))netBlock{
     
-    __block BOOL isNet = NO;
     [[AFNetworkReachabilityManager sharedManager]startMonitoring];
     [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         [ZJAFNRequestTool shareRequestTool].workStatus = status;
         if (status == AFNetworkReachabilityStatusNotReachable) {
             //跳转到设置URL的地方
-            isNet = NO;
+            netBlock(NO);
         }else{
-            isNet = YES;
+            netBlock(YES);
         }
     }];
-    return NO;
 }
 
 +(void)stopMonitoring{
@@ -84,7 +81,6 @@ static AFHTTPSessionManager *_manager;
     return securityPolicy;
 }
 
-
 - (instancetype)init
 {
     self = [super init];
@@ -95,7 +91,7 @@ static AFHTTPSessionManager *_manager;
     return self;
 }
 
--(NSURLSessionTask*)httpRequestMethod:(RequestMethod)requestMethod source:(NSString*)sourceURL param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
+-(NSURLSessionTask*)httpRequestMethod:(RequestMethod)requestMethod source:(NSString*)sourceURL param:(NSDictionary*)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
     
     //无网络情况，取消当前请求，直接返回错误信息*/
     if ([ZJAFNRequestTool shareRequestTool].workStatus ==AFNetworkReachabilityStatusNotReachable) {
@@ -107,6 +103,11 @@ static AFHTTPSessionManager *_manager;
     if (self.certificatesName) {
         [_manager setSecurityPolicy:[self customSecurityPolicy]];
     }
+    
+    if (isShow) {
+        [SVProgressHUD showWithStatus:@"小二努力加载中……"];
+    }
+    
     //拼接URL
     NSString *requestURL = [NSString stringWithFormat:@"%@%@",_resourceURL,sourceURL];
     switch (requestMethod) {
@@ -115,8 +116,10 @@ static AFHTTPSessionManager *_manager;
             _httpDataTask = [_manager GET:requestURL parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [SVProgressHUD dismiss];
                 successBlock(task,responseObject);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                [SVProgressHUD dismiss];
                 failBlock(error.description);
             }];
         }
@@ -126,8 +129,10 @@ static AFHTTPSessionManager *_manager;
             _httpDataTask = [_manager POST:requestURL parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [SVProgressHUD dismiss];
                 successBlock(task,responseObject);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                [SVProgressHUD dismiss];
                 failBlock(error.description);
             }];
         }
@@ -135,8 +140,10 @@ static AFHTTPSessionManager *_manager;
         case RequestMethod_Put:
         {
             _httpDataTask = [_manager PUT:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [SVProgressHUD dismiss];
                 successBlock(task,responseObject);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                [SVProgressHUD dismiss];
                 failBlock(error.description);
             }];
         }
@@ -145,20 +152,20 @@ static AFHTTPSessionManager *_manager;
     return _httpDataTask;
 }
 
-+(NSURLSessionTask *)getWithURL:(NSString *)urlStr param:(NSDictionary *)params success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
-    return [[ZJAFNRequestTool shareRequestTool] httpRequestMethod:RequestMethod_Get source:urlStr param:params success:^(NSURLSessionDataTask *task, id dataResource) {
++(NSURLSessionTask *)getWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
+    return [[ZJAFNRequestTool shareRequestTool] httpRequestMethod:RequestMethod_Get source:urlStr param:params hud:isShow success:^(NSURLSessionDataTask *task, id dataResource) {
         successBlock(task,dataResource);
     } fail:failBlock];
 }
 
-+(NSURLSessionTask *)postWithURL:(NSString *)urlStr param:(NSDictionary *)params success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
-    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Post source:urlStr param:params success:^(NSURLSessionDataTask *task, id dataResource) {
++(NSURLSessionTask *)postWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
+    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Post source:urlStr param:params hud:isShow success:^(NSURLSessionDataTask *task, id dataResource) {
         successBlock(task,dataResource);
     } fail:failBlock];
 }
 
-+(NSURLSessionTask *)putWithURL:(NSString *)urlStr param:(NSDictionary *)params success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
-    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Put source:urlStr param:params success:^(NSURLSessionDataTask *task, id dataResource) {
++(NSURLSessionTask *)putWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
+    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Put source:urlStr param:params hud:isShow success:^(NSURLSessionDataTask *task, id dataResource) {
         successBlock(task,dataResource);
     } fail:failBlock];
 }
