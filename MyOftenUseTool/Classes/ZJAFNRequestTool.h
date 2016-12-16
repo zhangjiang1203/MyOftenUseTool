@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
 /*
  * 开启网络监测 YES 有网络  NO 没有联网
  */
-+ (BOOL)startMonitoring:(void(^)(BOOL isNet))netBlock;
++ (void)startMonitoring:(void(^)(BOOL isNet))netBlock;
 
 /*
  * 关闭网络监测
