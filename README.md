@@ -1,5 +1,5 @@
 # MyOftenUseTool
-![Version](https://img.shields.io/badge/pod-0.4.1-yellow.svg)
+![Version](https://img.shields.io/badge/pod-0.4.3-yellow.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-iOS-orange.svg)
 ![Platform](https://img.shields.io/badge/Build-Passed-green.svg)
@@ -32,20 +32,18 @@ pod 'MyOftenUseTool'
 ```
 对应的实现如下
 ```objective-c
-+(BOOL)startMonitoring{
++ (void)startMonitoring:(void(^)(BOOL isNet))netBlock{
 
-    __block BOOL isNet = NO;
     [[AFNetworkReachabilityManager sharedManager]startMonitoring];
     [[AFNetworkReachabilityManager sharedManager]setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-    [ZJAFNRequestTool shareRequestTool].workStatus = status;
+        [ZJAFNRequestTool shareRequestTool].workStatus = status;
         if (status == AFNetworkReachabilityStatusNotReachable) {
             //跳转到设置URL的地方
-            isNet = NO;
+            netBlock(NO);
         }else{
-            isNet = YES;
+            netBlock(YES);
         }
     }];
-    return NO;
 }
 
 +(void)stopMonitoring{
@@ -54,18 +52,41 @@ pod 'MyOftenUseTool'
 
 ```
 
-在文件中添加了请求返回和取消请求的操作,每个请求中返回值 NSURLSessionTask 可以根据这个来取消这个请求
+在文件中添加了请求返回和取消请求的操作,每个请求中返回值 NSURLSessionTask 可以根据这个来取消这个请求,请求中使用了YYCache来缓存对应的URL的请求数据，
 ```objective-c
 /**
-get请求
-
+不带缓存的get请求
 @param urlStr       请求的URL
 @param params       请求参数
+@param isShow       显示指示符
 @param successBlock 成功的回调
 @param failBlock    失败的回调
 @return 返回的任务队列
 */
-+(NSURLSessionTask*)getWithURL:(NSString*)urlStr param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock;
++(NSURLSessionTask*)getWithURL:(NSString*)urlStr
+                         param:(NSDictionary*)params
+                           hud:(BOOL)isShow
+                       success:(RequestSuccessBlock)successBlock
+                          fail:(RequestFailBlock)failBlock;
+
+
+/**
+带有缓存的get请求
+@param urlStr       请求的URL
+@param params       请求参数
+@param isShow       显示指示符
+@param cacheBlock   缓存block
+@param successBlock 成功的回调
+@param failBlock    失败的回调
+@return 返回的任务队列
+*/
++(NSURLSessionTask*)getWithURL:(NSString*)urlStr
+                         param:(NSDictionary*)params
+                           hud:(BOOL)isShow
+                         cache:(RequestCache)cacheBlock
+                       success:(RequestSuccessBlock)successBlock
+                          fail:(RequestFailBlock)failBlock;
+
 ```
 取消当前的网络请求的操作
 ```objective-c

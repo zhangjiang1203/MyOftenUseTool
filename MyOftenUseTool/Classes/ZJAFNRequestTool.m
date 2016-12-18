@@ -156,9 +156,7 @@ static AFHTTPSessionManager *_manager;
 }
 
 +(NSURLSessionTask *)getWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
-    return [[ZJAFNRequestTool shareRequestTool] httpRequestMethod:RequestMethod_Get source:urlStr param:params hud:isShow cache:nil success:^(NSURLSessionDataTask *task, id dataResource) {
-        successBlock(task,dataResource);
-    } fail:failBlock];
+    return [self getWithURL:urlStr param:params hud:isShow cache:nil success:successBlock fail:failBlock];
 }
 
 
@@ -171,9 +169,7 @@ static AFHTTPSessionManager *_manager;
 
 
 +(NSURLSessionTask *)postWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
-    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Post source:urlStr param:params hud:isShow cache:nil success:^(NSURLSessionDataTask *task, id dataResource) {
-        successBlock(task,dataResource);
-    } fail:failBlock];
+    return [self postWithURL:urlStr param:params hud:isShow cache:nil success:successBlock fail:failBlock];
 }
 
 +(NSURLSessionTask *)postWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow cache:(RequestCache)cacheBlock success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
