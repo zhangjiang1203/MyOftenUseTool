@@ -14,50 +14,58 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - MyOftenUseTool (0.4.0):
+  - MyOftenUseTool (0.4.2):
     - AFNetworking (~> 3.1.0)
-    - MyOftenUseTool/AFNRequest (= 0.4.0)
-    - MyOftenUseTool/Foundation+Category (= 0.4.0)
-    - MyOftenUseTool/HUDMethod (= 0.4.0)
-    - MyOftenUseTool/SystemMethod (= 0.4.0)
-    - MyOftenUseTool/UIKit+Category (= 0.4.0)
-    - MyOftenUseTool/WaveAnimation (= 0.4.0)
+    - MyOftenUseTool/AFNRequest (= 0.4.2)
+    - MyOftenUseTool/Foundation+Category (= 0.4.2)
+    - MyOftenUseTool/HUDMethod (= 0.4.2)
+    - MyOftenUseTool/SystemMethod (= 0.4.2)
+    - MyOftenUseTool/UIKit+Category (= 0.4.2)
+    - MyOftenUseTool/WaveAnimation (= 0.4.2)
     - pop
     - SAMKeychain
     - SVProgressHUD
-  - MyOftenUseTool/AFNRequest (0.4.0):
-    - AFNetworking (~> 3.1.0)
-    - pop
-    - SAMKeychain
-    - SVProgressHUD
-  - MyOftenUseTool/Foundation+Category (0.4.0):
+    - YYCache
+  - MyOftenUseTool/AFNRequest (0.4.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
-  - MyOftenUseTool/HUDMethod (0.4.0):
+    - YYCache
+  - MyOftenUseTool/Foundation+Category (0.4.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
-  - MyOftenUseTool/SystemMethod (0.4.0):
+    - YYCache
+  - MyOftenUseTool/HUDMethod (0.4.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
-  - MyOftenUseTool/UIKit+Category (0.4.0):
+    - YYCache
+  - MyOftenUseTool/SystemMethod (0.4.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
-  - MyOftenUseTool/WaveAnimation (0.4.0):
+    - YYCache
+  - MyOftenUseTool/UIKit+Category (0.4.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
+    - YYCache
+  - MyOftenUseTool/WaveAnimation (0.4.2):
+    - AFNetworking (~> 3.1.0)
+    - pop
+    - SAMKeychain
+    - SVProgressHUD
+    - YYCache
   - pop (1.0.9)
   - SAMKeychain (1.5.2)
   - SVProgressHUD (2.1.2)
+  - YYCache (1.0.4)
 
 DEPENDENCIES:
   - MyOftenUseTool (from `../`)
@@ -68,10 +76,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  MyOftenUseTool: 91e9d2a9cbdd0c8d0c151e1ffd9f0ea7b12ef12c
+  MyOftenUseTool: c5ca914ee1a27ca3c4ecb3fafa3727b16b5ed16f
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
 PODFILE CHECKSUM: 29cf27f18207caf3277924b498f5aad7a36dd75d
 

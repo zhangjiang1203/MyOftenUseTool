@@ -7,8 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+
+///过期提醒
+#define PPDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
+
 /**请求成功的回调 */
 typedef void(^RequestSuccessBlock)(NSURLSessionDataTask  *task, id dataResource);
+/** 缓存的Block */
+typedef void(^RequestCache)(id responseCache);
+
 /**上传文件成功之后的回调 */
 typedef void(^UploadMyFileSuccess)(id dataResource);
 /**请求失败的回调 */
@@ -25,7 +32,6 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
 };
 
 @interface ZJAFNRequestTool : NSObject
-
 
 /**
  设置网络请求的前缀,在delegate中设置一次就可以，也可以根据测试版和正式版分别设置
@@ -53,7 +59,7 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
 + (void)stopMonitoring;
 
 /**
- get请求
+ 不带缓存的get请求
  @param urlStr       请求的URL
  @param params       请求参数
  @param isShow       显示指示符
@@ -61,11 +67,33 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
  @param failBlock    失败的回调
  @return 返回的任务队列
  */
-+(NSURLSessionTask*)getWithURL:(NSString*)urlStr param:(NSDictionary*)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock;
++(NSURLSessionTask*)getWithURL:(NSString*)urlStr
+                         param:(NSDictionary*)params
+                           hud:(BOOL)isShow
+                       success:(RequestSuccessBlock)successBlock
+                          fail:(RequestFailBlock)failBlock;
 
 
 /**
- post请求
+ 带有缓存的get请求
+ @param urlStr       请求的URL
+ @param params       请求参数
+ @param isShow       显示指示符
+ @param cacheBlock   缓存block
+ @param successBlock 成功的回调
+ @param failBlock    失败的回调
+ @return 返回的任务队列
+ */
++(NSURLSessionTask*)getWithURL:(NSString*)urlStr
+                         param:(NSDictionary*)params
+                           hud:(BOOL)isShow
+                         cache:(RequestCache)cacheBlock
+                       success:(RequestSuccessBlock)successBlock
+                          fail:(RequestFailBlock)failBlock;
+
+
+/**
+ 不带缓存的post请求
  @param urlStr       请求的URL
  @param params       请求参数
  @param isShow       显示指示符
@@ -73,8 +101,31 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
  @param failBlock    失败的回调
  @return 返回的任务队列
  */
-+(NSURLSessionTask*)postWithURL:(NSString*)urlStr param:(NSDictionary*)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock;
++(NSURLSessionTask*)postWithURL:(NSString*)urlStr
+                          param:(NSDictionary*)params
+                            hud:(BOOL)isShow
+                        success:(RequestSuccessBlock)successBlock
+                           fail:(RequestFailBlock)failBlock;
 
+
+
+/**
+ 带有缓存的post请求
+
+ @param urlStr       请求URL
+ @param params       请求参数
+ @param isShow       是否显示HUD
+ @param cacheBlock   缓存block
+ @param successBlock 成功block
+ @param failBlock    失败block
+ @return 返回的任务队列
+ */
++(NSURLSessionTask*)postWithURL:(NSString*)urlStr
+                          param:(NSDictionary*)params
+                            hud:(BOOL)isShow
+                          cache:(RequestCache)cacheBlock
+                        success:(RequestSuccessBlock)successBlock
+                           fail:(RequestFailBlock)failBlock;
 
 /**
  put请求
@@ -85,7 +136,11 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
  @param failBlock    失败的回调
  @return 返回的任务队列
  */
-+(NSURLSessionTask*)putWithURL:(NSString*)urlStr param:(NSDictionary*)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock;
++(NSURLSessionTask*)putWithURL:(NSString*)urlStr
+                         param:(NSDictionary*)params
+                           hud:(BOOL)isShow
+                       success:(RequestSuccessBlock)successBlock
+                          fail:(RequestFailBlock)failBlock;
 
 /**
  下载文件
@@ -128,3 +183,72 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
  */
 +(void)cancelRequest;
 @end
+
+
+#pragma mark -网络请求的缓存处理
+@interface ZJAFNRequestCache : NSObject
+
+/**
+ 缓存网络数据，根据请求的URL和parameters
+ 做KEY存储数据
+ @param httpData   服务器返回的数据
+ @param URL        请求的URL地址
+ @param parameters 请求的参数
+ */
++(void)setHttpCache:(id)httpData URL:(NSString*)URL parameters:(NSDictionary*)parameters;
+
+
+/**
+ 根据请求的URL和parameters取出缓存数据
+
+ @param URL 请求的URL
+ @param parameters 请求的参数
+ @return 缓存的服务器数据
+ */
++(id)httpCacheForURL:(NSString*)URL parameters:(NSDictionary*)parameters;
+
+
+/**
+ 获取网络缓存的总大小
+ */
++(NSString*)getAllHttpCacheSize;
+
+
+/**
+ 删除所有的网络缓存
+ */
++(void)removeAllHttpCache;
+
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
