@@ -5,17 +5,24 @@
 ![Platform](https://img.shields.io/badge/Build-Passed-green.svg)
 ###自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法
 
+##Requirements 要求
+* iOS 7+
+* XCode 8+
+
 #可以使用Cocoapods进行安装，有关于Cocoapods的安转和使用请参考[Cocoapods](http://cocoapods.org),
 #### Podfile
 在你需要使用的项目中添加Podfile文件，
+
 ```ruby
+
 platform :ios, '8.0'
 
 pod 'MyOftenUseTool'
+
 ```
 
 #关于类库的一些使用说明
-##AFNetworking的封装
+##AFNetworking的封装，添加了YYCache缓存网络数据，网络数据存储在本地，根据请求的URL获取缓存的数据，并返回到相应的Block中，其中的方法参考YYCache的使用方法[参考例子](https://github.com/jkpang/PPNetworkHelper)中，可以下载测试项目
 首先添加的就是关于网络状态的检测，
 
 ```objective-c
