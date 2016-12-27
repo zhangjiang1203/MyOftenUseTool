@@ -1,12 +1,12 @@
 # MyOftenUseTool
-![Version](https://img.shields.io/badge/pod-0.4.3-yellow.svg)
+![Version](https://img.shields.io/badge/pod-0.4.4-yellow.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-iOS-orange.svg)
 ![Platform](https://img.shields.io/badge/Build-Passed-green.svg)
 ###自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法
 
 ##Requirements 要求
-* iOS 7+
+* iOS 8+
 * XCode 8+
 
 #可以使用Cocoapods进行安装，有关于Cocoapods的安转和使用请参考[Cocoapods](http://cocoapods.org),
