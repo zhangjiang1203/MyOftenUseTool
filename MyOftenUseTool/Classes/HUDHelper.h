@@ -17,7 +17,7 @@
 
 
 
-#define MSG_VIDEO_NO_AUTH    @"MEETU未获得授权使用摄像头\n请在iOS“设置”－“隐私” - “相机”中打开,然后回到MEETU。"
+#define MSG_VIDEO_NO_AUTH    @"该应用未获得授权使用摄像头\n请在iOS“设置”－“隐私” - “相机”中打开,然后回到本应用。"
 #define MSG_VIDEO_NO         @"抱歉，暂不支持该手机系统版本"
 
 #define IOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
@@ -66,6 +66,12 @@ typedef enum {
  *  判断手机号是否正确
  */
 +(BOOL)CheckPhoneNumInput:(NSString *)text;
+
+
+/**
+ 判断身份证号格式是否正确
+ */
++ (BOOL)IsIdentityCard:(NSString *)IDCardNumber;
 
 
 /**

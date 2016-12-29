@@ -72,6 +72,16 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
     return  [pred evaluateWithObject:text];
 }
 
++ (BOOL) IsIdentityCard:(NSString *)IDCardNumber
+{
+    if (IDCardNumber.length <= 0) {
+        return NO;
+    }
+    NSString *regex2 = @"^(\\d{14}|\\d{17})(\\d|[xX])$";
+    NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
+    return [identityCardPredicate evaluateWithObject:IDCardNumber];
+}
+
 
 +(BOOL)CheckInviteCodeInput:(NSString *)text{
     NSString *regex = @"^[0-9]{6}$";
