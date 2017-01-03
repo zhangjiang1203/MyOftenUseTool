@@ -149,6 +149,13 @@ typedef enum {
  */
 + (BOOL)isBlankString:(NSString *)string;
 
+
+/**
+ 判断服务器返回的数据是否为空
+ */
++(BOOL)judgeResposeIsBlank:(id )responseData;
+
+
 /**
  *  两个字符串是否是包含关系
  */

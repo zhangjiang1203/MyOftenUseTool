@@ -1,6 +1,6 @@
 {
   "name": "MyOftenUseTool",
-  "version": "0.4.7",
+  "version": "0.5.0",
   "summary": "自己常用的一些封装方法和UIKIT，Foundation框架的category添加的方法,里面已经添加了最新的AFN,pop,SAMKeychain等依赖的框架",
   "description": "这是我自己根据项目中常用的方法和在网络上收集的一些比较好用的iOS原有的框架上添加的category，方便自己在开发中的使用，里面已经添加了最新的AFN,pop,SAMKeychain等依赖的框架",
   "homepage": "https://github.com/zhangjiang1203/MyOftenUseTool",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/zhangjiang1203/MyOftenUseTool.git",
-    "tag": "0.4.7"
+    "tag": "0.5.0"
   },
   "platforms": {
     "ios": "8.0"

@@ -377,6 +377,23 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
     return NO;
 }
 
+
++(BOOL)judgeResposeIsBlank:(id )responseData
+{
+    if([responseData isKindOfClass:[NSString class]]){
+        return ![HUDHelper isBlankString:responseData];
+    }
+    
+    if([responseData isKindOfClass:[NSArray class]] && [responseData count]>0){
+        return YES;
+    }
+    
+    if([responseData isKindOfClass:[NSDictionary class]] && [responseData allKeys].count){
+        return YES;
+    }
+    return NO;
+}
+
 //两个字符串是否是包含关系
 +(BOOL)isContainsString:(NSString *)firstStr second:(NSString*)secondStr{
     
