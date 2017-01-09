@@ -262,6 +262,7 @@ static AFHTTPSessionManager *_manager;
  *  取消当前的请求
  */
 +(void)cancelRequest{
+    [SVProgressHUD dismiss];
     [[ZJAFNRequestTool shareRequestTool].httpDataTask cancel];
 }
 @end
