@@ -96,12 +96,12 @@ static AFHTTPSessionManager *_manager;
     
     cacheBlock ? cacheBlock([ZJAFNRequestCache httpCacheForURL:sourceURL parameters:params]) : nil;
     
-    //无网络情况，取消当前请求，直接返回错误信息*/
-    if ([ZJAFNRequestTool shareRequestTool].workStatus ==AFNetworkReachabilityStatusNotReachable) {
-        failBlock(@"您还没有联网,请检查网络");
-        [ZJAFNRequestTool cancelRequest];
-        return nil;
-    }
+//    //无网络情况，取消当前请求，直接返回错误信息*/
+//    if ([ZJAFNRequestTool shareRequestTool].workStatus ==AFNetworkReachabilityStatusNotReachable) {
+//        failBlock(@"您还没有联网,请检查网络");
+//        [ZJAFNRequestTool cancelRequest];
+//        return nil;
+//    }
     //https SSL验证
     if (self.certificatesName) {
         [_manager setSecurityPolicy:[self customSecurityPolicy]];
