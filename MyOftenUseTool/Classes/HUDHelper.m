@@ -957,4 +957,29 @@ double radians(float degrees) {
 }
 
 
++ (NSString *)flattenHTML:(NSString *)html {
+    
+    NSScanner *theScanner;
+    NSString *text = nil;
+    theScanner = [NSScanner scannerWithString:html];
+    while ([theScanner isAtEnd] == NO) {
+        [theScanner scanUpToString:@"<" intoString:NULL] ;
+        [theScanner scanUpToString:@">" intoString:&text] ;
+        html = [html stringByReplacingOccurrencesOfString:
+                [NSString stringWithFormat:@"%@>", text]
+                                               withString:@""];
+    }
+    return html;
+}
+
+
+//正则去除网络标签
++(NSString *)getZZwithString:(NSString *)string{
+    NSRegularExpression *regularExpretion = [NSRegularExpression regularExpressionWithPattern:@"<[^>]*>|\n" options:0 error:nil];
+    string = [regularExpretion stringByReplacingMatchesInString:string options:NSMatchingReportProgress range:NSMakeRange(0, string.length) withTemplate:@""];
+    return string;
+}
+
+
+
 @end

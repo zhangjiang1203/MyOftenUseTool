@@ -347,4 +347,15 @@ typedef enum {
  *  @return label高度
  */
 +(CGFloat)getSpaceLabelHeight:(NSString*)str withFont:(UIFont*)font withWidth:(CGFloat)width space:(CGFloat)lineSpace;
+
+/**
+ 去掉带有HTML标签的文本
+ */
++ (NSString *)flattenHTML:(NSString *)html;
+
+
+/**
+ 正则表达式去标签
+ */
++(NSString *)getZZwithString:(NSString *)string;
 @end
