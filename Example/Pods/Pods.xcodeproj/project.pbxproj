@@ -247,6 +247,8 @@
 		CE2EB8CE3176F8A1FAA78CC8786292CC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 929C33D7A0714442CF5FB7DE7B7FE476 /* SystemConfiguration.framework */; };
 		CEB2F0E229EF841D92C780C3FFDF1BEA /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 850A3555C8FEF5B4B49E4D728AF94D62 /* AFSecurityPolicy.m */; };
 		CF287829627F26B2EB4382B897D06A0E /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 134C51B93360531610AE299C85BC8629 /* AFNetworking-dummy.m */; };
+		CF4D2DDF1E306D4C00FA3118 /* UIImage+RoateAndScale.h in Headers */ = {isa = PBXBuildFile; fileRef = CF4D2DDD1E306D4C00FA3118 /* UIImage+RoateAndScale.h */; };
+		CF4D2DE01E306D4C00FA3118 /* UIImage+RoateAndScale.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4D2DDE1E306D4C00FA3118 /* UIImage+RoateAndScale.m */; };
 		D0DF94A64A51FC25308FA13A81C7945B /* NSDictionary+SafeAccess.h in Headers */ = {isa = PBXBuildFile; fileRef = E28D0DA2F6B876A4BC1BE4B2DB61B2B9 /* NSDictionary+SafeAccess.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D1DB4B74204593977A5314AA17E33C75 /* YYMemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = CAB7B2E9DE49B0081E1724E5E71EA64C /* YYMemoryCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3457F94EC3D183E9335B3BD9B1C8C02 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A02A4256419371DD049FD061649556 /* NSString+Hash.m */; };
@@ -396,22 +398,22 @@
 		0D666817B2BAD8CD2294702C29D06AEF /* NSObject+Property.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Property.m"; sourceTree = "<group>"; };
 		0DDF0DC5B551ECE2391C2386A477619C /* YYCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E812925234A10D7CCA3BB8D0BCF68DE /* NSString+Emoji.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
-		0E87B5B6672413DA49067B40A9DBEBE7 /* POPLayerExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPLayerExtras.mm; path = pop/POPLayerExtras.mm; sourceTree = "<group>"; };
+		0E87B5B6672413DA49067B40A9DBEBE7 /* POPLayerExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPLayerExtras.mm; path = pop/POPLayerExtras.mm; sourceTree = "<group>"; };
 		0F22499DF1BB823F161B6BF7D72A22A2 /* SVProgressHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
 		109A46BC17ADC89FF735BCFECDF9F03C /* NSTimer+Addition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
 		10EC8781413A45343ABA7458E8C71FEB /* NSData+SDDataCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSData+SDDataCache.h"; sourceTree = "<group>"; };
 		10FAEB7CF079150CFF92F7161C4E1381 /* UIViewController+TopBarMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TopBarMessage.h"; sourceTree = "<group>"; };
 		1108FA95A0AB10824CC7D4887C0FE7C6 /* SVProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-umbrella.h"; sourceTree = "<group>"; };
-		116660AEE490CE16CDC9FEF34762B71A /* pop.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = pop.modulemap; sourceTree = "<group>"; };
+		116660AEE490CE16CDC9FEF34762B71A /* pop.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = pop.modulemap; sourceTree = "<group>"; };
 		11A5E2F7EA7CBD5729A480A40172C342 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVIndefiniteAnimatedView.h; path = SVProgressHUD/SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		126F2841C99B584F2492CE2001938EE4 /* Pods_MyOftenUseTool_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyOftenUseTool_Example.framework; path = "Pods-MyOftenUseTool_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		126F2841C99B584F2492CE2001938EE4 /* Pods_MyOftenUseTool_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyOftenUseTool_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		132AB1032567B2227F34E4D55E9C77D9 /* Pods-MyOftenUseTool_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyOftenUseTool_Example-frameworks.sh"; sourceTree = "<group>"; };
 		134C51B93360531610AE299C85BC8629 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		137D5F7D42AECDB2893BCF00EA4EB6F4 /* WaveAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WaveAnimation.m; sourceTree = "<group>"; };
 		13E915783BF41CEE8AD2D37F4EA6394A /* POPLayerExtras.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPLayerExtras.h; path = pop/POPLayerExtras.h; sourceTree = "<group>"; };
 		14875636744F936E8FCB26223B01BA9C /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
 		150AD6BD5A3882C5B6688EB2DE058080 /* POP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POP.h; path = pop/POP.h; sourceTree = "<group>"; };
-		16E9A4E382F7E2E42C44AE3236412880 /* SAMKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SAMKeychain.framework; path = SAMKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		16E9A4E382F7E2E42C44AE3236412880 /* SAMKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAMKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17FC762617CDE4BEC9C7E003A765B74E /* UIButton+CountDown.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+CountDown.h"; sourceTree = "<group>"; };
 		194866EBE2C31DB94923AEC3D8BA4937 /* UIView+MBIBnspectable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+MBIBnspectable.h"; sourceTree = "<group>"; };
 		1984F8F5A6929270EA53F5E26A950487 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -422,16 +424,16 @@
 		1E9A5B546B80817369ECA6196AF8B2BB /* NSDate+Reporting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Reporting.m"; sourceTree = "<group>"; };
 		1F87567647F1FEA3122816D1B644A860 /* SAMKeychainQuery.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAMKeychainQuery.m; path = Sources/SAMKeychainQuery.m; sourceTree = "<group>"; };
 		20007C76ADF235420035F73E3A8EBA5E /* YYMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYMemoryCache.m; path = YYCache/YYMemoryCache.m; sourceTree = "<group>"; };
-		20472D7E1026B2F70EB3A3BB0776A14C /* MyOftenUseTool.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = MyOftenUseTool.modulemap; sourceTree = "<group>"; };
+		20472D7E1026B2F70EB3A3BB0776A14C /* MyOftenUseTool.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MyOftenUseTool.modulemap; sourceTree = "<group>"; };
 		20E54C9A03B907D44CE85D98D6E074CB /* Pods-MyOftenUseTool_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyOftenUseTool_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		212775C0BBB8CCFB090C6C449EE32F35 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
-		23095B92C1CF3EAC33F9BF5C80206F25 /* Pods-MyOftenUseTool_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MyOftenUseTool_Tests.modulemap"; sourceTree = "<group>"; };
+		23095B92C1CF3EAC33F9BF5C80206F25 /* Pods-MyOftenUseTool_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MyOftenUseTool_Tests.modulemap"; sourceTree = "<group>"; };
 		2457C0B9E70D36DF3E3D9FD488F9463F /* NSDateFormatter+Make.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Make.m"; sourceTree = "<group>"; };
 		249E3B9403C7850629495D013685B882 /* NSString+Util.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
 		257789DE6D828BE38DD268F8EBD5B504 /* NSString+Trims.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+Trims.m"; sourceTree = "<group>"; };
 		25BD106B47980F685F313F1938A720C7 /* NSDate+Extension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		260B9E70C9CA8BF7877C7D138268B3F4 /* CustomImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = CustomImageView.m; sourceTree = "<group>"; };
-		26492777CF7DE6BD9CD14B900F9FEE45 /* POPGeometry.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPGeometry.mm; path = pop/POPGeometry.mm; sourceTree = "<group>"; };
+		26492777CF7DE6BD9CD14B900F9FEE45 /* POPGeometry.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPGeometry.mm; path = pop/POPGeometry.mm; sourceTree = "<group>"; };
 		269B0D172DF537C45953D9BD59D68584 /* NSObject+Blocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+Blocks.h"; sourceTree = "<group>"; };
 		2A8AEABD561425D1F823D29AAE1E6481 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2ADFCA47B8C92DD5777D301E2955DB21 /* SAMKeychain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SAMKeychain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -447,7 +449,7 @@
 		331CBCEBC78143BB980A23054513E969 /* NSTimer+Addition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
 		33905F5EAEF74D1BC4AD05DB7DC7825C /* pop-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "pop-dummy.m"; sourceTree = "<group>"; };
 		34397D4B77D936657CD7FA3D34AC5B70 /* SAMKeychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SAMKeychain.m; path = Sources/SAMKeychain.m; sourceTree = "<group>"; };
-		351DDECA34314C52EC93DE7ECAE5C69C /* MyOftenUseTool.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MyOftenUseTool.bundle; path = MyOftenUseTool.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		351DDECA34314C52EC93DE7ECAE5C69C /* MyOftenUseTool.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyOftenUseTool.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		3590489732B3D9EDAB7D2BEBC60D6FEC /* POPDecayAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPDecayAnimation.h; path = pop/POPDecayAnimation.h; sourceTree = "<group>"; };
 		3966CF9893BBAD48936E6E1ECD453719 /* POPAnimationEventInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationEventInternal.h; path = pop/POPAnimationEventInternal.h; sourceTree = "<group>"; };
 		3A25497267A2D754AD76D3E84BEA4A69 /* UIButton+Indicator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Indicator.m"; sourceTree = "<group>"; };
@@ -459,7 +461,7 @@
 		3C2378C9F532C6C8A1458AFDCBD98831 /* POPAnimatorPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimatorPrivate.h; path = pop/POPAnimatorPrivate.h; sourceTree = "<group>"; };
 		3EF22221D8BFFF2E880105C3DEFD8928 /* Pods-MyOftenUseTool_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyOftenUseTool_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3F48565804993CDD0455DFD17481F77F /* SAMKeychain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SAMKeychain-prefix.pch"; sourceTree = "<group>"; };
-		3FA68EBF318A9C0D92ECADE4ADD9AEC3 /* POPBasicAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPBasicAnimation.mm; path = pop/POPBasicAnimation.mm; sourceTree = "<group>"; };
+		3FA68EBF318A9C0D92ECADE4ADD9AEC3 /* POPBasicAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPBasicAnimation.mm; path = pop/POPBasicAnimation.mm; sourceTree = "<group>"; };
 		400520271D8BD40AD0E1610B0E72987C /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		40DF20B5D5B7340BDA25162C6388B680 /* UIView+Screenshot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Screenshot.m"; sourceTree = "<group>"; };
 		42B33355965DD04E0CB011A7618CA5A6 /* UITextView+PlaceHolder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextView+PlaceHolder.h"; sourceTree = "<group>"; };
@@ -469,7 +471,7 @@
 		455581E1DFCC7F29C2B24731C0C04AAE /* UIImage+FileName.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FileName.m"; sourceTree = "<group>"; };
 		460F62F91B22F655357BC96435CDF32A /* UIButton+Submitting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Submitting.m"; sourceTree = "<group>"; };
 		4632CFB6104FE2842B5D3C299C8D237B /* NSDate+Utilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
-		46344DE8AF3C785F05D2822B9441D10D /* TransformationMatrix.cpp */ = {isa = PBXFileReference; includeInIndex = 1; name = TransformationMatrix.cpp; path = pop/WebCore/TransformationMatrix.cpp; sourceTree = "<group>"; };
+		46344DE8AF3C785F05D2822B9441D10D /* TransformationMatrix.cpp */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.cpp; name = TransformationMatrix.cpp; path = pop/WebCore/TransformationMatrix.cpp; sourceTree = "<group>"; };
 		46391029B7CF0E85E39B3A0E97A265A4 /* SAMKeychain.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SAMKeychain.bundle; path = Support/SAMKeychain.bundle; sourceTree = "<group>"; };
 		474729D9DFD30C91E945C05B0123102D /* SAMKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAMKeychain.h; path = Sources/SAMKeychain.h; sourceTree = "<group>"; };
 		47E4C02BEB385D2D899CD86D57424E21 /* MyOftenUseTool.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MyOftenUseTool.xcconfig; sourceTree = "<group>"; };
@@ -477,7 +479,7 @@
 		4CE1AB136ED1C2D4A1C94E9DDD3B1CC3 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		4EF679CC3E416D9ABA62120B5AEA1651 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9282AEF6A8A78DD6848C97A556A48B /* ResourceBundle-MyOftenUseTool-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-MyOftenUseTool-Info.plist"; sourceTree = "<group>"; };
-		4FB41CFE17D043E99FDC7C4B08D18206 /* POPAnimationRuntime.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimationRuntime.mm; path = pop/POPAnimationRuntime.mm; sourceTree = "<group>"; };
+		4FB41CFE17D043E99FDC7C4B08D18206 /* POPAnimationRuntime.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPAnimationRuntime.mm; path = pop/POPAnimationRuntime.mm; sourceTree = "<group>"; };
 		503509CF0E2F39F346C441DA07661A4A /* POPCustomAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPCustomAnimation.h; path = pop/POPCustomAnimation.h; sourceTree = "<group>"; };
 		506669B152CDC5C77C60A6BF78DA95F0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		5096F8FF647A4361992476DFB18705C5 /* UIView+BlockGesture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+BlockGesture.m"; sourceTree = "<group>"; };
@@ -493,7 +495,7 @@
 		58464A3FA2BA3ACC14D2E39FD568C6A5 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
 		5850E8AB8F44FBB5D732FB11F91874BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		589153859A0288E8BADC6C64CBE0B3E9 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIActivityIndicatorView+AFNetworking.h"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
-		597B39E64684D8A4516A41D3D63E199B /* Pods_MyOftenUseTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyOftenUseTool_Tests.framework; path = "Pods-MyOftenUseTool_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		597B39E64684D8A4516A41D3D63E199B /* Pods_MyOftenUseTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyOftenUseTool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB649013CDD27F9FB8F471C9EB0CFD4 /* NSString+MIME.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+MIME.m"; sourceTree = "<group>"; };
 		5C1E4EC0BB613D9F65BB585CC49E1F93 /* UIView+Nib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Nib.m"; sourceTree = "<group>"; };
 		5D27B2A60D99EC71129424208B0659E3 /* YYCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYCache.h; path = YYCache/YYCache.h; sourceTree = "<group>"; };
@@ -509,11 +511,11 @@
 		665F1E435AC2800201387545A2E6831B /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		673A56C98B98FBA608AB9C27416C3977 /* UITextField+Blocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UITextField+Blocks.h"; sourceTree = "<group>"; };
 		6811B85B2106CE79EAA676F78F0B4E96 /* SVProgressHUD.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SVProgressHUD.xcconfig; sourceTree = "<group>"; };
-		6993F2851EE59BC5C391215F8AC4ECAF /* POPAnimationTracer.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimationTracer.mm; path = pop/POPAnimationTracer.mm; sourceTree = "<group>"; };
+		6993F2851EE59BC5C391215F8AC4ECAF /* POPAnimationTracer.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPAnimationTracer.mm; path = pop/POPAnimationTracer.mm; sourceTree = "<group>"; };
 		6B8120BF5D072D6686EB48BBF3939337 /* AFNetworking-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-prefix.pch"; sourceTree = "<group>"; };
 		6BFA912E087A3AFDFC15D6B389533FB0 /* HUDHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HUDHelper.h; sourceTree = "<group>"; };
 		6C471576A94D792D509744990A882513 /* Pods-MyOftenUseTool_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyOftenUseTool_Example-dummy.m"; sourceTree = "<group>"; };
-		6CB989D6DD0BF2F323E0960D5706E1B2 /* YYCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = YYCache.modulemap; sourceTree = "<group>"; };
+		6CB989D6DD0BF2F323E0960D5706E1B2 /* YYCache.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = YYCache.modulemap; sourceTree = "<group>"; };
 		6D77614C7FD5FE259AE0E1E00870D6D0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E842EC061DFDC586A02F8A504CA2B49 /* POPAnimationTracerInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationTracerInternal.h; path = pop/POPAnimationTracerInternal.h; sourceTree = "<group>"; };
 		6F8EDB6DE50AD67AD65F8F889A5BF96A /* Resource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
@@ -525,13 +527,13 @@
 		754C7525D2261DEA987F5CCBE34B9C30 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVRadialGradientLayer.m; path = SVProgressHUD/SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		764111F544C754812F1E19E0815991D5 /* SVProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		7721F1884B6D35412FA4E931864FAADD /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
-		773A1FD24ED9451E885880A92463F277 /* POPVector.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPVector.mm; path = pop/POPVector.mm; sourceTree = "<group>"; };
+		773A1FD24ED9451E885880A92463F277 /* POPVector.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPVector.mm; path = pop/POPVector.mm; sourceTree = "<group>"; };
 		77524EAC7624E3068886F2E568CB1EE5 /* YYDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = YYDiskCache.m; path = YYCache/YYDiskCache.m; sourceTree = "<group>"; };
 		7801E898A53815015BB8D941AADFA410 /* NSString+Hash.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
 		7ACB9B3E375520E773316CAADBC9AC17 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		7BA8AA4C3DDB7E2DB6B21C9DC947C930 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CC4EA9BD0574F5BEAB13D0F485CE021 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D59E5DE200A7821353DC23A017F5271 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = pop.framework; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D59E5DE200A7821353DC23A017F5271 /* pop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = pop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E2BB92460AFFFF3F5D2D670D492478F /* POPSpringSolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPSpringSolver.h; path = pop/POPSpringSolver.h; sourceTree = "<group>"; };
 		7E833CD2A14A199CFA157B952459DA77 /* MyOftenUseTool-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MyOftenUseTool-prefix.pch"; sourceTree = "<group>"; };
 		7F11E87BE5BEA82AA8E777EC83F8C66D /* NSTimer+Blocks.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
@@ -539,37 +541,37 @@
 		7F8F4E481D43E988DBF45219C06FC00C /* Pods-MyOftenUseTool_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyOftenUseTool_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		8076830E80E6CF54781594F3741A075C /* Pods-MyOftenUseTool_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyOftenUseTool_Tests-resources.sh"; sourceTree = "<group>"; };
 		80DAFBA4420561229BC7FE54D8DD340B /* POPAnimator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimator.h; path = pop/POPAnimator.h; sourceTree = "<group>"; };
-		82207D3B2DF7978DAB2A8EDAA942B310 /* POPCustomAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPCustomAnimation.mm; path = pop/POPCustomAnimation.mm; sourceTree = "<group>"; };
+		82207D3B2DF7978DAB2A8EDAA942B310 /* POPCustomAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPCustomAnimation.mm; path = pop/POPCustomAnimation.mm; sourceTree = "<group>"; };
 		8229F7B30CEF0E50E7A9D7F3ECB705C2 /* POPPropertyAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPPropertyAnimation.h; path = pop/POPPropertyAnimation.h; sourceTree = "<group>"; };
 		8358D7E42516FEC4659C717F21BD7285 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		83711A01401DBBF412B5CB4EFD0BCAD5 /* POPPropertyAnimationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPPropertyAnimationInternal.h; path = pop/POPPropertyAnimationInternal.h; sourceTree = "<group>"; };
-		843D819E2C1FA5946EF20982E971480E /* POPAnimationEvent.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimationEvent.mm; path = pop/POPAnimationEvent.mm; sourceTree = "<group>"; };
+		843D819E2C1FA5946EF20982E971480E /* POPAnimationEvent.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPAnimationEvent.mm; path = pop/POPAnimationEvent.mm; sourceTree = "<group>"; };
 		84CC8F8D242EFA435923B85DC0DAA340 /* UIButton+Indicator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+Indicator.h"; sourceTree = "<group>"; };
 		850A3555C8FEF5B4B49E4D728AF94D62 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
 		850FFC29DBE7793458EC4612BE479514 /* NSString+DictionaryValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+DictionaryValue.m"; sourceTree = "<group>"; };
-		869EE30C579C73E4F20432E1FB95B3BB /* POPSpringAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPSpringAnimation.mm; path = pop/POPSpringAnimation.mm; sourceTree = "<group>"; };
+		869EE30C579C73E4F20432E1FB95B3BB /* POPSpringAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPSpringAnimation.mm; path = pop/POPSpringAnimation.mm; sourceTree = "<group>"; };
 		87A5DEA6AC288E9CA6F091A56C23D0B0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		888E49C62E361D123266E57BCA0A482A /* POPMath.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPMath.mm; path = pop/POPMath.mm; sourceTree = "<group>"; };
+		888E49C62E361D123266E57BCA0A482A /* POPMath.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPMath.mm; path = pop/POPMath.mm; sourceTree = "<group>"; };
 		88A96600D57A959FFCF91BD745CEDEC5 /* UIDevice+Hardware.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Hardware.h"; sourceTree = "<group>"; };
 		8A7C04A222BF89AB22B5A24EE461958E /* NSString+Util.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+Util.m"; sourceTree = "<group>"; };
 		8B460E79C010FA33181DA2B82736EDBF /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
 		8C2E749A595204DF4FC15533E8D9D679 /* UIImage+Capture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+Capture.h"; sourceTree = "<group>"; };
 		8C3778F049B049FF3404C68145137BA3 /* SVProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD-dummy.m"; sourceTree = "<group>"; };
 		8C723B302EE7BC4EAF6CAF07769EF840 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D28055969CC0F37B6A344F0ED5751FD /* POPAnimator.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimator.mm; path = pop/POPAnimator.mm; sourceTree = "<group>"; };
+		8D28055969CC0F37B6A344F0ED5751FD /* POPAnimator.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPAnimator.mm; path = pop/POPAnimator.mm; sourceTree = "<group>"; };
 		8DB05F91ABD356D423ADB50F5FDF6500 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVProgressAnimatedView.h; path = SVProgressHUD/SVProgressAnimatedView.h; sourceTree = "<group>"; };
 		8E07AA721A6F79134FD7C5DAB9836CE9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		8E4FBB8C25FF87A9422AB92CDFA6706E /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E4FBB8C25FF87A9422AB92CDFA6706E /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F72BC262A6A34160FE6C39A37F02DDA /* Pods-MyOftenUseTool_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyOftenUseTool_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		908822714EAD9E279468BB6ADD3F4246 /* POPDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPDefines.h; path = pop/POPDefines.h; sourceTree = "<group>"; };
 		90887F561A3911DB620B423BC4E3E783 /* pop-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "pop-umbrella.h"; sourceTree = "<group>"; };
 		9182CEF2BF4640AA9822B9E699CF79CC /* NSDictionary+Merge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Merge.h"; sourceTree = "<group>"; };
 		918A33E0D0A67CF98B4B8C0C5C71E171 /* YYCache.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YYCache.xcconfig; sourceTree = "<group>"; };
-		91FEECE984B48DDA14D29A050D35346B /* POPAnimatableProperty.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimatableProperty.mm; path = pop/POPAnimatableProperty.mm; sourceTree = "<group>"; };
+		91FEECE984B48DDA14D29A050D35346B /* POPAnimatableProperty.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPAnimatableProperty.mm; path = pop/POPAnimatableProperty.mm; sourceTree = "<group>"; };
 		925B2FAAEF5B855DCF839A0D7D54C2AA /* WaveAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WaveAnimation.h; sourceTree = "<group>"; };
 		929C33D7A0714442CF5FB7DE7B7FE476 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		92CDDB56B327F08EC4083EA14FF6F67E /* Pods-MyOftenUseTool_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyOftenUseTool_Tests-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		947019910D7520ED5136405B82F96450 /* UIView+Find.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Find.h"; sourceTree = "<group>"; };
 		96A31A8B46A50C98F4993CFE59B28642 /* NSString+Contains.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+Contains.m"; sourceTree = "<group>"; };
 		96F5E37CF98CF63923B9D89264E5FBCB /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SVRadialGradientLayer.h; path = SVProgressHUD/SVRadialGradientLayer.h; sourceTree = "<group>"; };
@@ -580,7 +582,7 @@
 		9AE9C4753D86F6DD5C5BBD0F9D3687C9 /* UIView+Constraints.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Constraints.m"; sourceTree = "<group>"; };
 		9B686E128D2A597E4A0DF6578298DA44 /* UIButton+Submitting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+Submitting.h"; sourceTree = "<group>"; };
 		9BE6CB8643099AB3C53E26FD22448AC0 /* CustomButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
-		9CDEF513403C62BB5EF792E62DA6211D /* YYCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = YYCache.framework; path = YYCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CDEF513403C62BB5EF792E62DA6211D /* YYCache.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYCache.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D4ED9E5A4502E49AC65C8008AE4F818 /* YYKVStorage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYKVStorage.h; path = YYCache/YYKVStorage.h; sourceTree = "<group>"; };
 		9E5486762BC435A8114DA266A40B6F7D /* Pods-MyOftenUseTool_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyOftenUseTool_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		9E88DBA96713C05D5CC3989569A54EC5 /* SAMKeychain.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SAMKeychain.xcconfig; sourceTree = "<group>"; };
@@ -592,18 +594,18 @@
 		A391FE6B2CA3409A173048B986B7A816 /* POPAnimationTracer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationTracer.h; path = pop/POPAnimationTracer.h; sourceTree = "<group>"; };
 		A426522D57901ED751FCC48EEBCBA8D6 /* YYDiskCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYDiskCache.h; path = YYCache/YYDiskCache.h; sourceTree = "<group>"; };
 		A44D9E5EF7021DE760C86F7B0F95D8A3 /* SAMKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SAMKeychain-dummy.m"; sourceTree = "<group>"; };
-		A47694314081A6B6CB9DA74CEEAA99A0 /* SAMKeychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SAMKeychain.modulemap; sourceTree = "<group>"; };
+		A47694314081A6B6CB9DA74CEEAA99A0 /* SAMKeychain.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SAMKeychain.modulemap; sourceTree = "<group>"; };
 		A48060F0AB7B74DFDD34BAEFC408A5AB /* UIImage+RemoteSize.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RemoteSize.m"; sourceTree = "<group>"; };
 		A4A01B3F585FF4995AD8280DAEDDCE6E /* NSString+UUID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+UUID.h"; sourceTree = "<group>"; };
 		A4E906331A5C3208936046610731BF9A /* NSObject+Property.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+Property.h"; sourceTree = "<group>"; };
 		A5D6F683756071810CE372DEC31547E8 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
 		A63194921C350C1693EB5D950267659F /* Pods-MyOftenUseTool_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyOftenUseTool_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		A8A70D94218985518539E3CD768A2287 /* FloatConversion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FloatConversion.h; path = pop/WebCore/FloatConversion.h; sourceTree = "<group>"; };
-		AB718ACAFD214BDB7A5B767D30550476 /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AFNetworking.modulemap; sourceTree = "<group>"; };
+		AB718ACAFD214BDB7A5B767D30550476 /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AFNetworking.modulemap; sourceTree = "<group>"; };
 		ABC196B3167CE59FB6D9A877F9F66933 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		ACCC2FC16ABE688D376CA7B5D715630D /* NSDictionary+Block.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Block.h"; sourceTree = "<group>"; };
 		ADBDAB7BB71FEEC1DBE2C598C51B5E85 /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
-		B02E3EAD86C0F1481C59E252013E6D96 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVProgressHUD.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B02E3EAD86C0F1481C59E252013E6D96 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B081E79D03AAF78CD4E9866294F287BA /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkActivityIndicatorManager.h; path = "UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"; sourceTree = "<group>"; };
 		B1DB894475C62FBC2C9C0A4960C4DD31 /* Pods-MyOftenUseTool_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyOftenUseTool_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B2732A0CD946DD0E6F0C87917A20EAD4 /* ZJAFNRequestTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZJAFNRequestTool.m; sourceTree = "<group>"; };
@@ -616,7 +618,7 @@
 		B6B2806878FE021775C8A26D269C9BA0 /* POPCGUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPCGUtils.h; path = pop/POPCGUtils.h; sourceTree = "<group>"; };
 		B77AC27FBEA1D3E15CD2C30293D25E0B /* UIButton+BackgroundColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BackgroundColor.m"; sourceTree = "<group>"; };
 		BA584B4368B4494E9EABFC974D17EAF2 /* UI_Categories.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UI_Categories.h; sourceTree = "<group>"; };
-		BAED4B1321C6CDBEDD88B7018A16DAFC /* MyOftenUseTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MyOftenUseTool.framework; path = MyOftenUseTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAED4B1321C6CDBEDD88B7018A16DAFC /* MyOftenUseTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyOftenUseTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB565F6D0D96701DF146F7BA554B036 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
 		BBD449C7D690C016CE0D58C09FEC2C18 /* NSArray+Block.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Block.m"; sourceTree = "<group>"; };
 		BCC19FA0C7635904CD0517D6A5D0339F /* NSObject+KVOBlocks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVOBlocks.m"; sourceTree = "<group>"; };
@@ -644,6 +646,8 @@
 		C96AC65F376E3BE727FE5B1426522298 /* POPBasicAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPBasicAnimation.h; path = pop/POPBasicAnimation.h; sourceTree = "<group>"; };
 		CAB7B2E9DE49B0081E1724E5E71EA64C /* YYMemoryCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = YYMemoryCache.h; path = YYCache/YYMemoryCache.h; sourceTree = "<group>"; };
 		CC09FACA853AC5B15FFE1E60D7248963 /* CustomLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CustomLabel.h; sourceTree = "<group>"; };
+		CF4D2DDD1E306D4C00FA3118 /* UIImage+RoateAndScale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoateAndScale.h"; sourceTree = "<group>"; };
+		CF4D2DDE1E306D4C00FA3118 /* UIImage+RoateAndScale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoateAndScale.m"; sourceTree = "<group>"; };
 		CFC9E7B28116292570156F76BB5B35A5 /* UIImage+Color.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		D0F6B2CB59560CBCE2F33C8BD5290B81 /* NSString+DictionaryValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+DictionaryValue.h"; sourceTree = "<group>"; };
 		D18446855FC3CB42099EC8137B9ED512 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SVIndefiniteAnimatedView.m; path = SVProgressHUD/SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
@@ -653,7 +657,7 @@
 		D5E295396D51586B1A463AD5345BDF75 /* ZJSystemUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZJSystemUtils.h; sourceTree = "<group>"; };
 		D6823A4F9361CE2BCA8092A869EDAEE2 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		D6E3C38C91C674EAAE17ACF7784B69AF /* UITextField+Blocks.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Blocks.m"; sourceTree = "<group>"; };
-		D7B17DD78F7B3EC175FD7BC0EF28CE56 /* POPCGUtils.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPCGUtils.mm; path = pop/POPCGUtils.mm; sourceTree = "<group>"; };
+		D7B17DD78F7B3EC175FD7BC0EF28CE56 /* POPCGUtils.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPCGUtils.mm; path = pop/POPCGUtils.mm; sourceTree = "<group>"; };
 		D8161D324A2AC651E8FD1F621B0BCA50 /* NSArray+Block.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSArray+Block.h"; sourceTree = "<group>"; };
 		D8555C681349872D9ED0B77D6187B100 /* NSData+SDDataCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSData+SDDataCache.m"; sourceTree = "<group>"; };
 		D8A16E75FADA0687EA30A4AC23238818 /* UIViewController+TopBarMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TopBarMessage.m"; sourceTree = "<group>"; };
@@ -666,13 +670,13 @@
 		DD3C9AC5F010795F54401FF4A9C46001 /* POPSpringAnimationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPSpringAnimationInternal.h; path = pop/POPSpringAnimationInternal.h; sourceTree = "<group>"; };
 		DD4EA997D5A86F1D8E6614B324C57D46 /* NSString+Emoji.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
 		DD5B2FC9995E8F980876FAEB6F1FBC36 /* POPVector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPVector.h; path = pop/POPVector.h; sourceTree = "<group>"; };
-		DE3726A55B1969260E61AE64CDDC2193 /* POPAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimation.mm; path = pop/POPAnimation.mm; sourceTree = "<group>"; };
+		DE3726A55B1969260E61AE64CDDC2193 /* POPAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPAnimation.mm; path = pop/POPAnimation.mm; sourceTree = "<group>"; };
 		DE3A740D40F9F4FE22AE32F61A8351FD /* CustomTextView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CustomTextView.h; sourceTree = "<group>"; };
-		E14D9934BC96C593B18DA635E281590D /* POPPropertyAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPPropertyAnimation.mm; path = pop/POPPropertyAnimation.mm; sourceTree = "<group>"; };
+		E14D9934BC96C593B18DA635E281590D /* POPPropertyAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPPropertyAnimation.mm; path = pop/POPPropertyAnimation.mm; sourceTree = "<group>"; };
 		E26D20F417C909F5350E4C1473E691CB /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		E28D0DA2F6B876A4BC1BE4B2DB61B2B9 /* NSDictionary+SafeAccess.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeAccess.h"; sourceTree = "<group>"; };
 		E30EBA73E66B96CCE25A7165124BD0D6 /* UIButton+BackgroundColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+BackgroundColor.h"; sourceTree = "<group>"; };
-		E41C4B413A3361D1C8A5DFD0BBC117BA /* POPDecayAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPDecayAnimation.mm; path = pop/POPDecayAnimation.mm; sourceTree = "<group>"; };
+		E41C4B413A3361D1C8A5DFD0BBC117BA /* POPDecayAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPDecayAnimation.mm; path = pop/POPDecayAnimation.mm; sourceTree = "<group>"; };
 		E4F71E73BFBFFB050D54D8722E0BFF59 /* Pods-MyOftenUseTool_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyOftenUseTool_Example-resources.sh"; sourceTree = "<group>"; };
 		E50D3E3B8AFD10DDD653F92C7FA1A0EF /* NSDate+Utilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		E584AB0C8B5AF5AB2B915D6BB53E64C4 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
@@ -682,14 +686,14 @@
 		E83C921A0E3C47F22391D69D99FE180F /* SAMKeychainQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SAMKeychainQuery.h; path = Sources/SAMKeychainQuery.h; sourceTree = "<group>"; };
 		E8CDB218E42F03D54A67659F99411F1F /* ZJMethodHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZJMethodHeader.h; sourceTree = "<group>"; };
 		E944BBF615D4A2B0CFA020DF1C7BDBF6 /* NSDictionary+JSONString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JSONString.m"; sourceTree = "<group>"; };
-		E9563E1AB4483B9631688D0C6AA0408C /* POPAnimationExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimationExtras.mm; path = pop/POPAnimationExtras.mm; sourceTree = "<group>"; };
+		E9563E1AB4483B9631688D0C6AA0408C /* POPAnimationExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = POPAnimationExtras.mm; path = pop/POPAnimationExtras.mm; sourceTree = "<group>"; };
 		EAE8612E631E96F659F0285B6E03F3AB /* MyOftenUseTool-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MyOftenUseTool-dummy.m"; sourceTree = "<group>"; };
 		EC04416FACD4FB11832D30B430D87969 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GIF.m"; sourceTree = "<group>"; };
 		ECFD28FCB3DE0B66CFFE6E5BD14C34DA /* UIView+Screenshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+Screenshot.h"; sourceTree = "<group>"; };
 		ED0CD421C3E03CB9361F7BB86DA19D85 /* NSDate+Formatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Formatter.m"; sourceTree = "<group>"; };
 		EE1A714F34CCA81822F11C3085E78216 /* CustomTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = CustomTextField.h; sourceTree = "<group>"; };
 		EEBF33C02F79734C382F3BDE80F13945 /* NSString+RemoveEmoji.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+RemoveEmoji.m"; sourceTree = "<group>"; };
-		F0F1935391B819F401DA57FBE2CC37C7 /* SVProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SVProgressHUD.modulemap; sourceTree = "<group>"; };
+		F0F1935391B819F401DA57FBE2CC37C7 /* SVProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SVProgressHUD.modulemap; sourceTree = "<group>"; };
 		F12EA812A56483C4B292680199E3EC6F /* UIImage+FileName.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+FileName.h"; sourceTree = "<group>"; };
 		F14210A397246C9AB81D8F719715EAD1 /* UIImage+Merge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Merge.m"; sourceTree = "<group>"; };
 		F168978B4D30EADBD9C1CC10787F0830 /* UIImage+Alpha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
@@ -705,7 +709,7 @@
 		F52BD59BD5B3B3039A364458D46C24FE /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		F9D15462928EE9FF23EF508A312F76E8 /* ZJAlertViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ZJAlertViewController.m; sourceTree = "<group>"; };
 		FA50110BB2D3C0613DBED5178682ED97 /* UIView+Toast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
-		FD8ECD2EB3F6CB328E9241E70E253CD5 /* Pods-MyOftenUseTool_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MyOftenUseTool_Example.modulemap"; sourceTree = "<group>"; };
+		FD8ECD2EB3F6CB328E9241E70E253CD5 /* Pods-MyOftenUseTool_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MyOftenUseTool_Example.modulemap"; sourceTree = "<group>"; };
 		FED4862D39035A1C2E7A06171BA7D176 /* NSDate+Formatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSDate+Formatter.h"; sourceTree = "<group>"; };
 		FFE672F9FE883349F3DAD9EE762D1D3D /* POPDecayAnimationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPDecayAnimationInternal.h; path = pop/POPDecayAnimationInternal.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -819,7 +823,6 @@
 				D5E295396D51586B1A463AD5345BDF75 /* ZJSystemUtils.h */,
 				C0EC7AFD2B7AAEDDCFD9DAF5E59064B8 /* ZJSystemUtils.m */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -853,7 +856,6 @@
 				9BD27D13A0241499D0C73006D4830385 /* Resources */,
 				62BD0128252D44A175BC13B26111C2E0 /* Support Files */,
 			);
-			name = SVProgressHUD;
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -875,7 +877,6 @@
 			children = (
 				350AF00C8CF8C2DF88EE2A8419B2C154 /* Classes */,
 			);
-			name = MyOftenUseTool;
 			path = MyOftenUseTool;
 			sourceTree = "<group>";
 		};
@@ -892,7 +893,6 @@
 			children = (
 				6F8EDB6DE50AD67AD65F8F889A5BF96A /* Resource.bundle */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -901,7 +901,6 @@
 			children = (
 				AC19E6706AC336A8A2E2AD3AF3F35C92 /* Classes */,
 			);
-			name = MyOftenUseTool;
 			path = MyOftenUseTool;
 			sourceTree = "<group>";
 		};
@@ -918,7 +917,6 @@
 			children = (
 				7C6A8B23564759D89A87AC142E4490CC /* Classes */,
 			);
-			name = MyOftenUseTool;
 			path = MyOftenUseTool;
 			sourceTree = "<group>";
 		};
@@ -933,7 +931,6 @@
 				D872EF72CBA4116820FA70783974220B /* Support Files */,
 				7D5659E6199B9B8C69195BFB617F47D3 /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -991,6 +988,8 @@
 				A48060F0AB7B74DFDD34BAEFC408A5AB /* UIImage+RemoteSize.m */,
 				D6823A4F9361CE2BCA8092A869EDAEE2 /* UIImage+RoundedCorner.h */,
 				7ACB9B3E375520E773316CAADBC9AC17 /* UIImage+RoundedCorner.m */,
+				CF4D2DDD1E306D4C00FA3118 /* UIImage+RoateAndScale.h */,
+				CF4D2DDE1E306D4C00FA3118 /* UIImage+RoateAndScale.m */,
 				673A56C98B98FBA608AB9C27416C3977 /* UITextField+Blocks.h */,
 				D6E3C38C91C674EAAE17ACF7784B69AF /* UITextField+Blocks.m */,
 				42B33355965DD04E0CB011A7618CA5A6 /* UITextView+PlaceHolder.h */,
@@ -1018,7 +1017,6 @@
 				01AA4DE983257BDF5BC04F287650B872 /* ZJAlertViewController.h */,
 				F9D15462928EE9FF23EF508A312F76E8 /* ZJAlertViewController.m */,
 			);
-			name = UIKit;
 			path = UIKit;
 			sourceTree = "<group>";
 		};
@@ -1071,7 +1069,6 @@
 				525BDC165BD6D2836C4FA93A632972F2 /* Resources */,
 				6EABE93EBFEFE1F43198836FB7705B2F /* Support Files */,
 			);
-			name = SAMKeychain;
 			path = SAMKeychain;
 			sourceTree = "<group>";
 		};
@@ -1172,7 +1169,6 @@
 				7F11E87BE5BEA82AA8E777EC83F8C66D /* NSTimer+Blocks.h */,
 				5652AE4FFB6B72E301412DC710C19D84 /* NSTimer+Blocks.m */,
 			);
-			name = Foundation;
 			path = Foundation;
 			sourceTree = "<group>";
 		};
@@ -1182,7 +1178,6 @@
 				6BFA912E087A3AFDFC15D6B389533FB0 /* HUDHelper.h */,
 				F33015C635B3868F0171810D74E49C78 /* HUDHelper.m */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -1245,7 +1240,6 @@
 			children = (
 				1B6D59527A17D2CA4F44F771E923E5AE /* Classes */,
 			);
-			name = MyOftenUseTool;
 			path = MyOftenUseTool;
 			sourceTree = "<group>";
 		};
@@ -1268,7 +1262,6 @@
 			children = (
 				FF3522109779861E42B7E615D0937ABF /* Classes */,
 			);
-			name = MyOftenUseTool;
 			path = MyOftenUseTool;
 			sourceTree = "<group>";
 		};
@@ -1285,7 +1278,6 @@
 			children = (
 				DB8C514694CFF979D5EA376C6A6E54B5 /* Classes */,
 			);
-			name = MyOftenUseTool;
 			path = MyOftenUseTool;
 			sourceTree = "<group>";
 		};
@@ -1311,7 +1303,6 @@
 				925B2FAAEF5B855DCF839A0D7D54C2AA /* WaveAnimation.h */,
 				137D5F7D42AECDB2893BCF00EA4EB6F4 /* WaveAnimation.m */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -1328,7 +1319,6 @@
 				20007C76ADF235420035F73E3A8EBA5E /* YYMemoryCache.m */,
 				8F1A69C06B50366F2704AD7C3547B06A /* Support Files */,
 			);
-			name = YYCache;
 			path = YYCache;
 			sourceTree = "<group>";
 		};
@@ -1457,7 +1447,6 @@
 				B2BA2DBF5660AC4C52C671257E81ED6B /* UnitBezier.h */,
 				C72578BC23949FE3EDD340CC38795F54 /* Support Files */,
 			);
-			name = pop;
 			path = pop;
 			sourceTree = "<group>";
 		};
@@ -1490,7 +1479,6 @@
 				A2A521FB2C47267F38D1A0DBEDEF5887 /* ZJAFNRequestTool.h */,
 				B2732A0CD946DD0E6F0C87917A20EAD4 /* ZJAFNRequestTool.m */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -1499,7 +1487,6 @@
 			children = (
 				7B93AD1AD707EF2670477EF72F8DC3C0 /* Foundation */,
 			);
-			name = MyOftenUseTool;
 			path = MyOftenUseTool;
 			sourceTree = "<group>";
 		};
@@ -1534,7 +1521,6 @@
 			children = (
 				536C1CCDFE24F682D4FE6594661C0814 /* UIKit */,
 			);
-			name = MyOftenUseTool;
 			path = MyOftenUseTool;
 			sourceTree = "<group>";
 		};
@@ -1559,7 +1545,6 @@
 			children = (
 				E8CDB218E42F03D54A67659F99411F1F /* ZJMethodHeader.h */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -1609,6 +1594,7 @@
 				4DB0CA9766FF84CEA12680A9B6459307 /* NSString+Hash.h in Headers */,
 				E15E044091C96F41410EC003E5CC44EC /* NSString+MIME.h in Headers */,
 				A41E7FBA68F1E5DAFAF0DAE7EF0B711A /* NSString+RemoveEmoji.h in Headers */,
+				CF4D2DDF1E306D4C00FA3118 /* UIImage+RoateAndScale.h in Headers */,
 				15D99C5F21398FB4FBB239E2E779FEE5 /* NSString+Trims.h in Headers */,
 				4B5094C0D487C9651925A06B209794E0 /* NSString+UrlEncode.h in Headers */,
 				64F18A9FD1BC601A4319CEA7292A0028 /* NSString+Util.h in Headers */,
@@ -2093,6 +2079,7 @@
 				09C4265E3D71CC5B60A6F36723CB1B9B /* NSTimer+Addition.m in Sources */,
 				05C4483F07134D2BFA0FF0F0E7802225 /* NSTimer+Blocks.m in Sources */,
 				14E5EF7A8361DCA5400880B617AFE2B2 /* UIButton+BackgroundColor.m in Sources */,
+				CF4D2DE01E306D4C00FA3118 /* UIImage+RoateAndScale.m in Sources */,
 				458CF5CE1CB3660BFCB0C2CA83699134 /* UIButton+Block.m in Sources */,
 				E9D06EB3F21A034D8EF1461038BF35BE /* UIButton+CountDown.m in Sources */,
 				2EAAFF3DF308740F58D8FD71812EBCB0 /* UIButton+Indicator.m in Sources */,

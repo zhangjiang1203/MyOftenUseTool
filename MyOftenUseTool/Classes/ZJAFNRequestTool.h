@@ -173,7 +173,6 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
 + (NSURLSessionTask *)uploadWithURL:(NSString *)URL
                          parameters:(NSDictionary *)parameters
                              images:(NSArray<UIImage *> *)images
-                               name:(NSString *)name
                            progress:(HttpProgress)progress
                             success:(UploadMyFileSuccess)success
                             failure:(RequestFailBlock)failure;

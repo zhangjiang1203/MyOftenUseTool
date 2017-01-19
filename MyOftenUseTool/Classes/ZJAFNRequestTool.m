@@ -226,7 +226,6 @@ static AFHTTPSessionManager *_manager;
 + (NSURLSessionTask *)uploadWithURL:(NSString *)URL
                          parameters:(NSDictionary *)parameters
                              images:(NSArray<UIImage *> *)images
-                               name:(NSString *)name
                            progress:(HttpProgress)progress
                             success:(UploadMyFileSuccess)success
                             failure:(RequestFailBlock)failure
@@ -240,8 +239,18 @@ static AFHTTPSessionManager *_manager;
         NSString *dateString = [formatter stringFromDate:date];
         //压缩-添加-上传图片
         [images enumerateObjectsUsingBlock:^(UIImage * _Nonnull image, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
-            [formData appendPartWithFileData:imageData name:name fileName:[NSString stringWithFormat:@"%@-%zd",dateString,idx] mimeType:@"image/jpg/png/jpeg"];
+            NSData *imageData;
+            if (UIImagePNGRepresentation(image) == nil)
+            {
+                imageData = UIImageJPEGRepresentation(image, 1.0);
+                if (imageData.length/1024 > 1024) {
+                    imageData = UIImageJPEGRepresentation(image, 0.5);
+                }
+            }else{
+                imageData = UIImagePNGRepresentation(image);
+            }
+            
+            [formData appendPartWithFileData:imageData name:@"updateFile" fileName:[NSString stringWithFormat:@"%@-%zd",dateString,idx] mimeType:@"image/jpg/png/jpeg"];
         }];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         //上传进度
