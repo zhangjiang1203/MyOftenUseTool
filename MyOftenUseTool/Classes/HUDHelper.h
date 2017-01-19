@@ -276,13 +276,15 @@ typedef enum {
  */
 + (NSString *)generateTradeNO;
 
+/**
+ 简单绘制线性渐变效果 从上至下
 
-/*!
- @brief 简单绘制线性渐变效果 从上至下
  @param topColor 上色
  @param buttomColor 下色
- @param startpoint 起点
- @param endpoint   终点
+ @param startPoint 起点
+ @param endPoint 终点
+ @param frame 画布大小
+ @return 返回的图层
  */
 +(CALayer*)drawLineGradient:(UIColor*)topColor
                 buttomColor:(UIColor*)buttomColor

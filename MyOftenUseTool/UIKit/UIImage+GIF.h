@@ -20,7 +20,7 @@
 /**
  *  加载动态图
  *
- *  @param name 动态图名称
+ *  @param data 动态图名称
  */
 + (nullable UIImage *)sd_animatedGIFWithData:(nullable NSData *)data;
 
