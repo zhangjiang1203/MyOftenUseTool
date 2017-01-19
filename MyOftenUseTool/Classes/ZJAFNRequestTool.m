@@ -250,13 +250,13 @@ static AFHTTPSessionManager *_manager;
                 imageData = UIImagePNGRepresentation(image);
             }
             
-            [formData appendPartWithFileData:imageData name:@"updateFile" fileName:[NSString stringWithFormat:@"%@-%zd",dateString,idx] mimeType:@"image/jpg/png/jpeg"];
+            [formData appendPartWithFileData:imageData name:[NSString stringWithFormat:@"updateFile_%zd",idx] fileName:[NSString stringWithFormat:@"%@_%zd",dateString,idx] mimeType:@"image/jpg/png/jpeg"];
         }];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         //上传进度
-        dispatch_sync(dispatch_get_main_queue(), ^{
+//        dispatch_sync(dispatch_get_main_queue(), ^{
             progress ? progress(uploadProgress) : nil;
-        });
+//        });
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success ? success(responseObject) : nil;
         NSLog(@"responseObject = %@",responseObject);

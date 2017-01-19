@@ -56,6 +56,7 @@
 #import "UIImage+GIF.h"
 #import "UIImage+Merge.h"
 #import "UIImage+RemoteSize.h"
+#import "UIImage+RoateAndScale.h"
 #import "UIImage+RoundedCorner.h"
 #import "UITextField+Blocks.h"
 #import "UITextView+PlaceHolder.h"
