@@ -222,13 +222,45 @@ static AFHTTPSessionManager *_manager;
 }
 
 
-#pragma mark - 上传图片文件
-+ (NSURLSessionTask *)uploadWithURL:(NSString *)URL
-                         parameters:(NSDictionary *)parameters
-                             images:(NSArray<UIImage *> *)images
-                           progress:(HttpProgress)progress
-                            success:(UploadMyFileSuccess)success
-                            failure:(RequestFailBlock)failure
++(NSURLSessionTask *)uploadSignalImageWithURL:(NSString *)URL
+                                   parameters:(NSDictionary *)parameters
+                                       images:(UIImage *)image
+                                     progress:(HttpProgress)progress
+                                      success:(UploadMyFileSuccess)success
+                                      failure:(RequestFailBlock)failure{
+    return [_manager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSDate *date = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        [formatter setDateFormat:@"yyyy/MM/dd/hh/mm/ss"];
+        NSString *dateString = [formatter stringFromDate:date];
+        NSData *imageData;
+        if (UIImagePNGRepresentation(image) == nil)
+        {
+            imageData = UIImageJPEGRepresentation(image, 1.0);
+            if (imageData.length/1024 > 1024) {
+                imageData = UIImageJPEGRepresentation(image, 0.5);
+            }
+        }else{
+            imageData = UIImagePNGRepresentation(image);
+        }
+        [formData appendPartWithFileData:imageData name:@"updateFile" fileName:[NSString stringWithFormat:@"%@",dateString] mimeType:@"image/jpg/png/jpeg"];
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+        progress?progress(uploadProgress):nil;
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        success ? success(responseObject) : nil;
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure ? failure(error.description) : nil;
+    }];
+    
+}
+
+#pragma mark - 上传多张图片文件
++ (NSURLSessionTask *)uploadMultipleImageWithURL:(NSString *)URL
+                                      parameters:(NSDictionary *)parameters
+                                          images:(NSArray<UIImage *> *)images
+                                        progress:(HttpProgress)progress
+                                         success:(UploadMyFileSuccess)success
+                                         failure:(RequestFailBlock)failure
 {
     
     return [_manager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {

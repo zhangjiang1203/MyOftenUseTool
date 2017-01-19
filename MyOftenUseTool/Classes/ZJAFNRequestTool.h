@@ -157,25 +157,42 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
                               success:(void(^)(NSString *))success
                               failure:(RequestFailBlock)failure;
 /**
- *  上传图片文件
+ *  上传多个图片文件
  *  @param URL        请求地址
  *  @param parameters 请求参数
  *  @param images     图片数组
- *  @param name       文件对应服务器上的字段
- *  @param fileName   文件名
- *  @param mimeType   图片文件的类型,例:png、jpeg(默认类型)....
  *  @param progress   上传进度信息
  *  @param success    请求成功的回调
  *  @param failure    请求失败的回调
  *
  *  @return 返回的对象可取消请求,调用cancel方法
  */
-+ (NSURLSessionTask *)uploadWithURL:(NSString *)URL
-                         parameters:(NSDictionary *)parameters
-                             images:(NSArray<UIImage *> *)images
-                           progress:(HttpProgress)progress
-                            success:(UploadMyFileSuccess)success
-                            failure:(RequestFailBlock)failure;
++ (NSURLSessionTask *)uploadMultipleImageWithURL:(NSString *)URL
+                                      parameters:(NSDictionary *)parameters
+                                          images:(NSArray<UIImage *> *)images
+                                        progress:(HttpProgress)progress
+                                         success:(UploadMyFileSuccess)success
+                                         failure:(RequestFailBlock)failure;
+
+
+/**
+ 上传单张图片
+
+ @param URL 请求地址
+ @param parameters 请求参数
+ @param image 上传的图片
+ @param progress 上传进度信息
+ @param success 请求成功的回调
+ @param failure 请求失败的回调
+ @return 返回的可取消请求
+ */
++ (NSURLSessionTask *)uploadSignalImageWithURL:(NSString*)URL
+                                    parameters:(NSDictionary *)parameters
+                                        images:(UIImage*)image
+                                      progress:(HttpProgress)progress
+                                       success:(UploadMyFileSuccess)success
+                                       failure:(RequestFailBlock)failure;
+
 
 /**
  *  取消当前的请求
@@ -219,35 +236,3 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
 +(void)removeAllHttpCache;
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

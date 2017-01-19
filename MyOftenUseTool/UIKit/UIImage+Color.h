@@ -64,15 +64,13 @@
 
 /**
  *  返回该图片是否有透明度通道
- *
- *  @return
  */
 - (BOOL)hasAlphaChannel;
 
 /**
  *  获得灰度图
  *
- *  @param UIImage 原图像
+ *  @param sourceImage 原图像
  *
  *  @return 返回灰度图
  */
