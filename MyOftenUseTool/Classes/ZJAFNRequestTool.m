@@ -54,7 +54,7 @@ static AFHTTPSessionManager *_manager;
 +(void)initialize{
     _manager = [AFHTTPSessionManager manager];
     //设置请求参数的类型:JSON (AFJSONRequestSerializer,AFHTTPRequestSerializer)
-    _manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//    _manager.requestSerializer = [AFJSONRequestSerializer serializer];
     //设置请求的超时时间
     _manager.requestSerializer.timeoutInterval = 30.f;
     //设置服务器返回结果的类型:JSON (AFJSONResponseSerializer,AFHTTPResponseSerializer)

@@ -32,10 +32,15 @@ static const char *phTextView = "placeHolderTextView";
 # pragma mark -
 # pragma mark - UITextViewDelegate
 - (void)textViewDidBeginEditing:(UITextView *)textView {
-    self.placeHolderTextView.hidden = YES;
-    // if (self.textViewDelegate) {
-    //
-    // }
+    
+}
+
+-(void)textViewDidChange:(UITextView *)textView{
+    if (textView.text.length) {
+        self.placeHolderTextView.hidden = YES;
+    }else{
+        self.placeHolderTextView.hidden = NO;
+    }
 }
 - (void)textViewDidEndEditing:(UITextView *)textView {
     if (textView.text && [textView.text isEqualToString:@""]) {

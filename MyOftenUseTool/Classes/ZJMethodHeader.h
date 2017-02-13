@@ -116,6 +116,7 @@
 #import "HUDHelper.h"
 #import "ZJAFNRequestTool.h"
 #import "WaveAnimation.h"
+#import "ZJSystemUtils.h"
 
 
 #endif
