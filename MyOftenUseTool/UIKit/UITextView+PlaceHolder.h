@@ -11,5 +11,8 @@
 @interface UITextView (PlaceHolder) <UITextViewDelegate>
 @property (nonatomic, strong) UITextView *placeHolderTextView;
 //@property (nonatomic, assign) id <UITextViewDelegate> textViewDelegate;
-- (void)addPlaceHolder:(NSString *)placeHolder;
+/*
+ * 设置显示的占位符和占位符颜色
+ */
+- (void)addPlaceHolder:(NSString *)placeHolder color:(UIColor*)color;
 @end

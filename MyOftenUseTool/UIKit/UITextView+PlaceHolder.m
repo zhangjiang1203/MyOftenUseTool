@@ -15,14 +15,14 @@ static const char *phTextView = "placeHolderTextView";
 - (void)setPlaceHolderTextView:(UITextView *)placeHolderTextView {
     objc_setAssociatedObject(self, phTextView, placeHolderTextView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-- (void)addPlaceHolder:(NSString *)placeHolder {
+- (void)addPlaceHolder:(NSString *)placeHolder color:(UIColor*)color{
     if (![self placeHolderTextView]) {
         self.delegate = self;
         UITextView *textView = [[UITextView alloc] initWithFrame:self.bounds];
         textView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         textView.font = self.font;
         textView.backgroundColor = [UIColor clearColor];
-        textView.textColor = [UIColor grayColor];
+        textView.textColor = color?color:[UIColor grayColor];
         textView.userInteractionEnabled = NO;
         textView.text = placeHolder;
         [self addSubview:textView];
