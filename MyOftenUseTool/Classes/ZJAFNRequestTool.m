@@ -120,6 +120,8 @@ static AFHTTPSessionManager *_manager;
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
+                //设置缓存保存缓存数据
+                cacheBlock?:[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params];
                 successBlock(task,responseObject);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
@@ -133,6 +135,8 @@ static AFHTTPSessionManager *_manager;
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
+                //设置缓存保存缓存数据
+                cacheBlock?:[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params];
                 successBlock(task,responseObject);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
@@ -144,6 +148,8 @@ static AFHTTPSessionManager *_manager;
         {
             _httpDataTask = [_manager PUT:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
+                //设置缓存保存缓存数据
+                cacheBlock?:[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params];
                 successBlock(task,responseObject);
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
@@ -352,34 +358,3 @@ static YYCache *_dataCache;
 }
 
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
