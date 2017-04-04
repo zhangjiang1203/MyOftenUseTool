@@ -919,7 +919,8 @@ double radians(float degrees) {
 
 
 #pragma mark -给UILabel设置行间距和字间距
-+(void)setLabelSpace:(UILabel*)label withValue:(NSString*)str withFont:(UIFont*)font space:(CGFloat)lineSpace{
++(void)setLabelSpace:(UILabel*)label withValue:(NSString*)str withFont:(UIFont*)font color:(UIColor*)color space:(CGFloat)lineSpace{
+    
     NSMutableParagraphStyle *paraStyle = [[NSMutableParagraphStyle alloc] init];
     paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
     paraStyle.alignment = NSTextAlignmentLeft;
@@ -930,8 +931,11 @@ double radians(float degrees) {
     paraStyle.headIndent = 0;
     paraStyle.tailIndent = 0;
     //设置字间距 NSKernAttributeName:@1.5f
-    NSDictionary *dic = @{NSFontAttributeName:font, NSParagraphStyleAttributeName:paraStyle, NSKernAttributeName:@1.5f
-                          };
+    UIColor *defaultColor = color?color:[UIColor blackColor];
+    NSDictionary *dic = @{NSFontAttributeName:font,
+                          NSParagraphStyleAttributeName:paraStyle,
+                          NSKernAttributeName:@1.5f,
+                          NSForegroundColorAttributeName:defaultColor};
     NSAttributedString *attributeStr = [[NSAttributedString alloc] initWithString:str attributes:dic];
     label.attributedText = attributeStr;
 }

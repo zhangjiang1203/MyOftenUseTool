@@ -332,9 +332,10 @@ typedef enum {
  *  @param label     文本
  *  @param str       文字
  *  @param font      字体
+ *  @param color     文字颜色 不设置默认为黑色
  *  @param lineSpace 行间距
  */
-+(void)setLabelSpace:(UILabel*)label withValue:(NSString*)str withFont:(UIFont*)font space:(CGFloat)lineSpace;
++(void)setLabelSpace:(UILabel*)label withValue:(NSString*)str withFont:(UIFont*)font color:(UIColor*)color space:(CGFloat)lineSpace;
 
 
 #pragma mark -计算UILabel的高度(带有行间距的情况)

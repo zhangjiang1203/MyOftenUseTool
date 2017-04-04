@@ -122,10 +122,14 @@ static AFHTTPSessionManager *_manager;
                 [SVProgressHUD dismiss];
                 //设置缓存保存缓存数据
                 cacheBlock?:[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params];
-                successBlock(task,responseObject);
+                if (successBlock) {
+                    successBlock(task,responseObject);
+                }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
-                failBlock(error.description);
+                if (failBlock) {
+                    failBlock(error.description);
+                }
             }];
         }
             break;
@@ -137,10 +141,14 @@ static AFHTTPSessionManager *_manager;
                 [SVProgressHUD dismiss];
                 //设置缓存保存缓存数据
                 cacheBlock?:[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params];
-                successBlock(task,responseObject);
+                if (successBlock) {
+                    successBlock(task,responseObject);
+                }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
-                failBlock(error.description);
+                if (failBlock) {
+                    failBlock(error.description);
+                }
             }];
         }
             break;
@@ -150,10 +158,14 @@ static AFHTTPSessionManager *_manager;
                 [SVProgressHUD dismiss];
                 //设置缓存保存缓存数据
                 cacheBlock?:[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params];
-                successBlock(task,responseObject);
+                if (successBlock) {
+                    successBlock(task,responseObject);
+                }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
-                failBlock(error.description);
+                if (failBlock) {
+                    failBlock(error.description);
+                }
             }];
         }
             break;
