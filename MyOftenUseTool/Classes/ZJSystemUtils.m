@@ -15,8 +15,8 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <SystemConfiguration/CaptiveNetwork.h>
 
-static NSString *key = @"CFBundleShortVersionString";
-
+static NSString *versionKey = @"CFBundleShortVersionString";
+static NSString *appNameKey = @"CFBundleDisplayName";
 #define KUserPasswordIdentifier @"userPassWord"
 #define KUserAccount            @"userAccount"
 #define KUserLogin              @"userLogin"
@@ -178,12 +178,16 @@ static NSString *key = @"CFBundleShortVersionString";
 }
 
 +(NSString *)getCurrentVersion{
-    return [NSBundle mainBundle].infoDictionary[key];
+    return [NSBundle mainBundle].infoDictionary[versionKey];
 }
 
 +(NSString*)getHistoryVersion{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults stringForKey:key];
+    return [defaults stringForKey:versionKey];
+}
+
++(NSString*)getAppName{
+    return [NSBundle mainBundle].infoDictionary[appNameKey];
 }
 
 +(void)setLoginState:(BOOL)state{
@@ -215,7 +219,7 @@ static NSString *key = @"CFBundleShortVersionString";
     }else{
         //是第一次登陆,存储版本号
         //存储新版本号
-        [[NSUserDefaults standardUserDefaults] setObject:currentVersions forKey:key];
+        [[NSUserDefaults standardUserDefaults] setObject:currentVersions forKey:versionKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
         return YES;
     }

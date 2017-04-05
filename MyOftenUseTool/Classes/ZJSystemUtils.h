@@ -42,6 +42,11 @@
  */
 +(NSString*)getHistoryVersion;
 
+/*
+ * 获取app名称
+ */
++(NSString*)getAppName;
+
 /**
  设置登录状态 0 退出登录  1 登录成功
  */
