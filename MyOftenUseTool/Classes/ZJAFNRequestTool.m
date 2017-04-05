@@ -108,7 +108,7 @@ static AFHTTPSessionManager *_manager;
     }
     
     if (isShow) {
-        [SVProgressHUD showWithStatus:@"小二努力加载中……"];
+        [SVProgressHUD showWithStatus:@"加载中……"];
     }
     
     //拼接URL
@@ -121,7 +121,7 @@ static AFHTTPSessionManager *_manager;
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
                 //设置缓存保存缓存数据
-                cacheBlock?:[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params];
+                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
                 if (successBlock) {
                     successBlock(task,responseObject);
                 }
@@ -140,7 +140,7 @@ static AFHTTPSessionManager *_manager;
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
                 //设置缓存保存缓存数据
-                cacheBlock?:[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params];
+                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
                 if (successBlock) {
                     successBlock(task,responseObject);
                 }
@@ -157,7 +157,7 @@ static AFHTTPSessionManager *_manager;
             _httpDataTask = [_manager PUT:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
                 //设置缓存保存缓存数据
-                cacheBlock?:[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params];
+                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
                 if (successBlock) {
                     successBlock(task,responseObject);
                 }

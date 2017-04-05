@@ -6,7 +6,7 @@
 //  Copyright (c) 2014年 www.skyfox.org. All rights reserved.
 //
 
-#import "NSString+hash.h"
+#import "NSString+Hash.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <CommonCrypto/CommonHMAC.h>
 @implementation NSString (Hash)

@@ -14,49 +14,49 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - MyOftenUseTool (0.5.8):
+  - MyOftenUseTool (0.6.1):
     - AFNetworking (~> 3.1.0)
-    - MyOftenUseTool/AFNRequest (= 0.5.8)
-    - MyOftenUseTool/Foundation+Category (= 0.5.8)
-    - MyOftenUseTool/HUDMethod (= 0.5.8)
-    - MyOftenUseTool/SystemMethod (= 0.5.8)
-    - MyOftenUseTool/UIKit+Category (= 0.5.8)
-    - MyOftenUseTool/WaveAnimation (= 0.5.8)
+    - MyOftenUseTool/AFNRequest (= 0.6.1)
+    - MyOftenUseTool/Foundation+Category (= 0.6.1)
+    - MyOftenUseTool/HUDMethod (= 0.6.1)
+    - MyOftenUseTool/SystemMethod (= 0.6.1)
+    - MyOftenUseTool/UIKit+Category (= 0.6.1)
+    - MyOftenUseTool/WaveAnimation (= 0.6.1)
     - pop
     - SAMKeychain
     - SVProgressHUD
     - YYCache
-  - MyOftenUseTool/AFNRequest (0.5.8):
-    - AFNetworking (~> 3.1.0)
-    - pop
-    - SAMKeychain
-    - SVProgressHUD
-    - YYCache
-  - MyOftenUseTool/Foundation+Category (0.5.8):
+  - MyOftenUseTool/AFNRequest (0.6.1):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
     - YYCache
-  - MyOftenUseTool/HUDMethod (0.5.8):
+  - MyOftenUseTool/Foundation+Category (0.6.1):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
     - YYCache
-  - MyOftenUseTool/SystemMethod (0.5.8):
+  - MyOftenUseTool/HUDMethod (0.6.1):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
     - YYCache
-  - MyOftenUseTool/UIKit+Category (0.5.8):
+  - MyOftenUseTool/SystemMethod (0.6.1):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
     - YYCache
-  - MyOftenUseTool/WaveAnimation (0.5.8):
+  - MyOftenUseTool/UIKit+Category (0.6.1):
+    - AFNetworking (~> 3.1.0)
+    - pop
+    - SAMKeychain
+    - SVProgressHUD
+    - YYCache
+  - MyOftenUseTool/WaveAnimation (0.6.1):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
@@ -76,7 +76,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  MyOftenUseTool: 870f95422d27c82e9d67ba8e12e885f4381c9d9a
+  MyOftenUseTool: 829f250a839c0900c5f8209c9372710295c9c6a7
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
@@ -84,4 +84,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 29cf27f18207caf3277924b498f5aad7a36dd75d
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
