@@ -108,7 +108,8 @@ static AFHTTPSessionManager *_manager;
     }
     
     if (isShow) {
-        [SVProgressHUD showWithStatus:@"加载中……"];
+        [SVProgressHUD show];
+
     }
     
     //拼接URL
@@ -321,7 +322,7 @@ static AFHTTPSessionManager *_manager;
  *  取消当前的请求
  */
 +(void)cancelRequest{
-    [SVProgressHUD dismiss];
+//    [SVProgressHUD dismiss];
     [[ZJAFNRequestTool shareRequestTool].httpDataTask cancel];
 }
 @end
