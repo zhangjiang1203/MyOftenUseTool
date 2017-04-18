@@ -7,7 +7,7 @@
 //
 
 #import "ZJViewController.h"
-
+#import "WaveAnimation.h"
 @interface ZJViewController ()
 
 @end
@@ -17,13 +17,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+
+    [WaveAnimation startAnimationToView:self.view];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [WaveAnimation stopAnimation];
+}
+
+#pragma mark - 获取AppStore的info信息
+- (void)getAppStoreInfo:(NSString *)appID success:(void(^)(NSDictionary *))success {
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/CN/lookup?id=%@",appID]];
+    [[[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error == nil && data != nil && data.length > 0) {
+                NSDictionary *respDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                if (success) {
+                    success(respDict);
+                }
+            }
+        });
+    }] resume];
 }
 
 @end

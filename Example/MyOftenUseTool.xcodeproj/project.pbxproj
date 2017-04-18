@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B7A5BEAD9CE5BB21B9338FE /* Pods_MyOftenUseTool_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61760FFC38BFF65A7746C36F /* Pods_MyOftenUseTool_Example.framework */; };
+		2825D7DE1EA5EAF9001209D5 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2825D7DB1EA5EAF9001209D5 /* Resource.bundle */; };
+		2825D7DF1EA5EAF9001209D5 /* WaveAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2825D7DD1EA5EAF9001209D5 /* WaveAnimation.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -37,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2825D7DB1EA5EAF9001209D5 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
+		2825D7DC1EA5EAF9001209D5 /* WaveAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveAnimation.h; sourceTree = "<group>"; };
+		2825D7DD1EA5EAF9001209D5 /* WaveAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaveAnimation.m; sourceTree = "<group>"; };
 		28BD7FD1D35AAEDC40AB354F /* MyOftenUseTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MyOftenUseTool.podspec; path = ../MyOftenUseTool.podspec; sourceTree = "<group>"; };
 		3DD178B117410125D143E1B8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MyOftenUseTool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOftenUseTool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,9 +111,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2825D7DA1EA5EAF9001209D5 /* WaveAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				2825D7DB1EA5EAF9001209D5 /* Resource.bundle */,
+				2825D7DC1EA5EAF9001209D5 /* WaveAnimation.h */,
+				2825D7DD1EA5EAF9001209D5 /* WaveAnimation.m */,
+			);
+			path = WaveAnimation;
+			sourceTree = "<group>";
+		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				2825D7DA1EA5EAF9001209D5 /* WaveAnimation */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for MyOftenUseTool */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -286,6 +302,7 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				2825D7DE1EA5EAF9001209D5 /* Resource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* ZJAppDelegate.m in Sources */,
+				2825D7DF1EA5EAF9001209D5 /* WaveAnimation.m in Sources */,
 				6003F5A7195388D20070C39A /* ZJViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

@@ -12,6 +12,7 @@
 
 #import "ZJMethodHeader.h"
 #import "ZJAFNRequestTool.h"
+#import "ZJUpdateAppManager.h"
 #import "Foundation_Category.h"
 #import "NSArray+Block.h"
 #import "NSArray+SafeAccess.h"
@@ -74,7 +75,6 @@
 #import "UIViewController+TopBarMessage.h"
 #import "UI_Categories.h"
 #import "ZJAlertViewController.h"
-#import "WaveAnimation.h"
 
 FOUNDATION_EXPORT double MyOftenUseToolVersionNumber;
 FOUNDATION_EXPORT const unsigned char MyOftenUseToolVersionString[];

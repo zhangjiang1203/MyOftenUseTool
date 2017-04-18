@@ -56,19 +56,14 @@
       "public_header_files": "MyOftenUseTool/Classes/ZJSystemUtils.h"
     },
     {
-      "name": "WaveAnimation",
-      "source_files": "MyOftenUseTool/Classes/WaveAnimation.{h,m}",
-      "public_header_files": "MyOftenUseTool/Classes/WaveAnimation.h",
-      "resource_bundles": {
-        "MyOftenUseTool": [
-          "MyOftenUseTool/Classes/Resource.bundle"
-        ]
-      }
-    },
-    {
       "name": "AFNRequest",
       "source_files": "MyOftenUseTool/Classes/ZJAFNRequestTool.{h,m}",
       "public_header_files": "MyOftenUseTool/Classes/ZJAFNRequestTool.h"
+    },
+    {
+      "name": "APPStoreUpdate",
+      "source_files": "MyOftenUseTool/AppStoreUpdate/*.{h,m}",
+      "public_header_files": "MyOftenUseTool/AppStoreUpdate/*.h"
     },
     {
       "name": "UIKit+Category",

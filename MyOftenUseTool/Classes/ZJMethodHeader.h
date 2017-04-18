@@ -115,8 +115,7 @@
 #import "UI_Categories.h"
 #import "HUDHelper.h"
 #import "ZJAFNRequestTool.h"
-#import "WaveAnimation.h"
 #import "ZJSystemUtils.h"
-
+#import "ZJUpdateAppManager.h"
 
 #endif
