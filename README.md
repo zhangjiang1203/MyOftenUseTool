@@ -37,7 +37,9 @@ pod 'MyOftenUseTool'
 + (void)stopMonitoring;
 
 ```
+
 对应的实现如下
+
 ```objective-c
 + (void)startMonitoring:(void(^)(BOOL isNet))netBlock{
 
@@ -60,6 +62,7 @@ pod 'MyOftenUseTool'
 ```
 
 在文件中添加了请求返回和取消请求的操作,每个请求中返回值 NSURLSessionTask 可以根据这个来取消这个请求,请求中使用了YYCache来缓存对应的URL的请求数据，
+
 ```objective-c
 /**
 不带缓存的get请求
@@ -256,6 +259,7 @@ AFN请求中的封装还有post和put以及文件的上传和下载操作
 ![波浪显示](https://github.com/zhangjiang1203/MyOftenUseTool/blob/master/Example/waveAnimation.gif "波浪显示")
 
 显示指示图
+
 ```objective-c
 /**
 开始加载显示视图 nil为空的时候显示在rootView的window上
