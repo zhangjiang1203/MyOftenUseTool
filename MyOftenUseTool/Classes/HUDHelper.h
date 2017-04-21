@@ -29,16 +29,6 @@ typedef void (^AlertDecideBlock)(NSInteger buttonIndex);//
 
 double radians(float degrees);
 
-typedef enum {
-    NETWORK_TYPE_NONE= 0,
-    NETWORK_TYPE_2G= 1,
-    NETWORK_TYPE_3G= 2,
-    NETWORK_TYPE_4G= 3,
-    NETWORK_TYPE_5G= 4,//  5G目前为猜测结果
-    NETWORK_TYPE_WIFI= 5,
-    
-}NETWORK_TYPE;
-
 
 @interface HUDHelper : NSObject
 @property (nonatomic, strong) UIView *backView;
@@ -48,18 +38,10 @@ typedef enum {
  */
 + (HUDHelper *) getInstance;
 
-
-
 /**
  *  获取当前的显示的ViewController
  */
 + (UIViewController *)getCurrentViewController;
-
-
-/**
- *  获得当前的网络状态
- */
-+(NETWORK_TYPE)getNetworkTypeFromStatusBar;//获得当前的网络状态
 
 
 /**
@@ -72,12 +54,6 @@ typedef enum {
  判断身份证号格式是否正确
  */
 + (BOOL)IsIdentityCard:(NSString *)IDCardNumber;
-
-
-/**
- *  判断邀请码格式是否正确
- */
-+(BOOL)CheckInviteCodeInput:(NSString *)text;
 
 
 /**
@@ -97,51 +73,6 @@ typedef enum {
  * 计算指定高度的文本的宽度
  */
 +(CGSize)getSuitSizeWidthWithString:(NSString*)text fontSize:(float)fontSize sizeOfY:(float)y;
-
-/**
- *  是否有摄像头使用权限
- */
-+(void)videoAuthorizationStatusAuthorized:(void(^)(void))authorized;
-
-/**
- * 返回两个日期之间的天数
- */
-+(NSInteger)calculateDaysWithDate:(NSString*)dateString;
-
-
-/**
- *  比较两个日期的大小 format yyyy-MM-dd HH:mm:ss"
- */
-+(int)compareOneDay:(NSString *)oneDay withAnotherDay:(NSString *)anotherDay dateFormat:(NSString*)format;
-
-/**
- *  计算两个日期之间的分钟数
- */
-+(CGFloat)calculateMinuteFrom:(NSString*)dateStr1 toDate:(NSString *)dateStr2;
-
-
-/**
- *  计算与当前日期的分钟数
- *
- *  @param dateString 比较的日期
- *
- *  @return 相隔的分钟数  -1  0 都是小于当前时间  > 0 才是返回以后的时间
- */
-+(NSInteger)calculateMinuteWithDate:(NSString *)dateString;
-
-
-/**
- * date与string的相互转换
- *  @"yyyy-MM-dd HH:mm:ss"
- */
-+(NSDate*) convertDateFromString:(NSString*)uiDate format:(NSString*)format;
-
-
-/**
- *  字符串转日期
- *  @param dateString 输入的日期字符串形如：@"1992-05-21 13:08:08"
- */
-+ (NSDate *)dateFromString:(NSString *)dateString format:(NSString*)format;
 
 
 /*!
@@ -190,18 +121,6 @@ typedef enum {
  */
 + (UIImage *)buttonImageFromColor:(UIColor *)color size:(CGSize)size;
 
-
-/**
- *  获取当前系统时间 @"yyyy-MM-dd HH:mm:ss"
- */
-+(NSString*)getCurrentDateWithFormat:(NSString*)format;
-
-/**
- *  截屏操作
- *
- */
-+ (UIImage *) captureScreen;
-
 /**
  * 裁剪图片
  */
@@ -242,11 +161,6 @@ typedef enum {
 +(void)floatAnimator:(UIView *)animator;
 
 
-/**
- *  app版本号
- */
-+ (NSString *)appVersion;
-
 
 /**
  *  根据颜色值生成一个渐变的颜色块
@@ -269,12 +183,6 @@ typedef enum {
  */
 + (CLLocation*)transformFromGoogleToBaiDu:(CLLocation*)google;
 
-
-#pragma mark   ==============产生随机订单号==============
-/**
- *  产生随机订单号
- */
-+ (NSString *)generateTradeNO;
 
 /**
  简单绘制线性渐变效果 从上至下
@@ -320,11 +228,6 @@ typedef enum {
  *  设置图片显示的样式
  */
 +(void)setControlView:(UIView*)view corner:(CGFloat)cornerRadius borderW:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
-
-/**
- *  修改图像显示的方向
- */
-+ (UIImage *)fixOrientation:(UIImage *)srcImg ;
 
 /**
  *  设置label的行间距的文本显示

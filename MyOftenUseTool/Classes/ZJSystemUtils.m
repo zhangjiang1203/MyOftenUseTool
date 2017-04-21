@@ -190,6 +190,17 @@ static NSString *appNameKey = @"CFBundleDisplayName";
     return [NSBundle mainBundle].infoDictionary[appNameKey];
 }
 
++ (UIImage *) captureScreen{
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    CGRect rect = [keyWindow bounds];
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [keyWindow.layer renderInContext:context];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
+
 +(void)setLoginState:(BOOL)state{
     if (state) {
         [[NSUserDefaults standardUserDefaults]setObject:KUserLoginSuccess forKey:KUserLogin];

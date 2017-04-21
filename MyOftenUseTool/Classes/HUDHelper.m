@@ -20,16 +20,13 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
 
 - (CGRect)attachmentBoundsForTextContainer:(NSTextContainer *)textContainer proposedLineFragment:(CGRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex NS_AVAILABLE_IOS(7_0)
 {
-    
     return CGRectMake( 0 , -2 , 16 , 16 );
-    
 }
 @end
 
 @interface HUDHelper ()<POPAnimationDelegate>
 
 @end
-
 
 
 @implementation HUDHelper
@@ -42,27 +39,6 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
         }
     }
     return instance;
-}
-
-
-
-////  当前的网络类型
-+(NETWORK_TYPE)getNetworkTypeFromStatusBar {
-    UIApplication *app = [UIApplication sharedApplication];
-    NSArray *subviews = [[[app valueForKey:@"statusBar"] valueForKey:@"foregroundView"] subviews];
-    NSNumber *dataNetworkItemView = nil;
-    for (id subview in subviews) {
-        
-        if([subview isKindOfClass:[NSClassFromString(@"UIStatusBarDataNetworkItemView") class]])     {
-            dataNetworkItemView = subview;
-            break;
-        }
-        
-    }
-    NETWORK_TYPE nettype = NETWORK_TYPE_NONE;
-    NSNumber * num = [dataNetworkItemView valueForKey:@"dataNetworkType"];
-    nettype = [num intValue];
-    return nettype;
 }
 
 /* 判断手机号是否正确 */
@@ -81,15 +57,6 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
     NSPredicate *identityCardPredicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex2];
     return [identityCardPredicate evaluateWithObject:IDCardNumber];
 }
-
-
-+(BOOL)CheckInviteCodeInput:(NSString *)text{
-    NSString *regex = @"^[0-9]{6}$";
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    return  [pred evaluateWithObject:text];
-}
-
-
 
 /**
  *  计算字符串中字符个数 一个汉字占据两个字符
@@ -164,43 +131,14 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
                     address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
                 }
             }
-            
             temp_addr = temp_addr->ifa_next;
         }
     }
-    
     // Free memory
     freeifaddrs(interfaces);
-    
     return address;
 }
 
-/**
- *  摄像头是否有使用权限
- */
-+(void)videoAuthorizationStatusAuthorized:(void(^)(void))authorized
-{
-    NSString *mediaType = AVMediaTypeVideo;
-    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
-    //授权的返回
-    if(authStatus == AVAuthorizationStatusAuthorized){
-//        if (!IOS7_OR_LATER) {
-//            [HUDHelper alertShowWithMsg:MSG_VIDEO_NO continueBlock:^{
-//                
-//            }];
-//        }else{
-//            authorized();
-//        }
-    }else{
-        
-//        [HUDHelper alertShowWithMsg:MSG_VIDEO_NO_AUTH continueBlock:^{
-//            NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
-//            if ([[UIApplication sharedApplication] canOpenURL:url]) {
-//                [[UIApplication sharedApplication] openURL:url];
-//            }
-//        }];
-    }
-}
 
 /**
  *  获取当前的显示的ViewController
@@ -232,131 +170,6 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
         result = window.rootViewController;
     
     return result;
-}
-
-#pragma mark - 计算两个日期之间的年数
-+(NSInteger)calculateAgeFromDate:(NSDate *)date1 toDate:(NSDate *)date2{
-    NSCalendar *userCalendar = [NSCalendar currentCalendar];
-    unsigned int unitFlags = NSCalendarUnitYear;
-    NSDateComponents *components = [userCalendar components:unitFlags fromDate:date1 toDate:date2 options:0];
-    NSInteger years = [components year];
-    return years;
-}
-
-#pragma mark -返回两个日期之间的天数
-+(NSInteger)calculateDaysWithDate:(NSString*)dateString{
-    NSDate *date = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
-    NSString *currentTime = [dateFormatter stringFromDate:date];
-    NSDate *endDate = [dateFormatter dateFromString:dateString];
-    int compareRes = [HUDHelper compareOneDay:currentTime withAnotherDay:dateString dateFormat: @"yyyy-MM-dd HH:mm:ss"];
-    if (compareRes == 1) {
-        //还没有过期
-        //取出现在的时间差距
-        NSCalendar *userCalendar = [NSCalendar currentCalendar];
-        unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |kCFCalendarUnitDay;
-        NSDateComponents *components = [userCalendar components:unitFlags fromDate:date toDate:endDate options:0];
-        NSInteger day = [components day];
-        return day;
-        
-    }else if (compareRes == 0){
-        //两个日期在同一天
-        return 0;
-    }else{
-        //已经过期
-        return -1;
-    }
-}
-
-
-+(NSInteger)calculateMinuteWithDate:(NSString *)dateString{
-    NSDate *date = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:dateString];
-    NSString *currentTime = [dateFormatter stringFromDate:date];
-    NSDate *endDate = [dateFormatter dateFromString:dateString];
-    int compareRes = [HUDHelper compareOneDay:currentTime withAnotherDay:dateString dateFormat:dateString];
-    if (compareRes == 1) {
-        //还没有过期
-        //取出现在的时间差距
-        return 0;
-    }else if (compareRes == 0){
-        //两个日期在同一天
-        NSCalendar *userCalendar = [NSCalendar currentCalendar];
-        unsigned int unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |kCFCalendarUnitDay;
-        NSDateComponents *components = [userCalendar components:unitFlags fromDate:date toDate:endDate options:0];
-        NSInteger minutes = [components day];
-        return minutes;
-    }else{
-        //已经过期
-        return -1;
-    }
-
-}
-#pragma mark -比较两个日期的大小
-+(int)compareOneDay:(NSString *)oneDay withAnotherDay:(NSString *)anotherDay dateFormat:(NSString*)format
-{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:format];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
-//    NSString *oneDayStr = [dateFormatter stringFromDate:oneDay];
-//    NSString *anotherDayStr = [dateFormatter stringFromDate:anotherDay];
-    
-    NSDate *dateA = [dateFormatter dateFromString:oneDay];
-    NSDate *dateB = [dateFormatter dateFromString:anotherDay];
-    NSComparisonResult result = [dateA compare:dateB];
-    NSLog(@"oneDay : %@, anotherDay : %@", oneDay, anotherDay);
-    if (result == NSOrderedDescending) {
-        //DLog(@"oneDay  is in the future");
-        return 1;
-    }
-    else if (result == NSOrderedAscending){
-        //DLog(@"oneDay is in the past");
-        return -1;
-    }
-    //DLog(@"Both dates are the same");
-    return 0;
-    
-}
-
-#pragma mark -计算两个日期之间的分钟数
-+(CGFloat)calculateMinuteFrom:(NSString*)dateStr1 toDate:(NSString *)dateStr2{
-
-    NSDate *destDate1 = [HUDHelper convertDateFromString:dateStr1 format:@"yyyy-MM-dd HH:mm:ss"];
-    NSDate *destDate2 = [HUDHelper convertDateFromString:dateStr2 format:@"yyyy-MM-dd HH:mm:ss"];
-    
-    //取两个日期对象的时间间隔：
-    //这里的NSTimeInterval 并不是对象，是基本型，其实是double类型，是由c定义的:typedef double NSTimeInterval;
-    NSTimeInterval time = [destDate1 timeIntervalSinceDate:destDate2];
-    
-    CGFloat minutes = ((CGFloat)time)/(60.0);
-    //    int hours = ((int)time)%(3600*24)/3600;
-    //    NSString *dateContent = [[NSString alloc] initWithFormat:@"%i天%i小时",days,hours];
-    return minutes;
-}
-
-#pragma mark - date与string的相互转换
-+(NSDate*) convertDateFromString:(NSString*)uiDate format:(NSString*)format
-{
-    NSTimeZone *zone = [NSTimeZone systemTimeZone];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:format];
-    NSDate *sDate = [dateFormatter dateFromString:uiDate];
-    NSInteger intervalSDate = [zone secondsFromGMTForDate: sDate];
-    sDate = [sDate dateByAddingTimeInterval: intervalSDate];
-    return sDate;
-
-}
-//字符串转日期 string->date
-//输入的日期字符串形如：@"1992-05-21 13:08:08"
-+ (NSDate *)dateFromString:(NSString *)dateString format:(NSString*)format{
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:format];
-    NSDate *destDate= [dateFormatter dateFromString:dateString];
-    return destDate;
 }
 
 /*!
@@ -524,17 +337,6 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
     return img;
 }
 
-
-#pragma mark -获取当前系统时间
-+(NSString*)getCurrentDateWithFormat:(NSString*)format{
-    NSDate *date = [NSDate date];
-    NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
-    [dateformatter setDateStyle:NSDateFormatterFullStyle];
-    [dateformatter setDateFormat:format];
-    NSString *time = [dateformatter stringFromDate:date];
-    return time;
-}
-
 #pragma mark - 裁剪图片
 + (UIImage *)clipsToRect:(CGRect)rect image:(UIImage*)orangeImage{
     CGRect maxRect = CGRectMake(0, 0, orangeImage.size.width, orangeImage.size.height);
@@ -650,18 +452,6 @@ double radians(float degrees) {
 }
 
 
-+ (UIImage *) captureScreen{
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    CGRect rect = [keyWindow bounds];
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [keyWindow.layer renderInContext:context];
-    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return img;
-}
-
-
 #pragma mark------对动画的处理
 +(void)floatAnimator:(UIView *)animator
 {
@@ -680,15 +470,6 @@ double radians(float degrees) {
     animation.duration = 1.4;
     animation.repeatCount=10000;
     [animator.layer addAnimation:animation forKey:@"ShakedAnimation"];
-}
-
-
-
-//app版本号
-+ (NSString *)appVersion
-{
-    NSDictionary *infoDict = [[NSBundle mainBundle]infoDictionary];
-    return [NSString stringWithFormat:@"%@",infoDict[@"CFBundleShortVersionString"]];
 }
 
 
@@ -745,8 +526,6 @@ double radians(float degrees) {
     return theImage;
 }
 
-
-
 #pragma mark -百度转火星坐标
 +(CLLocation*)transformFromBaiDuToGoogle:(CLLocation*)baidu{
     
@@ -771,21 +550,6 @@ double radians(float degrees) {
     return [[CLLocation alloc]initWithLatitude:bd_lat longitude:bd_lon];
 }
 
-+ (NSString *)generateTradeNO
-{
-    static int kNumber = 15;
-    
-    NSString *sourceStr = @"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    NSMutableString *resultStr = [[NSMutableString alloc] init];
-    srand((unsigned)time(0));
-    for (int i = 0; i < kNumber; i++)
-    {
-        unsigned index = rand() % [sourceStr length];
-        NSString *oneStr = [sourceStr substringWithRange:NSMakeRange(index, 1)];
-        [resultStr appendString:oneStr];
-    }
-    return resultStr;
-}
 
 +(void)makeNumChangeWithView:(UILabel*)label string:(NSString*)suffix FromValue:(CGFloat)from toValue:(CGFloat)to time:(CGFloat)time{
     
@@ -844,79 +608,6 @@ double radians(float degrees) {
         view.layer.borderWidth  = borderWidth;
     }
 }
-
-
-+ (UIImage *)fixOrientation:(UIImage *)srcImg {
-    if (srcImg.imageOrientation == UIImageOrientationUp) return srcImg;
-    CGAffineTransform transform = CGAffineTransformIdentity;
-    switch (srcImg.imageOrientation) {
-        case UIImageOrientationDown:
-        case UIImageOrientationDownMirrored:
-            transform = CGAffineTransformTranslate(transform, srcImg.size.width, srcImg.size.height);
-            transform = CGAffineTransformRotate(transform, M_PI);
-            break;
-            
-        case UIImageOrientationLeft:
-        case UIImageOrientationLeftMirrored:
-            transform = CGAffineTransformTranslate(transform, srcImg.size.width, 0);
-            transform = CGAffineTransformRotate(transform, M_PI_2);
-            break;
-            
-        case UIImageOrientationRight:
-        case UIImageOrientationRightMirrored:
-            transform = CGAffineTransformTranslate(transform, 0, srcImg.size.height);
-            transform = CGAffineTransformRotate(transform, -M_PI_2);
-            break;
-        case UIImageOrientationUp:
-        case UIImageOrientationUpMirrored:
-            break;
-    }
-    
-    switch (srcImg.imageOrientation) {
-        case UIImageOrientationUpMirrored:
-        case UIImageOrientationDownMirrored:
-            transform = CGAffineTransformTranslate(transform, srcImg.size.width, 0);
-            transform = CGAffineTransformScale(transform, -1, 1);
-            break;
-            
-        case UIImageOrientationLeftMirrored:
-        case UIImageOrientationRightMirrored:
-            transform = CGAffineTransformTranslate(transform, srcImg.size.height, 0);
-            transform = CGAffineTransformScale(transform, -1, 1);
-            break;
-        case UIImageOrientationUp:
-        case UIImageOrientationDown:
-        case UIImageOrientationLeft:
-        case UIImageOrientationRight:
-            break;
-    }
-    
-    CGContextRef ctx = CGBitmapContextCreate(NULL, srcImg.size.width, srcImg.size.height,
-                                             CGImageGetBitsPerComponent(srcImg.CGImage), 0,
-                                             CGImageGetColorSpace(srcImg.CGImage),
-                                             CGImageGetBitmapInfo(srcImg.CGImage));
-    CGContextConcatCTM(ctx, transform);
-    switch (srcImg.imageOrientation) {
-        case UIImageOrientationLeft:
-        case UIImageOrientationLeftMirrored:
-        case UIImageOrientationRight:
-        case UIImageOrientationRightMirrored:
-            CGContextDrawImage(ctx, CGRectMake(0,0,srcImg.size.height,srcImg.size.width), srcImg.CGImage);
-            break;
-            
-        default:
-            CGContextDrawImage(ctx, CGRectMake(0,0,srcImg.size.width,srcImg.size.height), srcImg.CGImage);
-            break;
-    }
-    
-    CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
-    UIImage *img = [UIImage imageWithCGImage:cgimg];
-    CGContextRelease(ctx);
-    CGImageRelease(cgimg);
-    return img;
-}
-
-
 
 #pragma mark -给UILabel设置行间距和字间距
 +(void)setLabelSpace:(UILabel*)label withValue:(NSString*)str withFont:(UIFont*)font color:(UIColor*)color space:(CGFloat)lineSpace{
@@ -983,7 +674,4 @@ double radians(float degrees) {
     string = [regularExpretion stringByReplacingMatchesInString:string options:NSMatchingReportProgress range:NSMakeRange(0, string.length) withTemplate:@""];
     return string;
 }
-
-
-
 @end

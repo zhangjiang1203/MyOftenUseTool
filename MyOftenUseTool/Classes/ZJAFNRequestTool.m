@@ -8,6 +8,7 @@
 
 #import "ZJAFNRequestTool.h"
 #import "AFNetworking.h"
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 #import "SVProgressHUD.h"
 #import "YYCache.h"
 @interface ZJAFNRequestTool ()
@@ -15,6 +16,8 @@
 @property (nonatomic,strong) NSURLSessionDataTask *httpDataTask;
 
 @property (nonatomic,assign) AFNetworkReachabilityStatus workStatus;
+
+@property (strong,nonatomic) NSMutableArray *sessionTaskArr;
 
 @end
 
@@ -53,13 +56,33 @@ static AFHTTPSessionManager *_manager;
 //initialize该初始化方法在当用到此类时候只调用一次
 +(void)initialize{
     _manager = [AFHTTPSessionManager manager];
-    //设置请求参数的类型:JSON (AFJSONRequestSerializer,AFHTTPRequestSerializer)
-//    _manager.requestSerializer = [AFJSONRequestSerializer serializer];
     //设置请求的超时时间
     _manager.requestSerializer.timeoutInterval = 30.f;
     //设置服务器返回结果的类型:JSON (AFJSONResponseSerializer,AFHTTPResponseSerializer)
     _manager.responseSerializer = [AFJSONResponseSerializer serializer];
     _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/*", nil];
+    // 打开状态栏的等待菊花
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+}
+
++ (void)setRequestSerializer:(ZJRequestSerializer)requestSerializer {
+    _manager.requestSerializer = requestSerializer==ZJRequestSerializerHTTP ? [AFHTTPRequestSerializer serializer] : [AFJSONRequestSerializer serializer];
+}
+
++ (void)setResponseSerializer:(ZJResponseSerializer)responseSerializer {
+    _manager.responseSerializer = responseSerializer==ZJResponseSerializerHTTP ? [AFHTTPResponseSerializer serializer] : [AFJSONResponseSerializer serializer];
+}
+
++ (void)setRequestTimeoutInterval:(NSTimeInterval)time {
+    _manager.requestSerializer.timeoutInterval = time;
+}
+
++ (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field {
+    [_manager.requestSerializer setValue:value forHTTPHeaderField:field];
+}
+
++ (void)openNetworkActivityIndicator:(BOOL)open {
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:open];
 }
 
 - (AFSecurityPolicy*)customSecurityPolicy
@@ -87,7 +110,7 @@ static AFHTTPSessionManager *_manager;
     self = [super init];
     if (self) {
         //加载错误信息提示
-
+        self.sessionTaskArr = [NSMutableArray array];
     }
     return self;
 }
@@ -95,13 +118,7 @@ static AFHTTPSessionManager *_manager;
 -(NSURLSessionTask*)httpRequestMethod:(RequestMethod)requestMethod source:(NSString*)sourceURL param:(NSDictionary*)params hud:(BOOL)isShow cache:(RequestCache)cacheBlock success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
     
     cacheBlock ? cacheBlock([ZJAFNRequestCache httpCacheForURL:sourceURL parameters:params]) : nil;
-    
-//    //无网络情况，取消当前请求，直接返回错误信息*/
-//    if ([ZJAFNRequestTool shareRequestTool].workStatus ==AFNetworkReachabilityStatusNotReachable) {
-//        failBlock(@"您还没有联网,请检查网络");
-//        [ZJAFNRequestTool cancelRequest];
-//        return nil;
-//    }
+
     //https SSL验证
     if (self.certificatesName) {
         [_manager setSecurityPolicy:[self customSecurityPolicy]];
@@ -122,12 +139,15 @@ static AFHTTPSessionManager *_manager;
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
                 //设置缓存保存缓存数据
-                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
+                [_sessionTaskArr removeObject:task];
                 if (successBlock) {
                     successBlock(task,responseObject);
                 }
+                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
+                
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
+                [_sessionTaskArr removeObject:task];
                 if (failBlock) {
                     failBlock(error.description);
                 }
@@ -140,13 +160,15 @@ static AFHTTPSessionManager *_manager;
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
-                //设置缓存保存缓存数据
-                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
+                [_sessionTaskArr removeObject:task];
                 if (successBlock) {
                     successBlock(task,responseObject);
                 }
+                //设置缓存保存缓存数据
+                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
+                [_sessionTaskArr removeObject:task];
                 if (failBlock) {
                     failBlock(error.description);
                 }
@@ -157,13 +179,15 @@ static AFHTTPSessionManager *_manager;
         {
             _httpDataTask = [_manager PUT:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
-                //设置缓存保存缓存数据
-                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
+                [_sessionTaskArr removeObject:task];
                 if (successBlock) {
                     successBlock(task,responseObject);
                 }
+                //设置缓存保存缓存数据
+                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
+                [_sessionTaskArr removeObject:task];
                 if (failBlock) {
                     failBlock(error.description);
                 }
@@ -171,6 +195,8 @@ static AFHTTPSessionManager *_manager;
         }
             break;
     }
+    // 添加sessionTask到数组
+    _httpDataTask ? [[ZJAFNRequestTool shareRequestTool].sessionTaskArr addObject:_httpDataTask] : nil ;
     return _httpDataTask;
 }
 
@@ -237,17 +263,19 @@ static AFHTTPSessionManager *_manager;
     }];
     //开始下载
     [downloadTask resume];
+    downloadTask ? [[ZJAFNRequestTool shareRequestTool].sessionTaskArr addObject:downloadTask] : nil ;
     return downloadTask;
 }
 
-
+//上传单张图片
 +(NSURLSessionTask *)uploadSignalImageWithURL:(NSString *)URL
                                    parameters:(NSDictionary *)parameters
                                        images:(UIImage *)image
                                      progress:(HttpProgress)progress
                                       success:(UploadMyFileSuccess)success
                                       failure:(RequestFailBlock)failure{
-    return [_manager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    
+    NSURLSessionTask *uploadTask = [_manager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         NSDate *date = [NSDate date];
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
         [formatter setDateFormat:@"yyyy/MM/dd/hh/mm/ss"];
@@ -271,6 +299,11 @@ static AFHTTPSessionManager *_manager;
         failure ? failure(error.description) : nil;
     }];
     
+    uploadTask ? [[ZJAFNRequestTool shareRequestTool].sessionTaskArr addObject:uploadTask] : nil ;
+    
+    return uploadTask;
+    
+    
 }
 
 #pragma mark - 上传多张图片文件
@@ -281,8 +314,7 @@ static AFHTTPSessionManager *_manager;
                                          success:(UploadMyFileSuccess)success
                                          failure:(RequestFailBlock)failure
 {
-    
-    return [_manager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+    NSURLSessionTask *sessionTask = [_manager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         //根据当前系统时间生成图片名称
         NSDate *date = [NSDate date];
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -305,9 +337,9 @@ static AFHTTPSessionManager *_manager;
         }];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         //上传进度
-//        dispatch_sync(dispatch_get_main_queue(), ^{
-            progress ? progress(uploadProgress) : nil;
-//        });
+        //        dispatch_sync(dispatch_get_main_queue(), ^{
+        progress ? progress(uploadProgress) : nil;
+        //        });
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success ? success(responseObject) : nil;
         NSLog(@"responseObject = %@",responseObject);
@@ -316,15 +348,35 @@ static AFHTTPSessionManager *_manager;
         failure ? failure(error.description) : nil;
         NSLog(@"error = %@",error);
     }];
+    
+    sessionTask ? [[ZJAFNRequestTool shareRequestTool].sessionTaskArr addObject:sessionTask] : nil ;
+    return sessionTask;
 }
 
-/**
- *  取消当前的请求
- */
-+(void)cancelRequest{
-//    [SVProgressHUD dismiss];
-    [[ZJAFNRequestTool shareRequestTool].httpDataTask cancel];
++ (void)cancelAllRequest {
+    // 锁操作
+    @synchronized(self) {
+        [[ZJAFNRequestTool shareRequestTool].sessionTaskArr enumerateObjectsUsingBlock:^(NSURLSessionTask  *_Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
+            [task cancel];
+        }];
+        [[ZJAFNRequestTool shareRequestTool].sessionTaskArr  removeAllObjects];
+    }
 }
+
++ (void)cancelRequestWithURL:(NSString *)URL {
+    if (!URL) { return; }
+    @synchronized (self) {
+        [[ZJAFNRequestTool shareRequestTool].sessionTaskArr  enumerateObjectsUsingBlock:^(NSURLSessionTask  *_Nonnull task, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([task.currentRequest.URL.absoluteString hasPrefix:URL]) {
+                [task cancel];
+                [[ZJAFNRequestTool shareRequestTool].sessionTaskArr  removeObject:task];
+                *stop = YES;
+            }
+        }];
+    }
+}
+
+
 @end
 
 #pragma mark -网络缓存方法
@@ -369,5 +421,40 @@ static YYCache *_dataCache;
     NSString *cacheKey = [NSString stringWithFormat:@"%@%@",URL,paraString];
     return cacheKey;
 }
+@end
+
+#pragma mark - NSDictionary,NSArray的分类
+/*
+ *新建NSDictionary与NSArray的分类, 控制台打印json数据中的中文
+ */
+#ifdef DEBUG
+@implementation NSArray (ZJ)
+
+- (NSString *)descriptionWithLocale:(id)locale {
+    NSMutableString *strM = [NSMutableString stringWithString:@"(\n"];
+    [self enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [strM appendFormat:@"\t%@,\n", obj];
+    }];
+    [strM appendString:@")"];
+    
+    return strM;
+}
 
 @end
+
+@implementation NSDictionary (ZJ)
+
+- (NSString *)descriptionWithLocale:(id)locale {
+    NSMutableString *strM = [NSMutableString stringWithString:@"{\n"];
+    [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [strM appendFormat:@"\t%@ = %@;\n", key, obj];
+    }];
+    
+    [strM appendString:@"}\n"];
+    
+    return strM;
+}
+@end
+#endif
+
+

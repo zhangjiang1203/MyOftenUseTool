@@ -31,6 +31,21 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
     RequestMethod_Put  = 3,
 };
 
+
+typedef NS_ENUM(NSUInteger, ZJRequestSerializer) {
+    /** 设置请求数据为JSON格式*/
+    ZJRequestSerializerJSON = 1,
+    /** 设置请求数据为二进制格式*/
+    ZJRequestSerializerHTTP = 2,
+};
+
+typedef NS_ENUM(NSUInteger, ZJResponseSerializer) {
+    /** 设置响应数据为JSON格式*/
+    ZJResponseSerializerJSON = 1,
+    /** 设置响应数据为二进制格式*/
+    ZJResponseSerializerHTTP = 2,
+};
+
 @interface ZJAFNRequestTool : NSObject
 
 /**
@@ -57,6 +72,41 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
  * 关闭网络监测
  */
 + (void)stopMonitoring;
+
+
+/**
+ *  设置网络请求参数的格式:默认为二进制格式
+ *
+ *  @param requestSerializer ZJRequestSerializerJSON(JSON格式),ZJRequestSerializerHTTP(二进制格式),
+ */
++ (void)setRequestSerializer:(ZJRequestSerializer)requestSerializer;
+
+/**
+ *  设置服务器响应数据格式:默认为JSON格式
+ *
+ *  @param responseSerializer ZJResponseSerializerJSON(JSON格式),ZJResponseSerializerHTTP(二进制格式)
+ */
++ (void)setResponseSerializer:(ZJResponseSerializer)responseSerializer;
+
+/**
+ *  设置请求超时时间:默认为30S
+ *
+ *  @param time 时长
+ */
++ (void)setRequestTimeoutInterval:(NSTimeInterval)time;
+
+/**
+ *  设置请求头
+ */
++ (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field;
+
+/**
+ *  是否打开网络状态转圈菊花:默认打开
+ *
+ *  @param open YES(打开), NO(关闭)
+ */
++ (void)openNetworkActivityIndicator:(BOOL)open;
+
 
 /**
  不带缓存的get请求
@@ -193,11 +243,15 @@ typedef NS_ENUM(NSUInteger, RequestMethod) {
                                        success:(UploadMyFileSuccess)success
                                        failure:(RequestFailBlock)failure;
 
+/**
+ *  取消所有的请求
+ */
++(void)cancelAllRequest;
 
 /**
- *  取消当前的请求
+ *  根据指定的URL取消请求
  */
-+(void)cancelRequest;
++ (void)cancelRequestWithURL:(NSString *)URL;
 @end
 
 

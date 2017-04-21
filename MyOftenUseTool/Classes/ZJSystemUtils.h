@@ -47,6 +47,11 @@
  */
 +(NSString*)getAppName;
 
+/*
+ * 截屏
+ */
++ (UIImage *) captureScreen;
+
 /**
  设置登录状态 0 退出登录  1 登录成功
  */
