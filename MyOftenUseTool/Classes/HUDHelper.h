@@ -212,7 +212,7 @@ double radians(float degrees);
  *
  *  @return 用控件的attributedText属性接收
  */
-+(NSMutableAttributedString*)createTextKitWithString:(NSString*)string attributes:(NSDictionary*)attributes image:(NSString*)imageName range:(NSRange)range index:(NSInteger)index;
++(NSMutableAttributedString*)createTextKitWithString:(NSString*)string attributes:(NSDictionary*)attributes image:(NSString*)imageName index:(NSInteger)index;
 
 
 /**

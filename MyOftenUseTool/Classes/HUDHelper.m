@@ -271,13 +271,9 @@ static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
  *
  *  @return 用控件的attributedText属性接收
  */
-+(NSMutableAttributedString*)createTextKitWithString:(NSString*)string attributes:(NSDictionary*)attributes image:(NSString*)imageName range:(NSRange)range index:(NSInteger)index{
++(NSMutableAttributedString*)createTextKitWithString:(NSString*)string attributes:(NSDictionary*)attributes image:(NSString*)imageName index:(NSInteger)index{
     //图文混排
     NSMutableAttributedString *titleString = [[NSMutableAttributedString alloc]initWithString:string attributes:attributes];
-    if (range.length>0) {
-        [titleString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:239/255.0 green:47/255.0 blue:47/255.0 alpha:1] range:range];
-    }
-    
     WCAttachmentText *textAttachment = [[WCAttachmentText alloc]initWithData:nil ofType:nil];
     UIImage *showImage = [UIImage imageNamed:imageName];
     textAttachment.image = showImage;
