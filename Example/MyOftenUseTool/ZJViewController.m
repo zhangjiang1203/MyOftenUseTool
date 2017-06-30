@@ -8,7 +8,14 @@
 
 #import "ZJViewController.h"
 #import "WaveAnimation.h"
+#import "UI_Categories.h"
+#import "ZJMethodHeader.h"
+
+#define keyPath(objc,keyPath) @(((void)objc.keyPath, #keyPath))
+
+
 @interface ZJViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *testTextField;
 
 @end
 
@@ -17,9 +24,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-
     [WaveAnimation startAnimationToView:self.view];
+    
+    
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

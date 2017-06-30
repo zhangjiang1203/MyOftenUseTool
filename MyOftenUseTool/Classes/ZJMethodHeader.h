@@ -100,6 +100,26 @@
 #define NSLog(FORMAT, ...) nil
 #endif
 
+
+/**
+ *  亮字体
+ */
+#define FontL(s)             [UIFont systemFontOfSize:s weight:UIFontWeightLight]
+/**
+ *  常规字体
+ */
+#define FontR(s)             [UIFont systemFontOfSize:s weight:UIFontWeightRegular]
+/**
+ *  加粗字体
+ */
+#define FontB(s)             [UIFont systemFontOfSize:s weight:UIFontWeightBold]
+
+/**
+ *  纤细字体
+ */
+#define FontT(s)             [UIFont systemFontOfSize:s weight:UIFontWeightThin]
+
+
 /**
  *  设置控件的圆角和边框
 */

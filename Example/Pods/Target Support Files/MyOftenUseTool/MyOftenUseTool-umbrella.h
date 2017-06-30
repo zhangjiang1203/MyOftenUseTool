@@ -63,6 +63,7 @@
 #import "UIImage+RoateAndScale.h"
 #import "UIImage+RoundedCorner.h"
 #import "UITextField+Blocks.h"
+#import "UITextField+PlaceHolder.h"
 #import "UITextView+PlaceHolder.h"
 #import "UIView+BlockGesture.h"
 #import "UIView+Constraints.h"

@@ -8,6 +8,7 @@
 
 #ifdef __OBJC__
 #import "UITextField+Blocks.h"
+#import "UITextField+PlaceHolder.h"
 #import "UITextView+PlaceHolder.h"
 #import "UIView+BlockGesture.h"
 #import "UIView+Constraints.h"
