@@ -29,15 +29,15 @@ DESC
   s.public_header_files = 'MyOftenUseTool/Classes/ZJMethodHeader.h'
 
 #添加新的文件时，先更新一下这个本地的类库
-s.source_files  = 'MyOftenUseTool/**/*'
- s.public_header_files = 'MyOftenUseTool/**/*.h'
+#s.source_files  = 'MyOftenUseTool/**/*'
+# s.public_header_files = 'MyOftenUseTool/**/*.h'
 
-s.exclude_files = "MyOftenUseTool/Exclude"
+# s.exclude_files = "MyOftenUseTool/Exclude"
 
-   s.resource_bundles = {
-     'MyOftenUseTool' => ['MyOftenUseTool/Assets/*.png']
-   }
-
+#   s.resource_bundles = {
+#     'MyOftenUseTool' => ['MyOftenUseTool/Assets/*.png']
+#   }
+#这里的文件都要打开
   s.frameworks = 'UIKit', 'MapKit','QuartzCore','Foundation'
   s.dependency 'AFNetworking', '~> 3.1.0'
 #动画引擎
@@ -49,34 +49,34 @@ s.exclude_files = "MyOftenUseTool/Exclude"
   s.requires_arc = true
 
   #创建个人目录
-#  s.subspec 'HUDMethod' do |hudMethod|
-#    hudMethod.source_files = 'MyOftenUseTool/Classes/HUDHelper.{h,m}'
-#    hudMethod.public_header_files = 'MyOftenUseTool/Classes/#HUDHelper.h'
- # end
+  s.subspec 'HUDMethod' do |hudMethod|
+    hudMethod.source_files = 'MyOftenUseTool/Classes/HUDHelper.{h,m}'
+    hudMethod.public_header_files = 'MyOftenUseTool/Classes/HUDHelper.h'
+  end
 
- # s.subspec 'SystemMethod' do |ss|
- #   ss.source_files = 'MyOftenUseTool/Classes/ZJSystemUtils.{h,m}'
- #   ss.public_header_files = 'MyOftenUseTool/Classes/ZJSystemUtils.h'
- # end
+  s.subspec 'SystemMethod' do |ss|
+    ss.source_files = 'MyOftenUseTool/Classes/ZJSystemUtils.{h,m}'
+    ss.public_header_files = 'MyOftenUseTool/Classes/ZJSystemUtils.h'
+  end
 
-  #s.subspec 'AFNRequest' do |ss|
-  #  ss.source_files = 'MyOftenUseTool/AFNRequestManager/*'
-  #  ss.public_header_files = 'MyOftenUseTool/AFNRequestManager/*.h'
-  #end
+  s.subspec 'AFNRequest' do |ss|
+    ss.source_files = 'MyOftenUseTool/AFNRequestManager/*'
+    ss.public_header_files = 'MyOftenUseTool/AFNRequestManager/*.h'
+  end
 
-  #s.subspec 'APPStoreUpdate' do |ss|
-  #  ss.source_files = 'MyOftenUseTool/AppStoreUpdate/*.{h,m}'
-  #  ss.public_header_files = 'MyOftenUseTool/AppStoreUpdate/*.h'
-  #end
+  s.subspec 'APPStoreUpdate' do |ss|
+    ss.source_files = 'MyOftenUseTool/AppStoreUpdate/*.{h,m}'
+    ss.public_header_files = 'MyOftenUseTool/AppStoreUpdate/*.h'
+  end
 
-  #s.subspec 'UIKit+Category' do |ss|
-   # ss.source_files = 'MyOftenUseTool/UIKit/*.{h,m}'
-   # ss.public_header_files = 'MyOftenUseTool/UIKit/*.h'
-  #end
+  s.subspec 'UIKit+Category' do |ss|
+    ss.source_files = 'MyOftenUseTool/UIKit/*.{h,m}'
+    ss.public_header_files = 'MyOftenUseTool/UIKit/*.h'
+  end
 
-  #s.subspec 'Foundation+Category' do |ss|
-   # ss.source_files = 'MyOftenUseTool/Foundation/**'
-  #  ss.public_header_files = 'MyOftenUseTool/Foundation/*.h'
-  #end
+  s.subspec 'Foundation+Category' do |ss|
+    ss.source_files = 'MyOftenUseTool/Foundation/**'
+    ss.public_header_files = 'MyOftenUseTool/Foundation/*.h'
+  end
 
 end
