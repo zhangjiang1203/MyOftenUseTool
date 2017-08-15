@@ -20,27 +20,8 @@
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RyX-PU-gai">
-                                <rect key="frame" x="30" y="80" width="315" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ilh-mT-7ad"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="RyX-PU-gai" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="30" id="nEr-BT-16H"/>
-                            <constraint firstItem="RyX-PU-gai" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="60" id="uba-e4-CUZ"/>
-                            <constraint firstAttribute="trailing" secondItem="RyX-PU-gai" secondAttribute="trailing" constant="30" id="yjp-vU-lbm"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="testTextField" destination="RyX-PU-gai" id="77e-gJ-vD3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

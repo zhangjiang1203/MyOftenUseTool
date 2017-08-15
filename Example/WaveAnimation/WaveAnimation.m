@@ -139,7 +139,8 @@ static WaveAnimation *animation = nil;
 #pragma mark -开始设置动画
 +(void)startAnimationToView:(UIView*)view{
     
-    WaveAnimation *wave = [WaveAnimation shareWaveAnimation];wave.alpha = 0.0;
+    WaveAnimation *wave = [WaveAnimation shareWaveAnimation];
+    wave.alpha = 0.0;
     [wave.displayLink invalidate];
     wave.displayLink = [CADisplayLink displayLinkWithTarget:wave selector:@selector(updateMyWaveAnimation)];
     [wave.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];

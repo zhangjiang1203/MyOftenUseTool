@@ -8,18 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+
 ///过期提醒
 #define PPDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
 
 /**请求成功的回调 */
-typedef void(^RequestSuccessBlock)(NSURLSessionDataTask  *task, id dataResource);
+typedef void(^RequestSuccessBlock)(id responseObject);
 /** 缓存的Block */
 typedef void(^RequestCache)(id responseCache);
 
-/**上传文件成功之后的回调 */
-typedef void(^UploadMyFileSuccess)(id dataResource);
 /**请求失败的回调 */
 typedef void(^RequestFailBlock)(NSString *errorStr);
+
+/**上传文件成功之后的回调 */
+typedef void(^UploadMyFileSuccess)(id dataResource);
+
 
 /** 上传或者下载的进度, Progress.completedUnitCount:当前大小 - Progress.totalUnitCount:总大小*/
 typedef void (^HttpProgress)(NSProgress *progress);
@@ -254,39 +257,3 @@ typedef NS_ENUM(NSUInteger, ZJResponseSerializer) {
 + (void)cancelRequestWithURL:(NSString *)URL;
 @end
 
-
-#pragma mark -网络请求的缓存处理
-@interface ZJAFNRequestCache : NSObject
-
-/**
- 缓存网络数据，根据请求的URL和parameters
- 做KEY存储数据
- @param httpData   服务器返回的数据
- @param URL        请求的URL地址
- @param parameters 请求的参数
- */
-+(void)setHttpCache:(id)httpData URL:(NSString*)URL parameters:(NSDictionary*)parameters;
-
-
-/**
- 根据请求的URL和parameters取出缓存数据
-
- @param URL 请求的URL
- @param parameters 请求的参数
- @return 缓存的服务器数据
- */
-+(id)httpCacheForURL:(NSString*)URL parameters:(NSDictionary*)parameters;
-
-
-/**
- 获取网络缓存的总大小
- */
-+(NSString*)getAllHttpCacheSize;
-
-
-/**
- 删除所有的网络缓存
- */
-+(void)removeAllHttpCache;
-
-@end

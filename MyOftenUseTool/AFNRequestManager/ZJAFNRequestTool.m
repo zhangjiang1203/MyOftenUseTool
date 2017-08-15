@@ -10,10 +10,9 @@
 #import "AFNetworking.h"
 #import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 #import "SVProgressHUD.h"
-#import "YYCache.h"
-@interface ZJAFNRequestTool ()
+#import "ZJNetCacheManager.h"
 
-@property (nonatomic,strong) NSURLSessionDataTask *httpDataTask;
+@interface ZJAFNRequestTool ()
 
 @property (nonatomic,assign) AFNetworkReachabilityStatus workStatus;
 
@@ -116,35 +115,34 @@ static AFHTTPSessionManager *_manager;
 }
 
 -(NSURLSessionTask*)httpRequestMethod:(RequestMethod)requestMethod source:(NSString*)sourceURL param:(NSDictionary*)params hud:(BOOL)isShow cache:(RequestCache)cacheBlock success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
-    
-    cacheBlock ? cacheBlock([ZJAFNRequestCache httpCacheForURL:sourceURL parameters:params]) : nil;
 
     //https SSL验证
     if (self.certificatesName) {
         [_manager setSecurityPolicy:[self customSecurityPolicy]];
     }
-    
     if (isShow) {
         [SVProgressHUD show];
-
     }
-    
     //拼接URL
     NSString *requestURL = [NSString stringWithFormat:@"%@%@",_resourceURL,sourceURL];
+    cacheBlock?[ZJNetCacheManager getHttpCacheWithURL:requestURL params:params withBlock:^(id<NSCoding> object) {
+        cacheBlock(object);
+        [SVProgressHUD dismiss];
+    }]:nil;
+    
+    NSURLSessionDataTask *httpDataTask;
     switch (requestMethod) {
         case RequestMethod_Get:
         {
-            _httpDataTask = [_manager GET:requestURL parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+             httpDataTask = [_manager GET:requestURL parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
                 //设置缓存保存缓存数据
                 [_sessionTaskArr removeObject:task];
-                if (successBlock) {
-                    successBlock(task,responseObject);
-                }
-                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
-                
+                successBlock?successBlock(responseObject):nil;
+                //缓存数据
+                cacheBlock?[ZJNetCacheManager setHttpCache:responseObject URL:requestURL params:params]:nil;
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
@@ -156,16 +154,14 @@ static AFHTTPSessionManager *_manager;
             break;
         case RequestMethod_Post:
         {
-            _httpDataTask = [_manager POST:requestURL parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
+            httpDataTask = [_manager POST:requestURL parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
                 
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
-                if (successBlock) {
-                    successBlock(task,responseObject);
-                }
+                successBlock?successBlock(responseObject):nil;
                 //设置缓存保存缓存数据
-                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
+                cacheBlock?[ZJNetCacheManager setHttpCache:responseObject URL:requestURL params:params]:nil;
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
@@ -177,14 +173,15 @@ static AFHTTPSessionManager *_manager;
             break;
         case RequestMethod_Put:
         {
-            _httpDataTask = [_manager PUT:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            httpDataTask = [_manager PUT:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
                 if (successBlock) {
-                    successBlock(task,responseObject);
+                    successBlock(responseObject);
                 }
                 //设置缓存保存缓存数据
-                cacheBlock?[ZJAFNRequestCache setHttpCache:responseObject URL:requestURL parameters:params]:nil;
+                //设置缓存保存缓存数据
+                cacheBlock?[ZJNetCacheManager setHttpCache:responseObject URL:requestURL params:params]:nil;
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
@@ -196,8 +193,8 @@ static AFHTTPSessionManager *_manager;
             break;
     }
     // 添加sessionTask到数组
-    _httpDataTask ? [[ZJAFNRequestTool shareRequestTool].sessionTaskArr addObject:_httpDataTask] : nil ;
-    return _httpDataTask;
+    httpDataTask ? [[ZJAFNRequestTool shareRequestTool].sessionTaskArr addObject:httpDataTask] : nil ;
+    return httpDataTask;
 }
 
 +(NSURLSessionTask *)getWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
@@ -206,8 +203,8 @@ static AFHTTPSessionManager *_manager;
 
 
 +(NSURLSessionTask *)getWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow cache:(RequestCache)cacheBlock success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
-    return [[ZJAFNRequestTool shareRequestTool] httpRequestMethod:RequestMethod_Get source:urlStr param:params hud:isShow cache:cacheBlock success:^(NSURLSessionDataTask *task, id dataResource) {
-        successBlock(task,dataResource);
+    return [[ZJAFNRequestTool shareRequestTool] httpRequestMethod:RequestMethod_Get source:urlStr param:params hud:isShow cache:cacheBlock success:^(id dataResource) {
+        successBlock(dataResource);
     } fail:failBlock];
 
 }
@@ -218,14 +215,14 @@ static AFHTTPSessionManager *_manager;
 }
 
 +(NSURLSessionTask *)postWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow cache:(RequestCache)cacheBlock success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
-    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Post source:urlStr param:params hud:isShow cache:cacheBlock success:^(NSURLSessionDataTask *task, id dataResource) {
-        successBlock(task,dataResource);
+    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Post source:urlStr param:params hud:isShow cache:cacheBlock success:^( id dataResource) {
+        successBlock(dataResource);
     } fail:failBlock];
 }
 
 +(NSURLSessionTask *)putWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
-    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Put source:urlStr param:params hud:isShow cache:nil success:^(NSURLSessionDataTask *task, id dataResource) {
-        successBlock(task,dataResource);
+    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Put source:urlStr param:params hud:isShow cache:nil success:^(id dataResource) {
+        successBlock(dataResource);
     } fail:failBlock];
 }
 
@@ -314,7 +311,7 @@ static AFHTTPSessionManager *_manager;
                                          success:(UploadMyFileSuccess)success
                                          failure:(RequestFailBlock)failure
 {
-    NSURLSessionTask *sessionTask = [_manager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        NSURLSessionTask *sessionTask = [_manager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         //根据当前系统时间生成图片名称
         NSDate *date = [NSDate date];
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
@@ -376,51 +373,6 @@ static AFHTTPSessionManager *_manager;
     }
 }
 
-
-@end
-
-#pragma mark -网络缓存方法
-@implementation ZJAFNRequestCache
-static NSString *const NetworkResponseCache = @"NetworkResponseCache";
-static YYCache *_dataCache;
-
-+(void)initialize{
-    _dataCache = [YYCache cacheWithName:NetworkResponseCache];
-}
-
-+(void)setHttpCache:(id)httpData URL:(NSString *)URL parameters:(NSDictionary *)parameters{
-    NSString *cacheKey = [self cacheKeyWithURL:URL parameters:parameters];
-    //异步缓存 不会阻塞主线程
-    [_dataCache setObject:httpData forKey:cacheKey withBlock:nil];
-}
-
-+(id)httpCacheForURL:(NSString *)URL parameters:(NSDictionary *)parameters{
-    NSString *cacheKey = [self cacheKeyWithURL:URL parameters:parameters];
-    return [_dataCache objectForKey:cacheKey];
-}
-
-+(NSString*)getAllHttpCacheSize{
-    NSInteger totalCount = [_dataCache.diskCache totalCount];
-    
-    return [NSString stringWithFormat:@"%.2fM",totalCount/1024.0/1024.0];
-}
-
-+(void)removeAllHttpCache{
-    [_dataCache.diskCache removeAllObjects];
-}
-
-
-+(NSString*)cacheKeyWithURL:(NSString*)URL parameters:(NSDictionary*)parameters{
-    
-    if (!parameters) return URL;
-    //将参数字典转换成字符串
-    NSData *stringData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
-    NSString *paraString = [[NSString alloc]initWithData:stringData encoding:NSUTF8StringEncoding];
-    
-    //将URL与转换好的参数字符串拼接在一起，成为最终存储的KEY值
-    NSString *cacheKey = [NSString stringWithFormat:@"%@%@",URL,paraString];
-    return cacheKey;
-}
 @end
 
 #pragma mark - NSDictionary,NSArray的分类

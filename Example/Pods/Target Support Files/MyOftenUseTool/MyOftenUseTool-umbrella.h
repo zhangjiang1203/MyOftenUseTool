@@ -10,9 +10,12 @@
 #endif
 #endif
 
-#import "ZJMethodHeader.h"
 #import "ZJAFNRequestTool.h"
+#import "ZJNetCacheManager.h"
 #import "ZJUpdateAppManager.h"
+#import "HUDHelper.h"
+#import "ZJMethodHeader.h"
+#import "ZJSystemUtils.h"
 #import "Foundation_Category.h"
 #import "NSArray+Block.h"
 #import "NSArray+SafeAccess.h"
@@ -43,8 +46,6 @@
 #import "NSString+UUID.h"
 #import "NSTimer+Addition.h"
 #import "NSTimer+Blocks.h"
-#import "HUDHelper.h"
-#import "ZJSystemUtils.h"
 #import "UIButton+BackgroundColor.h"
 #import "UIButton+Block.h"
 #import "UIButton+CountDown.h"

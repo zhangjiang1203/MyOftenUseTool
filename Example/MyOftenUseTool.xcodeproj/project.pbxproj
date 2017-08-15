@@ -10,6 +10,8 @@
 		0B7A5BEAD9CE5BB21B9338FE /* Pods_MyOftenUseTool_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61760FFC38BFF65A7746C36F /* Pods_MyOftenUseTool_Example.framework */; };
 		2825D7DE1EA5EAF9001209D5 /* Resource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2825D7DB1EA5EAF9001209D5 /* Resource.bundle */; };
 		2825D7DF1EA5EAF9001209D5 /* WaveAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2825D7DD1EA5EAF9001209D5 /* WaveAnimation.m */; };
+		287D457A1F171B370094506A /* ZJSegmentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 287D45791F171B370094506A /* ZJSegmentScrollView.m */; };
+		287D45801F171E6F0094506A /* ZJWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 287D457F1F171E6F0094506A /* ZJWaveView.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -42,6 +44,10 @@
 		2825D7DB1EA5EAF9001209D5 /* Resource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Resource.bundle; sourceTree = "<group>"; };
 		2825D7DC1EA5EAF9001209D5 /* WaveAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveAnimation.h; sourceTree = "<group>"; };
 		2825D7DD1EA5EAF9001209D5 /* WaveAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaveAnimation.m; sourceTree = "<group>"; };
+		287D45781F171B370094506A /* ZJSegmentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJSegmentScrollView.h; sourceTree = "<group>"; };
+		287D45791F171B370094506A /* ZJSegmentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJSegmentScrollView.m; sourceTree = "<group>"; };
+		287D457E1F171E6F0094506A /* ZJWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJWaveView.h; sourceTree = "<group>"; };
+		287D457F1F171E6F0094506A /* ZJWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJWaveView.m; sourceTree = "<group>"; };
 		28BD7FD1D35AAEDC40AB354F /* MyOftenUseTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MyOftenUseTool.podspec; path = ../MyOftenUseTool.podspec; sourceTree = "<group>"; };
 		3DD178B117410125D143E1B8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MyOftenUseTool_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOftenUseTool_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +165,10 @@
 		6003F593195388D20070C39A /* Example for MyOftenUseTool */ = {
 			isa = PBXGroup;
 			children = (
+				287D457E1F171E6F0094506A /* ZJWaveView.h */,
+				287D457F1F171E6F0094506A /* ZJWaveView.m */,
+				287D45781F171B370094506A /* ZJSegmentScrollView.h */,
+				287D45791F171B370094506A /* ZJSegmentScrollView.m */,
 				6003F59C195388D20070C39A /* ZJAppDelegate.h */,
 				6003F59D195388D20070C39A /* ZJAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -415,7 +425,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* ZJAppDelegate.m in Sources */,
+				287D45801F171E6F0094506A /* ZJWaveView.m in Sources */,
 				2825D7DF1EA5EAF9001209D5 /* WaveAnimation.m in Sources */,
+				287D457A1F171B370094506A /* ZJSegmentScrollView.m in Sources */,
 				6003F5A7195388D20070C39A /* ZJViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
