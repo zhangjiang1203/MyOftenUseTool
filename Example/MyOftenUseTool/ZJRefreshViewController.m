@@ -29,9 +29,6 @@
     self.myTableView.refreshControl = self.refreshControl;
 }
 
-
-
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 10;
 }

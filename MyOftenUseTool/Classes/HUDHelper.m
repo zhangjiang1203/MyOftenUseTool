@@ -644,7 +644,7 @@ double radians(float degrees) {
                           NSKernAttributeName:@1.5f};
     
     CGSize size = [str boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
-    return size.height-10;
+    return size.height;
 }
 
 

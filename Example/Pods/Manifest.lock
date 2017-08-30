@@ -14,7 +14,49 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - MyOftenUseTool (0.6.7):
+  - MyOftenUseTool (0.6.9):
+    - AFNetworking (~> 3.1.0)
+    - MyOftenUseTool/AFNRequest (= 0.6.9)
+    - MyOftenUseTool/APPStoreUpdate (= 0.6.9)
+    - MyOftenUseTool/Foundation+Category (= 0.6.9)
+    - MyOftenUseTool/HUDMethod (= 0.6.9)
+    - MyOftenUseTool/SystemMethod (= 0.6.9)
+    - MyOftenUseTool/UIKit+Category (= 0.6.9)
+    - pop
+    - SAMKeychain
+    - SVProgressHUD
+    - YYCache
+  - MyOftenUseTool/AFNRequest (0.6.9):
+    - AFNetworking (~> 3.1.0)
+    - pop
+    - SAMKeychain
+    - SVProgressHUD
+    - YYCache
+  - MyOftenUseTool/APPStoreUpdate (0.6.9):
+    - AFNetworking (~> 3.1.0)
+    - pop
+    - SAMKeychain
+    - SVProgressHUD
+    - YYCache
+  - MyOftenUseTool/Foundation+Category (0.6.9):
+    - AFNetworking (~> 3.1.0)
+    - pop
+    - SAMKeychain
+    - SVProgressHUD
+    - YYCache
+  - MyOftenUseTool/HUDMethod (0.6.9):
+    - AFNetworking (~> 3.1.0)
+    - pop
+    - SAMKeychain
+    - SVProgressHUD
+    - YYCache
+  - MyOftenUseTool/SystemMethod (0.6.9):
+    - AFNetworking (~> 3.1.0)
+    - pop
+    - SAMKeychain
+    - SVProgressHUD
+    - YYCache
+  - MyOftenUseTool/UIKit+Category (0.6.9):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
@@ -34,7 +76,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  MyOftenUseTool: bfb605a06f622badf9fa37bf27b5896a4a5eac6a
+  MyOftenUseTool: 41ad5a2f1a7669e5e5cfb1d52272a1b1f54d3f84
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
