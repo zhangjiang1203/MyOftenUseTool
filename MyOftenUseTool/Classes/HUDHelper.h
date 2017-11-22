@@ -148,11 +148,10 @@ double radians(float degrees);
  */
 +(void)makeScale:(UIView*)scaleView delegate:(id)delegate scale:(CGFloat)scale duration:(CFTimeInterval)duration;
 
-
 /**
  *  控件旋转
  */
-+(void)rotationView:(UIView*)view delegate:(id)delegate;
++(void)rotationView:(UIView*)view duration:(CGFloat)duration delegate:(id)delegate;;
 
 
 /**

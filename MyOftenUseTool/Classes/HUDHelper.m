@@ -423,7 +423,7 @@ double radians(float degrees) {
 }
 
 
-+(void)rotationView:(UIView*)view delegate:(id)delegate
++(void)rotationView:(UIView*)view duration:(CGFloat)duration delegate:(id)delegate
 {
     view.layer.transform=CATransform3DIdentity;
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
@@ -441,7 +441,7 @@ double radians(float degrees) {
                             nil];
     [animation setValues:frameValues];
     animation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-    animation.duration = 0.5;
+    animation.duration = duration;
     animation.repeatCount=HUGE_VALF;
     animation.delegate=delegate;
     [view.layer addAnimation:animation forKey:@"RotationAnimation"];
