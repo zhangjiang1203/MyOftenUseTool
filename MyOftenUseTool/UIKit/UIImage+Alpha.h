@@ -28,7 +28,6 @@
  设置图片的alpha值
  
  @param alpha alpha值
- @param image 设置的图片
  @return 返回的图片
  */
 -(nullable UIImage *)imageByApplyingAlpha:(CGFloat )alpha;

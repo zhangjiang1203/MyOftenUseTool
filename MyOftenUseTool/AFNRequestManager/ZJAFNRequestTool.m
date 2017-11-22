@@ -57,6 +57,8 @@ static AFHTTPSessionManager *_manager;
     _manager = [AFHTTPSessionManager manager];
     //设置请求的超时时间
     _manager.requestSerializer.timeoutInterval = 30.f;
+//    _manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    
     //设置服务器返回结果的类型:JSON (AFJSONResponseSerializer,AFHTTPResponseSerializer)
     _manager.responseSerializer = [AFJSONResponseSerializer serializer];
     _manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/html", @"text/json", @"text/plain", @"text/javascript", @"text/xml", @"image/*", nil];
@@ -140,9 +142,21 @@ static AFHTTPSessionManager *_manager;
                 [SVProgressHUD dismiss];
                 //设置缓存保存缓存数据
                 [_sessionTaskArr removeObject:task];
-                successBlock?successBlock(responseObject):nil;
-                //缓存数据
-                cacheBlock?[ZJNetCacheManager setHttpCache:responseObject URL:requestURL params:params]:nil;
+                if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                    if ([responseObject[@"success"] integerValue] == 1) {
+                        successBlock?successBlock(responseObject[@"result"]):nil;
+                        //设置缓存保存缓存数据
+                        cacheBlock?[ZJNetCacheManager setHttpCache:responseObject[@"result"] URL:requestURL params:params]:nil;
+                    }else{
+                        if (failBlock) {
+                            failBlock(responseObject[@"errorMsg"]);
+                        }
+                    }
+                }else{
+                    successBlock?successBlock(responseObject[@"result"]):nil;
+                    //设置缓存保存缓存数据
+                    cacheBlock?[ZJNetCacheManager setHttpCache:responseObject[@"result"] URL:requestURL params:params]:nil;
+                }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
@@ -159,9 +173,21 @@ static AFHTTPSessionManager *_manager;
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
-                successBlock?successBlock(responseObject):nil;
-                //设置缓存保存缓存数据
-                cacheBlock?[ZJNetCacheManager setHttpCache:responseObject URL:requestURL params:params]:nil;
+                if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                    if ([responseObject[@"success"] integerValue] == 1) {
+                        successBlock?successBlock(responseObject[@"result"]):nil;
+                        //设置缓存保存缓存数据
+                        cacheBlock?[ZJNetCacheManager setHttpCache:responseObject[@"result"] URL:requestURL params:params]:nil;
+                    }else{
+                        if (failBlock) {
+                            failBlock(responseObject[@"errorMsg"]);
+                        }
+                    }
+                }else{
+                    successBlock?successBlock(responseObject[@"result"]):nil;
+                    //设置缓存保存缓存数据
+                    cacheBlock?[ZJNetCacheManager setHttpCache:responseObject[@"result"] URL:requestURL params:params]:nil;
+                }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
@@ -174,6 +200,26 @@ static AFHTTPSessionManager *_manager;
         case RequestMethod_Put:
         {
             httpDataTask = [_manager PUT:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+                [SVProgressHUD dismiss];
+                [_sessionTaskArr removeObject:task];
+                if (successBlock) {
+                    successBlock(responseObject);
+                }
+                //设置缓存保存缓存数据
+                //设置缓存保存缓存数据
+                cacheBlock?[ZJNetCacheManager setHttpCache:responseObject URL:requestURL params:params]:nil;
+            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+                [SVProgressHUD dismiss];
+                [_sessionTaskArr removeObject:task];
+                if (failBlock) {
+                    failBlock(error.description);
+                }
+            }];
+        }
+            break;
+            case RequestMethod_Delete:
+        {
+            httpDataTask = [_manager DELETE:requestURL parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
                 if (successBlock) {
@@ -224,6 +270,19 @@ static AFHTTPSessionManager *_manager;
     return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Put source:urlStr param:params hud:isShow cache:nil success:^(id dataResource) {
         successBlock(dataResource);
     } fail:failBlock];
+}
+
++(NSURLSessionTask *)putWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow cache:(RequestCache)cacheBlock success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
+    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Put source:urlStr param:params hud:isShow cache:cacheBlock success:successBlock fail:failBlock];
+}
+
+
++(NSURLSessionTask *)deleteWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
+    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Delete source:urlStr param:params hud:isShow cache:nil success:successBlock fail:failBlock];
+}
+
++(NSURLSessionTask *)deleteWithURL:(NSString *)urlStr param:(NSDictionary *)params hud:(BOOL)isShow cache:(RequestCache)cacheBlock success:(RequestSuccessBlock)successBlock fail:(RequestFailBlock)failBlock{
+    return [[ZJAFNRequestTool shareRequestTool]httpRequestMethod:RequestMethod_Delete source:urlStr param:params hud:isShow cache:cacheBlock success:successBlock fail:failBlock];
 }
 
 #pragma mark - 下载文件

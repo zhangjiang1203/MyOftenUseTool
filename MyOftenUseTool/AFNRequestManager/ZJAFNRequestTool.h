@@ -29,9 +29,10 @@ typedef void (^HttpProgress)(NSProgress *progress);
 
 
 typedef NS_ENUM(NSUInteger, RequestMethod) {
-    RequestMethod_Get  = 1,
-    RequestMethod_Post = 2,
-    RequestMethod_Put  = 3,
+    RequestMethod_Get    = 1,
+    RequestMethod_Post   = 2,
+    RequestMethod_Put    = 3,
+    RequestMethod_Delete = 4,
 };
 
 
@@ -194,6 +195,62 @@ typedef NS_ENUM(NSUInteger, ZJResponseSerializer) {
                            hud:(BOOL)isShow
                        success:(RequestSuccessBlock)successBlock
                           fail:(RequestFailBlock)failBlock;
+
+
+/**
+ put 请求有缓存
+
+ @param urlStr 请求的URL
+ @param params 请求参数
+ @param isShow 显示指示符
+ @param cacheBlock 缓存回调
+ @param successBlock 成功的回调
+ @param failBlock 失败的回调
+ @return 返回的任务队列
+ */
++(NSURLSessionTask*)putWithURL:(NSString*)urlStr
+                          param:(NSDictionary*)params
+                            hud:(BOOL)isShow
+                          cache:(RequestCache)cacheBlock
+                        success:(RequestSuccessBlock)successBlock
+                           fail:(RequestFailBlock)failBlock;
+
+
+
+/**
+ delete请求
+
+ @param urlStr 请求的URL
+ @param params 请求参数
+ @param isShow 显示指示符
+ @param successBlock 成功的回调
+ @param failBlock 失败的回调
+ @return 返回的任务队列
+ */
++(NSURLSessionTask*)deleteWithURL:(NSString*)urlStr
+                         param:(NSDictionary*)params
+                           hud:(BOOL)isShow
+                       success:(RequestSuccessBlock)successBlock
+                          fail:(RequestFailBlock)failBlock;
+
+
+/**
+ delete请求 带缓存
+ 
+ @param urlStr 请求的URL
+ @param params 请求参数
+ @param isShow 显示指示符
+ @param cacheBlock 缓存回调
+ @param successBlock 成功的回调
+ @param failBlock 失败的回调
+ @return 返回的任务队列
+ */
++(NSURLSessionTask*)deleteWithURL:(NSString*)urlStr
+                            param:(NSDictionary*)params
+                              hud:(BOOL)isShow
+                            cache:(RequestCache)cacheBlock
+                          success:(RequestSuccessBlock)successBlock
+                             fail:(RequestFailBlock)failBlock;
 
 /**
  下载文件
