@@ -142,21 +142,9 @@ static AFHTTPSessionManager *_manager;
                 [SVProgressHUD dismiss];
                 //设置缓存保存缓存数据
                 [_sessionTaskArr removeObject:task];
-                if ([responseObject isKindOfClass:[NSDictionary class]]) {
-                    if ([responseObject[@"success"] integerValue] == 1) {
-                        successBlock?successBlock(responseObject[@"result"]):nil;
+                successBlock?successBlock(responseObject):nil;
                         //设置缓存保存缓存数据
-                        cacheBlock?[ZJNetCacheManager setHttpCache:responseObject[@"result"] URL:requestURL params:params]:nil;
-                    }else{
-                        if (failBlock) {
-                            failBlock(responseObject[@"errorMsg"]);
-                        }
-                    }
-                }else{
-                    successBlock?successBlock(responseObject[@"result"]):nil;
-                    //设置缓存保存缓存数据
-                    cacheBlock?[ZJNetCacheManager setHttpCache:responseObject[@"result"] URL:requestURL params:params]:nil;
-                }
+                cacheBlock?[ZJNetCacheManager setHttpCache:responseObject URL:requestURL params:params]:nil;
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
@@ -173,21 +161,9 @@ static AFHTTPSessionManager *_manager;
             } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
-                if ([responseObject isKindOfClass:[NSDictionary class]]) {
-                    if ([responseObject[@"success"] integerValue] == 1) {
-                        successBlock?successBlock(responseObject[@"result"]):nil;
+                successBlock?successBlock(responseObject):nil;
                         //设置缓存保存缓存数据
-                        cacheBlock?[ZJNetCacheManager setHttpCache:responseObject[@"result"] URL:requestURL params:params]:nil;
-                    }else{
-                        if (failBlock) {
-                            failBlock(responseObject[@"errorMsg"]);
-                        }
-                    }
-                }else{
-                    successBlock?successBlock(responseObject[@"result"]):nil;
-                    //设置缓存保存缓存数据
-                    cacheBlock?[ZJNetCacheManager setHttpCache:responseObject[@"result"] URL:requestURL params:params]:nil;
-                }
+                cacheBlock?[ZJNetCacheManager setHttpCache:responseObject URL:requestURL params:params]:nil;
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
                 [SVProgressHUD dismiss];
                 [_sessionTaskArr removeObject:task];
