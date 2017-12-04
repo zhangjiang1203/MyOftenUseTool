@@ -14,49 +14,49 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - MyOftenUseTool (0.7.0):
+  - MyOftenUseTool (0.7.2):
     - AFNetworking (~> 3.1.0)
-    - MyOftenUseTool/AFNRequest (= 0.7.0)
-    - MyOftenUseTool/APPStoreUpdate (= 0.7.0)
-    - MyOftenUseTool/Foundation+Category (= 0.7.0)
-    - MyOftenUseTool/HUDMethod (= 0.7.0)
-    - MyOftenUseTool/SystemMethod (= 0.7.0)
-    - MyOftenUseTool/UIKit+Category (= 0.7.0)
+    - MyOftenUseTool/AFNRequest (= 0.7.2)
+    - MyOftenUseTool/APPStoreUpdate (= 0.7.2)
+    - MyOftenUseTool/Foundation+Category (= 0.7.2)
+    - MyOftenUseTool/HUDMethod (= 0.7.2)
+    - MyOftenUseTool/SystemMethod (= 0.7.2)
+    - MyOftenUseTool/UIKit+Category (= 0.7.2)
     - pop
     - SAMKeychain
     - SVProgressHUD
     - YYCache
-  - MyOftenUseTool/AFNRequest (0.7.0):
-    - AFNetworking (~> 3.1.0)
-    - pop
-    - SAMKeychain
-    - SVProgressHUD
-    - YYCache
-  - MyOftenUseTool/APPStoreUpdate (0.7.0):
+  - MyOftenUseTool/AFNRequest (0.7.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
     - YYCache
-  - MyOftenUseTool/Foundation+Category (0.7.0):
+  - MyOftenUseTool/APPStoreUpdate (0.7.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
     - YYCache
-  - MyOftenUseTool/HUDMethod (0.7.0):
+  - MyOftenUseTool/Foundation+Category (0.7.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
     - YYCache
-  - MyOftenUseTool/SystemMethod (0.7.0):
+  - MyOftenUseTool/HUDMethod (0.7.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
     - SVProgressHUD
     - YYCache
-  - MyOftenUseTool/UIKit+Category (0.7.0):
+  - MyOftenUseTool/SystemMethod (0.7.2):
+    - AFNetworking (~> 3.1.0)
+    - pop
+    - SAMKeychain
+    - SVProgressHUD
+    - YYCache
+  - MyOftenUseTool/UIKit+Category (0.7.2):
     - AFNetworking (~> 3.1.0)
     - pop
     - SAMKeychain
@@ -76,7 +76,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  MyOftenUseTool: dee902e67fc7088c5d2042b22bfb85d14d1202a1
+  MyOftenUseTool: 63c663650010cf3331605ba64ae2e7079c2be799
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0

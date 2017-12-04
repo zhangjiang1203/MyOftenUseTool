@@ -25,6 +25,7 @@ static const char *phTextView = "placeHolderTextView";
         textView.textColor = color?color:[UIColor grayColor];
         textView.userInteractionEnabled = NO;
         textView.text = placeHolder;
+        textView.hidden = self.text.length;
         [self addSubview:textView];
         [self setPlaceHolderTextView:textView];
     }
